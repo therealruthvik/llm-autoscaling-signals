@@ -69,9 +69,10 @@ replica's capacity, no reactive signal comes close to static provisioning:
 three fixed replicas meet the latency SLO for every request, while the best
 reactive policies (running requests and a calibrated KV-cache target) meet it
 for about a third of requests and use 1.8 times the GPU time. The reason is
-not mainly which signal is chosen. Requests that queue during the startup
-delay stay on the replica that received them, so replicas added later cannot
-serve them. Our contributions are:
+timing more than the choice of signal. With a 73\,s replica startup, added
+capacity arrives near the end of a 120\,s burst, and the requests that queued
+in the meantime have already missed the SLO. In simulation, neither tuning
+the targets nor better request routing recovers them. Our contributions are:
 \begin{itemize}
 \item A measured single-replica profile of vLLM~0.32.0 serving
   Qwen2.5-1.5B-Instruct on an NVIDIA T4, repeated in three sessions on two
@@ -91,10 +92,11 @@ serve them. Our contributions are:
 \item Evidence that the TTFT metric of a widely used vLLM emulator excludes
   queueing time, unlike vLLM, which biases TTFT-based scaling in emulated
   experiments (Section~\ref{sec:kind}).
-\item Simulated sensitivity sweeps over thresholds, scrape interval, HPA sync
-  period, stabilization window, maximum replicas and startup delay, using a
-  discrete-event simulator calibrated to the same measurements
-  (Section~\ref{sec:sweeps}).
+\item Simulated sensitivity sweeps over policy targets, rate windows, scrape
+  interval, HPA sync period, stabilization window, maximum replicas, startup
+  delay and request routing, using a discrete-event simulator calibrated to
+  the same measurements, and the sensitivity of the measured results to the
+  SLO definition (Section~\ref{sec:sweeps}).
 \item All code, raw measurements and run logs (Section~\ref{sec:artifact}).
 \end{itemize}
 
@@ -125,9 +127,18 @@ is a single run. Ramani and Tantawi fit a queueing model to predict TTFT and
 inter-token latency and use it in an SLO-driven
 autoscaler~\cite{ramani2026queueing}. Chiron uses queue size, utilization and
 SLOs in a hierarchical design~\cite{patke2025chiron}; SageServe scales GPU VMs
-from traffic forecasts across data centers~\cite{jaiswal2025sageserve}. Our
+from traffic forecasts across data centers~\cite{jaiswal2025sageserve}. TokenScale scales disaggregated prefill and decode pools on a token-rate
+signal~\cite{lai2025tokenscale}. AIBrix provides a Kubernetes control plane for
+vLLM with LLM-specific autoscalers and load-aware routing~\cite{aibrix2025}. Our
 work is complementary: we do not propose a controller, but measure how the
 reactive signals that operators deploy today behave, and why.
+
+\textbf{Cold start.} Because startup delay dominates our results, work that
+shortens it bears directly on them. ServerlessLLM loads checkpoints from
+storage near the GPU and live-migrates inference~\cite{fu2024serverlessllm};
+Kabakibo et al.\ break down vLLM cold-start time~\cite{kabakibo2026breaking};
+Foundry restores captured CUDA graphs instead of re-capturing them and reports
+cold-start reductions of up to 99\%~\cite{liu2026foundry}.
 
 \section{Methodology}
 \label{sec:method}
@@ -158,7 +169,9 @@ one or two Prometheus triggers, minimum one and maximum eight replicas, and a
 60\,s scale-down stabilization window. Where a target is derived from our
 measurements, it is the signal's mean value on the T4 at 6.4 requests/s, which is
 80\% of measured saturated capacity, interpolated between the 4 and
-8 requests/s levels. We also include static provisioning with three replicas,
+8 requests/s levels. For example, the running target of 50 is far below the
+256-request scheduling cap because the cap is reached only after the server is
+already saturated. Section~\ref{sec:sweeps} varies every target. We also include static provisioning with three replicas,
 the smallest static size that covers the 20 requests/s peak of our workloads.
 CPU- and GPU-utilization policies are not evaluated: neither our emulator nor our
 profiles provide a faithful version of these signals
@@ -197,7 +210,10 @@ shuffled per trial. Before every trial the emulator is redeployed with a fresh
 pod.
 
 A request meets the SLO if its TTFT is at most 1\,s and its TPOT at most
-150\,ms; failed requests count as misses. SLO attainment is the fraction of all
+150\,ms; failed requests count as misses. Both limits are met with margin by
+an unloaded T4 replica (TTFT p99 below 1\,s and TPOT about 18\,ms up to
+8 requests/s), so a miss indicates overload rather than slow hardware;
+Section~\ref{sec:sweeps} relaxes both. SLO attainment is the fraction of all
 sent requests that meet the SLO. Cost is pod-seconds from the start of the load
 until 30\,s after its end, counting every pod that exists, whether starting,
 ready or draining, since each would hold a GPU. The simulated sweeps also report
@@ -370,15 +386,16 @@ peak queue averaged 934--1{,}182 requests per policy; no added pod ever held a
 waiting request. After the burst, the original pod needed until 302--345\,s
 after load start (mean per policy) to empty its queue, more than two minutes
 after the offered load fell back to 2 requests/s (Fig.~\ref{fig:timeline}).
-The SLO misses are therefore mostly requests that arrived during the startup
-delay and queued on the original replica; added replicas cannot serve them.
-vLLM has no mechanism to move waiting requests between servers, so this applies
-to real deployments with per-replica queues. A gateway that holds requests
-centrally and dispatches them to replicas with free capacity would avoid it;
-we did not test one.
+vLLM has no mechanism to move waiting requests between servers, so this
+applies to real deployments with per-replica queues. Pinning lengthens the
+tail, but it is not the main cause of SLO misses: in simulation, a shared
+queue that lets new replicas take over the backlog cuts TTFT p99 by
+about 2.5 times yet does not raise attainment (Section~\ref{sec:sweeps}), because the
+requests in the backlog have already waited past the 1\,s TTFT limit by the
+time any added replica is ready.
 
 \textbf{Queue-based signals overshoot.} The waiting count keeps reporting the
-pinned backlog, about a thousand requests, so the queue, combined and ttft
+backlog, about a thousand requests, so the queue, combined and ttft
 policies ask for $\lceil 1000/5 \rceil$ replicas and reach the maximum of eight
 in every trial, although the added replicas never queue. Bounded signals behave
 differently: running requests cannot exceed 256 on the saturated pod, and the
@@ -404,7 +421,9 @@ second pod ready 145\,s after the step began.
 
 \section{Sensitivity (Simulated)}
 \label{sec:sweeps}
-% Sources: sim/results/sweep_v2.csv (2,415 runs); analysis/results/sweep_summary.txt.
+% Sources: sim/results/sweep_v2.csv (2,415 runs); analysis/results/sweep_summary.txt;
+% sim/results/followup_v1.csv (795 runs); analysis/results/followup_summary.txt;
+% analysis/results/slo_sensitivity.txt (measured).
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_sweeps_step.pdf}
@@ -418,9 +437,11 @@ Ramp and steady workloads are in the artifact.}
 
 We vary one parameter at a time in the simulator, for six reactive policies,
 three workloads and five seeds, 2{,}415 runs in total
-(Fig.~\ref{fig:sweeps}). The third workload, \emph{steady}, offers
+(Fig.~\ref{fig:sweeps}), plus 795 runs that vary policy targets, rate
+windows, routing and the static replica count. The third workload, \emph{steady}, offers
 12 requests/s (1.5 times single-replica capacity) for 360\,s. All results in
-this section are simulated.
+this section are simulated, except the SLO sensitivity, which uses the
+measured cluster trials.
 
 \textbf{Startup delay matters most.} Under the step load, the running policy's
 SLO attainment falls from 0.56 with a 30\,s startup to 0.31 at the measured
@@ -449,9 +470,52 @@ windows the replica count oscillates: queue makes 4.8 scale-ups and 2.8
 scale-downs per run with no stabilization, against 2.6 and 1.2 with 300\,s,
 and each re-scale-up pays the startup delay again.
 
-\textbf{Static provisioning remains the reference.} Under the steady load, two
-static replicas meet the SLO for every request at 960 pod-seconds (schedule plus
-120\,s). The best reactive policy, ttft, attains 0.64 at 3{,}123.
+\textbf{Targets trade cost for attainment.} Lowering a
+target buys attainment with pod-seconds (schedule plus 30\,s). Under the step
+load, running at 30, 50, 70 and 100 per replica attains 0.33, 0.31, 0.27 and
+0.25 at 2{,}510, 2{,}030, 1{,}467 and 1{,}080 pod-seconds; kv-cal from 0.04 to
+0.2 spans 0.32 to 0.21. qps improves at lower targets (4 per replica: 0.14 step,
+0.41 ramp, against 0.12 and 0.32 at 6.4) but stays last among the scaling
+policies under the step load. The ttft target barely matters (0.197--0.198 for
+0.75--2\,s). The best step attainment over all targets tested is 0.33. Targets
+matter more under sustained load: under the steady load, running at 30 per
+replica attains 0.74 against 0.55 at 50, at 2{,}889 against 2{,}430
+pod-seconds, and kv-cal at 0.04 attains 0.74 against 0.49 at 0.06.
+
+\textbf{Shorter rate windows do not rescue qps.} With a 30\,s window, qps attains
+0.14 (step) and 0.36 (ramp), against 0.12 and 0.32 with 1\,min. With a 15\,s
+window and a 15\,s scrape interval the rate has fewer than two samples and
+reads zero, as a Prometheus \texttt{rate()} over one scrape interval would,
+so the policy never scales. A 15\,s window raises ttft from 0.20 to 0.21.
+
+\input{routing_table}
+
+\textbf{Routing shortens the tail but does not recover attainment.}
+Table~\ref{tab:routing} replaces random routing with least-request routing
+and with a central queue from which replicas pull work. Least-request routing
+raises attainment by 0.02--0.08, because new arrivals avoid the saturated
+original replica. The central queue moves the backlog onto new replicas and
+cuts step TTFT p99 from 125\,s to 49\,s for running, but does not raise
+attainment, and lowers it by up to 0.11: the moved requests have already
+missed the SLO, and they load the new replicas with large batches, so requests
+that arrive afterwards decode at a slower TPOT or wait. Requests that queue during the startup delay are lost
+under any routing.
+
+\textbf{Static provisioning remains the reference.} Two static replicas attain
+0.42 under the step load at 780 pod-seconds, more than any reactive policy at
+any target we tested, at under half the cost; under the ramp they attain 0.58 at
+940. Three replicas meet the SLO for every request under every routing
+scheme. Under the steady load, two static replicas meet the SLO for every
+request at 960 pod-seconds (schedule plus 120\,s); the best reactive policy,
+ttft, attains 0.64 at 3{,}123.
+
+\textbf{The SLO definition does not change the ranking (measured).} On the
+cluster trials, relaxing the TTFT limit from 1\,s to 5\,s changes every
+policy's attainment by at most 0.003, and relaxing TPOT from 150 to 250\,ms
+raises every reactive policy by 0.04--0.07; the ranking is unchanged. Most
+misses (0.25--0.84 of all requests, depending on policy) violate both limits:
+they are requests that waited in a queue for tens of seconds, which no
+moderate SLO accepts.
 
 \section{Limitations}
 \label{sec:limits}
@@ -478,16 +542,22 @@ emulator's timing can be perturbed by other load; we kept the machine otherwise
 idle during runs. Image pull time is excluded because the emulator image is
 small and cached; a real vLLM image adds minutes to the first start on a node.
 
-\textbf{Signals not evaluated.} We do not evaluate CPU- or GPU-utilization
+\textbf{Signals and settings not evaluated.} We do not evaluate token-rate
+signals~\cite{lai2025tokenscale}; like qps, they measure served work, so we
+expect them to share its lag, but we have not tested this. We do not vary
+\texttt{max\_num\_seqs}, which bounds the running signal. We do not evaluate CPU- or GPU-utilization
 policies. The emulator's CPU use does not resemble vLLM's, and our profiling
 runs did not record GPU utilization. Prior guidance already cautions that
 GPU utilization measures duty cycle rather than useful
 work~\cite{gke2026autoscaling}.
 
 \textbf{Synthetic workloads and routing.} Loads are synthetic Poisson processes
-with lognormal lengths. Requests are routed by a Kubernetes Service, uniformly at
-random across ready pods. A load-aware gateway would route around busy
-replicas and change the backlog results.
+with lognormal lengths. On the cluster, requests are routed by a Kubernetes Service, uniformly at
+random across ready pods; load-aware routing is evaluated only in simulation.
+
+\textbf{No multi-replica hardware validation.} We have not repeated the policy
+comparison on several real vLLM replicas. This matters most for the ttft
+policy, whose cluster results are affected by the emulator's TTFT definition.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -500,13 +570,14 @@ scaled to the replica limit without improving the SLO, and request throughput
 under-scaled because it measures served rather than offered load. The cluster
 and the simulator rank the policies almost identically (Spearman 0.97).
 
-The larger lesson is that the choice of signal matters less than where the
-waiting requests are. With a startup delay longer than the burst, every
-reactive policy adds capacity after the backlog has already formed on the
-original replica, and a Service that routes new arrivals at random cannot move
-that backlog. Shorter startup, load-aware routing, or requeueing waiting
-requests onto new replicas would attack this directly, and each changes which
-signal is best. An open question is whether a reactive signal can ever be
+The larger lesson is that the choice of signal matters less than when
+capacity arrives. With a startup delay close to the length of the burst, every
+reactive policy adds replicas after the requests that will miss the SLO have
+already queued. In simulation under the step load, tuning targets,
+shortening rate windows and changing request routing moved attainment by at most 0.07 from the defaults, while cutting startup from 73\,s to 30\,s nearly
+doubled it. Work that shortens cold
+start~\cite{fu2024serverlessllm,liu2026foundry} therefore matters more for
+reactive scaling than the choice of signal. An open question is whether a reactive signal can ever be
 good enough under bursts, or whether reactive scaling on LLM servers should be
 treated as a cost optimization layered on top of a static floor sized for the
 expected peak.

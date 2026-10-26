@@ -19,7 +19,11 @@ Replica model (continuous batching, calibrated to the T4 runs in data/):
     not lengthened again)
   - KV usage = tokens held by running requests / KV_TOKENS
 Cluster model:
-  - Service routing: uniform random over Ready replicas, per request (kube-proxy)
+  - Service routing (cfg "routing"): "random" = uniform over Ready replicas, per
+    request (kube-proxy, the default); "least" = fewest outstanding requests at
+    arrival (a least-request gateway); "central" = one shared waiting queue that
+    every Ready replica pulls from when it has a free slot (an idealized gateway
+    queue; the waiting metric is then the shared queue length)
   - new pods become Ready after startup delay; removed pods leave routing at
     once, drain for PRESTOP seconds, then in-flight requests fail
   - Prometheus scrapes each pod every scrape_interval (random phase)
@@ -111,6 +115,7 @@ class Sim:
         self.scraped = {}        # replica id -> (t, metrics snapshot)
         self.trace = []          # (t, spec, ready, total_pods, metric_value)
         self.spec = policy.get("static", 1)
+        self.central = []        # shared waiting queue (routing == "central")
         for _ in range(self.spec):
             self.add_replica(ready_now=True)
 
@@ -136,8 +141,11 @@ class Sim:
     def kick(self, rep):
         if rep.dead:
             return
-        while rep.waiting and len(rep.running) + len(rep.prefill) < MAX_SEQS:
-            r = rep.waiting.pop(0)
+        pull = self.cfg.get("routing") == "central" and rep.ready and rep.removed_at is None
+        while (rep.waiting or (pull and self.central)) and \
+                len(rep.running) + len(rep.prefill) < MAX_SEQS:
+            r = rep.waiting.pop(0) if rep.waiting else self.central.pop(0)
+            r.replica = rep.rid
             rep.prefill.append(r)
             b = len(rep.running) + len(rep.prefill)
             dt = (PREFILL_BASE + PREFILL_PER_TOKEN * r.pin) * load_factor(b, G)
@@ -185,20 +193,23 @@ class Sim:
         """Value of the policy signal as KEDA would read it from Prometheus."""
         kind = self.policy["signal"]
         snaps = [self.scraped[r.rid][1] for r in self.live() if r.rid in self.scraped]
+        win = self.cfg.get("rate_window", 60.0)
+        if kind == "waiting" and self.cfg.get("routing") == "central":
+            return sum(s[kind] for s in snaps) + len(self.central)
         if kind in ("waiting", "running", "kv"):
             return sum(s[kind] for s in snaps)
-        if kind == "qps":  # completions/s over the last 60 s, from scraped counters
+        if kind == "qps":  # completions/s over the last rate_window s, from scraped counters
             tot = 0.0
             for r in self.live():
-                hist = [h for h in getattr(r, "succ_hist", []) if h[0] >= self.t - 60]
+                hist = [h for h in getattr(r, "succ_hist", []) if h[0] >= self.t - win]
                 if len(hist) >= 2:
                     tot += (hist[-1][1] - hist[0][1]) / max(1e-9, hist[-1][0] - hist[0][0])
             return tot
-        if kind == "ttft":  # p90 of TTFTs observed in the last 60 s (as scraped)
+        if kind == "ttft":  # p90 of TTFTs observed in the last rate_window s (as scraped)
             vals = []
             for r in self.live():
                 cut = self.scraped.get(r.rid, (0, None))[0]
-                vals += [v for (t, v) in r.ttft_obs if self.t - 60 <= t <= cut]
+                vals += [v for (t, v) in r.ttft_obs if self.t - win <= t <= cut]
             return float(np.percentile(vals, 90)) if vals else 0.0
         raise ValueError(kind)
 
@@ -276,7 +287,18 @@ class Sim:
             r.failed = True
             r.t_done = self.t
             return
-        rep = ready[self.rng.integers(len(ready))]
+        routing = self.cfg.get("routing", "random")
+        if routing == "central":
+            self.central.append(r)
+            for rep in sorted(ready, key=lambda x: len(x.running) + len(x.prefill)):
+                self.kick(rep)
+                if not self.central:
+                    break
+            return
+        if routing == "least":
+            rep = min(ready, key=lambda x: len(x.waiting) + len(x.prefill) + len(x.running))
+        else:
+            rep = ready[self.rng.integers(len(ready))]
         r.replica = rep.rid
         rep.waiting.append(r)
         self.kick(rep)
@@ -299,6 +321,7 @@ class Sim:
                 rep = self.reps[data]
                 if rep.removed_at is None:
                     rep.ready = True
+                    self.kick(rep)
             elif kind == "kill":
                 self.on_kill(data)
             elif kind == "scrape":
@@ -343,6 +366,8 @@ POLICIES = {
 }
 POLICIES["combined"] = {"signal": "waiting", "type": "AverageValue", "target": 5,
                         "triggers": [POLICIES["queue"] | {}, POLICIES["kv-default"] | {}]}
+POLICIES["combined-cal"] = {"signal": "waiting", "type": "AverageValue", "target": 5,
+                            "triggers": [POLICIES["queue"] | {}, POLICIES["kv-cal"] | {}]}
 for n in (1, 2, 3, 4):
     POLICIES[f"static-{n}"] = {"static": n}
 
@@ -352,7 +377,8 @@ LOADS = {
     "steady": ["12:360"],
 }
 DEFAULT_CFG = {"startup": 73.0, "scrape": 15.0, "sync": 15.0,
-               "stabilization": 60.0, "max_replicas": 8}
+               "stabilization": 60.0, "max_replicas": 8,
+               "routing": "random", "rate_window": 60.0}
 
 
 def summarize(sim, slo_ttft=1.0, slo_tpot=0.15, window=None):
