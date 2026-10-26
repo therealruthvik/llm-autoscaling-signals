@@ -1,0 +1,13 @@
+{"t": 1792622167.7806249, "waiting": 0.0, "running": 0.0, "kv_cache": 0.0, "preemptions": 0.0}
+{"t": 1792622168.7814736, "waiting": 0.0, "running": 0.0, "kv_cache": 0.0, "preemptions": 0.0}
+{"t": 1792622169.7820828, "waiting": 0.0, "running": 2.0, "kv_cache": 0.00211895727590794, "preemptions": 0.0}
+{"t": 1792622170.7831175, "waiting": 0.0, "running": 4.0, "kv_cache": 0.004385748780367571, "preemptions": 0.0}
+{"t": 1792622171.7839406, "waiting": 0.0, "running": 5.0, "kv_cache": 0.005716256837333122, "preemptions": 0.0}
+{"t": 1792622172.7848666, "waiting": 0.0, "running": 3.0, "kv_cache": 0.004188636475631946, "preemptions": 0.0}
+{"t": 1792622173.7854528, "waiting": 0.0, "running": 1.0, "kv_cache": 0.0010348395998620585, "preemptions": 0.0}
+{"t": 1792622174.7859097, "waiting": 0.0, "running": 4.0, "kv_cache": 0.0034494653328733804, "preemptions": 0.0}
+{"t": 1792622175.7863486, "waiting": 0.0, "running": 5.0, "kv_cache": 0.004435026856551505, "preemptions": 0.0}
+{"t": 1792622176.7867453, "waiting": 0.0, "running": 6.0, "kv_cache": 0.006406149903907754, "preemptions": 0.0}
+{"t": 1792622177.787473, "waiting": 0.0, "running": 5.0, "kv_cache": 0.005913369142068747, "preemptions": 0.0}
+{"t": 1792622178.7882564, "waiting": 0.0, "running": 2.0, "kv_cache": 0.0032523530281377555, "preemptions": 0.0}
+{"t": 1792622179.7886019, "waiting": 0.0, "running": 2.0, "kv_cache": 0.0036465776376090053, "preemptions": 0.0}

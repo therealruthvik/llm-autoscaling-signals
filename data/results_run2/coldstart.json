@@ -1,0 +1,29 @@
+[
+  {
+    "trial": 0,
+    "spawn_to_ready_s": 170.28141808509827,
+    "weights_load_s": 1.92,
+    "model_load_s": 31.204408,
+    "graph_capture_s": 10.0,
+    "kv_cache_tokens": 312784.0,
+    "max_concurrency_x": 152.73
+  },
+  {
+    "trial": 1,
+    "spawn_to_ready_s": 99.97548055648804,
+    "weights_load_s": 2.47,
+    "model_load_s": 8.359174,
+    "graph_capture_s": 10.0,
+    "kv_cache_tokens": 324704.0,
+    "max_concurrency_x": 158.55
+  },
+  {
+    "trial": 2,
+    "spawn_to_ready_s": 70.36013889312744,
+    "weights_load_s": 2.39,
+    "model_load_s": 7.852147,
+    "graph_capture_s": 5.0,
+    "kv_cache_tokens": 324704.0,
+    "max_concurrency_x": 158.55
+  }
+]

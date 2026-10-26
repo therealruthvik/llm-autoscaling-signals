@@ -1,0 +1,29 @@
+[
+  {
+    "trial": 0,
+    "spawn_to_ready_s": 209.64231896400452,
+    "weights_load_s": 12.39,
+    "model_load_s": 82.81817,
+    "graph_capture_s": 10.0,
+    "kv_cache_tokens": 312816.0,
+    "max_concurrency_x": 152.74
+  },
+  {
+    "trial": 1,
+    "spawn_to_ready_s": 76.41750741004944,
+    "weights_load_s": 11.09,
+    "model_load_s": 18.846843,
+    "graph_capture_s": 5.0,
+    "kv_cache_tokens": 324736.0,
+    "max_concurrency_x": 158.56
+  },
+  {
+    "trial": 2,
+    "spawn_to_ready_s": 99.56249785423279,
+    "weights_load_s": 6.3,
+    "model_load_s": 14.62972,
+    "graph_capture_s": 9.0,
+    "kv_cache_tokens": 324736.0,
+    "max_concurrency_x": 158.56
+  }
+]
