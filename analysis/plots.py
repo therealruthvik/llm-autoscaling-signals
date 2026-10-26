@@ -148,6 +148,7 @@ def fig_timeline(campaign, load="step", policies=("queue", "kv-default", "static
         axes[1].plot([x - t0 for x in ts], [series[x] for x in ts], color=SERIES[i], label=pol)
     for ax in axes:
         ax.axvspan(60, 180, color=GRID, alpha=0.6, linewidth=0)
+        ax.set_xlim(0, 390)
     axes[0].set_ylabel("pods")
     axes[1].set_ylabel("waiting requests")
     axes[1].set_xlabel("time since load start (s)")
@@ -168,7 +169,7 @@ def fig_sweeps(path, load="step"):
         sub = [r for r in rows if r["sweep"] == sw and r["load"] == load]
         pols = [p for p in SWEEP_POLICIES if any(r["policy"] == p for r in sub)]
         xs_all = sorted({float(r["value"]) for r in sub})
-        for row, key in enumerate(["slo_attainment", "pod_seconds"]):
+        for row, key in enumerate(["slo_attainment", "pod_seconds_tail120"]):
             ax = axes[row][col]
             for pol in pols:
                 i = SWEEP_POLICIES.index(pol)
@@ -179,13 +180,14 @@ def fig_sweeps(path, load="step"):
                         linewidth=1.2, label=pol)
             if logx:
                 ax.set_xscale("log")
-            ax.set_xticks(xs_all, [f"{x:g}" for x in xs_all], fontsize=6, rotation=90)
+            ticks = [x for x in xs_all if not (sw == "startup" and x in (73, 170))]
+            ax.set_xticks(ticks, [f"{x:g}" for x in ticks], fontsize=6, rotation=90)
             ax.minorticks_off()
             if row == 0:
                 ax.set_title(label, fontsize=7.5, color=INK, loc="left")
                 ax.set_ylim(0, 1.02)
     axes[0][0].set_ylabel("SLO attainment")
-    axes[1][0].set_ylabel("pod-seconds")
+    axes[1][0].set_ylabel("pod-seconds\n(schedule + 120 s)")
     handles, labels = axes[0][1].get_legend_handles_labels()
     fig.legend(handles, labels, ncol=6, loc="lower center", bbox_to_anchor=(0.5, -0.05), fontsize=7)
     fig.suptitle(f"SIMULATED sensitivity, {load} load (mean of 5 seeds)", fontsize=8, x=0.01,

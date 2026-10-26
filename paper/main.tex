@@ -18,12 +18,24 @@ Calibrated to Measured vLLM Behavior}
 \maketitle
 
 \begin{abstract}
-TODO: write last, after results are final. Shape: problem (operators pick an
-autoscaling signal for vLLM on Kubernetes from vendor guidance); what we did
-(measured single-replica vLLM on T4 across three sessions and two providers;
-compared seven reactive signals plus static provisioning on a kind cluster
-with an emulator calibrated to those measurements, and swept control-loop
-parameters in a calibrated simulator); top findings with numbers; artifact.
+Operators who autoscale vLLM on Kubernetes must pick a metric to scale on,
+usually from vendor guidance that is not backed by controlled comparisons. We
+measured a single vLLM replica on an NVIDIA T4 in three sessions on two
+providers. We then compared seven reactive scaling policies and static
+provisioning on a real Kubernetes control plane, using an emulator calibrated to
+those measurements, in 80 trials under burst and ramp workloads. Finally, we swept
+control-loop parameters in a discrete-event simulator that reproduces the
+cluster's SLO attainment within 0.05 for every policy. Three static replicas met
+the latency SLO for all requests. The best reactive policies, which scale on
+running requests or a calibrated KV-cache target, met it for 32\% (burst) and
+68--70\% (ramp) of requests at 1.8 times the GPU time. Scaling on queue depth did
+worse and always ran to the replica limit, because the backlog that builds up
+during the 73\,s replica startup stays on the replica that received it. A KV-cache
+threshold of 0.8 never fired, because KV usage peaked at 35\% under overload.
+In simulation, startup delay dominated every control-loop setting, and raising
+the replica limit raised the cost of queue-based scaling with no gain in
+attainment. We also found that a widely used vLLM emulator omits queueing time
+from its TTFT metric. Code, measurements and logs are released.
 \end{abstract}
 
 \section{Introduction}
@@ -64,10 +76,14 @@ methodology. Our contributions are:
   server replaced by an emulator calibrated to the measured profile, under
   identical burst and ramp workloads, five trials each
   (Section~\ref{sec:kind}).
-\item An analysis of failure mechanisms: a KV-cache signal that cannot reach
-  common thresholds when prompts are short, queue-depth overshoot driven by
-  backlog that cannot migrate between replicas, and requests lost at
-  scale-down (Section~\ref{sec:mechanisms}).
+\item An analysis of failure mechanisms: backlog that stays on the replica
+  that received it, queue-depth overshoot driven by that backlog, a KV-cache
+  signal that cannot reach common thresholds when prompts are short, and a
+  throughput signal that measures served rather than offered load
+  (Section~\ref{sec:mechanisms}).
+\item Evidence that the TTFT metric of a widely used vLLM emulator excludes
+  queueing time, unlike vLLM, which biases TTFT-based scaling in emulated
+  experiments (Section~\ref{sec:kind}).
 \item Simulated sensitivity sweeps over thresholds, scrape interval, HPA sync
   period, stabilization window, maximum replicas and startup delay, using a
   discrete-event simulator calibrated to the same measurements
@@ -175,9 +191,10 @@ pod.
 
 A request meets the SLO if its TTFT is at most 1\,s and its TPOT at most
 150\,ms; failed requests count as misses. SLO attainment is the fraction of all
-sent requests that meet the SLO. Cost is pod-seconds over a fixed window per
-workload (schedule length plus 120\,s), counting every pod that exists, whether
-starting, ready or draining, since each would hold a GPU. We also record
+sent requests that meet the SLO. Cost is pod-seconds from the start of the load
+until 30\,s after its end, counting every pod that exists, whether starting,
+ready or draining, since each would hold a GPU. The simulated sweeps also report
+pod-seconds until 120\,s after the end, which includes the scale-down tail. We also record
 failed requests, the time from burst onset until the first additional pod is
 created and becomes ready, and the peak pod count. We report means with 95\%
 confidence intervals (Student's $t$, five trials).
@@ -277,15 +294,157 @@ and sweep it in simulation.
 
 \section{Policy Comparison on the Emulated Cluster}
 \label{sec:kind}
-TODO(measured).
+% Sources: runs/main (80 trials); analysis/results/kind_summary.txt,
+% analysis/results/kind_vs_sim.txt; figure from analysis/plots.py (fig_main).
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_main.pdf}
+\caption{Measured on the kind cluster with the calibrated emulator: SLO
+attainment and pod-seconds per policy (mean of five paired trials; error bars
+are 95\% confidence intervals). Pod-seconds cover the schedule plus 30\,s.}
+\label{fig:main}
+\end{figure*}
+
+Fig.~\ref{fig:main} shows the 80 trials (eight policies, two workloads, five
+trials each). No request failed in any trial.
+
+\textbf{Static provisioning dominates.} Three static replicas served every
+request within the SLO under both workloads, at 1{,}170 (step) and 1{,}410 (ramp)
+pod-seconds. No reactive policy came close. The best ones, running and kv-cal,
+met the SLO for 0.32 of requests under the step load and 0.68--0.70 under the
+ramp, while using 1.8 times the pod-seconds of static-3 (2{,}070--2{,}111 step,
+2{,}488--2{,}550 ramp). Queue depth, the most commonly recommended signal,
+attained 0.26 (step) and 0.56 (ramp) at 2{,}436 and 2{,}688 pod-seconds.
+Only kv-default and qps used fewer pod-seconds than static-3, and they attained
+just 0.06--0.30.
+
+\textbf{Ranking.} The order is the same under both workloads: running and kv-cal
+(indistinguishable), then queue and combined (indistinguishable), then ttft,
+qps and kv-default. The bounded signals (running, KV) beat the queue signal under
+the ramp, by 0.13--0.14 with non-overlapping intervals. Under the step load they
+lead by 0.04--0.07, within the confidence intervals.
+
+\textbf{Why reactive scaling loses here.} Startup delay sets the timing. For the
+five policies other than qps and kv-default, the first added pod became ready
+91--112\,s after the step began (mean per policy), of which 73\,s is replica
+startup. The burst lasts 120\,s, so added capacity arrives in its last
+8--29\,s. Section~\ref{sec:mechanisms} explains why this capacity then
+helps less than its size suggests.
+
+\textbf{Agreement with the simulator.} Running the simulator with the same
+policies, workloads and seeds reproduces the measured SLO attainment within
+0.05 for all 16 policy--workload pairs; the rank correlation between policies is
+0.97 under each workload. Pod-seconds agree within 5.2\% for every policy except
+ttft, which the simulator charges 16--21\% more. The cause is in the emulator:
+it records TTFT without time spent in the waiting queue, whereas vLLM measures
+TTFT from request arrival. On the cluster, the ttft policy therefore saw a p90
+of at most 2.35\,s while client-side TTFT p99 exceeded 100\,s, and it scaled out
+more slowly than it would against a real vLLM server. The simulator follows
+vLLM's definition.
 
 \section{Failure Mechanisms}
 \label{sec:mechanisms}
-TODO(measured).
+% Sources: analysis/results/mechanisms.txt (from runs/main prometheus.json and
+% pods.jsonl); figure from analysis/plots.py (fig_timeline).
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_timeline.pdf}
+\caption{Measured, step workload, trial 0: pods and total waiting requests for
+queue, kv-default and static-3. Under queue, the backlog is all on the original
+pod and drains at that pod's rate after the burst.}
+\label{fig:timeline}
+\end{figure}
+
+\textbf{Backlog is pinned to the replica that received it.} A request that is
+waiting in one replica's queue stays there; only new arrivals are routed to new
+replicas. In every step trial of every scaling policy, when the second pod
+became ready, all waiting requests were on the original pod. The original pod's
+peak queue averaged 934--1{,}182 requests per policy; no added pod ever held a
+waiting request. After the burst, the original pod needed until 302--345\,s
+after load start (mean per policy) to empty its queue, more than two minutes
+after the offered load fell back to 2 requests/s (Fig.~\ref{fig:timeline}).
+The SLO misses are therefore mostly requests that arrived during the startup
+delay and queued on the original replica; added replicas cannot serve them.
+vLLM has no mechanism to move waiting requests between servers, so this applies
+to real deployments with per-replica queues. A gateway that holds requests
+centrally and dispatches them to replicas with free capacity would avoid it;
+we did not test one.
+
+\textbf{Queue-based signals overshoot.} The waiting count keeps reporting the
+pinned backlog, about a thousand requests, so the queue, combined and ttft
+policies ask for $\lceil 1000/5 \rceil$ replicas and reach the maximum of eight
+in every trial, although the added replicas never queue. Bounded signals behave
+differently: running requests cannot exceed 256 on the saturated pod, and the
+added pods report only their share of new arrivals. The running and kv-cal
+policies peaked at 7.0--7.6 pods on average and used 5--15\% fewer pod-seconds
+than queue, with equal or higher SLO attainment.
+
+\textbf{The default KV-cache threshold never fires.} A single overloaded T4
+replica peaks at 34--35\% KV-cache usage (Section~\ref{sec:profile}), so a
+per-replica target of 0.8 is never reached: kv-default stayed at one pod in all
+ten trials, identical to having no autoscaler. The same holds for the KV branch
+of the combined policy. The cluster-wide KV total peaked at 0.41, below the
+0.8 needed even for a single replica, so combined acted exactly like queue: in
+the simulator its results are identical, and on the cluster they agree within
+the confidence intervals.
+
+\textbf{Throughput measures served load, not offered load.} Completions per
+second cannot exceed the capacity of the existing replicas, 7.8--8.2 requests/s
+each. With a target of 6.4, the desired count can grow by at most about a
+quarter per step, and only after the 1\,min rate window catches up. The qps
+policy reached two pods under the step load and three under the ramp, with the
+second pod ready 145\,s after the step began.
 
 \section{Sensitivity (Simulated)}
 \label{sec:sweeps}
-TODO(sim).
+% Sources: sim/results/sweep_v2.csv (2,415 runs); analysis/results/sweep_summary.txt.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_sweeps_step.pdf}
+\caption{SIMULATED, step workload: SLO attainment (top) and pod-seconds over the
+schedule plus 120\,s (bottom) when one control-loop parameter is varied from the
+default (startup 73\,s, scrape 15\,s, sync 15\,s, stabilization 60\,s, eight
+replicas, queue target 5). Mean of five seeds. Queue and combined coincide.
+Ramp and steady workloads are in the artifact.}
+\label{fig:sweeps}
+\end{figure*}
+
+We vary one parameter at a time in the simulator, for six reactive policies,
+three workloads and five seeds, 2{,}415 runs in total
+(Fig.~\ref{fig:sweeps}). The third workload, \emph{steady}, offers
+12 requests/s (1.5 times single-replica capacity) for 360\,s. All results in
+this section are simulated.
+
+\textbf{Startup delay matters most.} Under the step load, the running policy's
+SLO attainment falls from 0.56 with a 30\,s startup to 0.31 at the measured
+73\,s, and to 0.07 at 300\,s or more, where it equals one static replica
+(0.068). Under the ramp it falls from 0.91 to 0.69 to 0.13. Every scaling policy
+declines in the same way.
+
+\textbf{The control loop matters little.} Shortening the scrape interval from
+15\,s to 5\,s raises the running policy's step attainment from 0.31 to 0.35;
+shortening the HPA sync period from 15\,s to 5\,s raises it to 0.33. Doubling
+either to 30\,s lowers it to 0.24--0.25. For the queue policy, any target from 1
+to 10 waiting requests gives the same step result (0.27); 50 lowers it to 0.21.
+
+\textbf{Raising the maximum replica count only adds cost.} For the queue,
+combined and ttft policies, step pod-seconds grow almost in proportion to the
+cap (queue: 3{,}185 at eight, 6{,}118 at 16, 11{,}707 at 32), and attainment
+rises by at most 0.01. The running and kv-cal policies stop at about seven
+replicas whatever the cap, so their cost is flat above eight.
+
+\textbf{Stabilization matters under sustained overload.} Under the step and
+ramp loads, the scale-down stabilization window changes only cost: from 0 to
+300\,s, the running policy's step pod-seconds rise from 2{,}355 to 2{,}654.
+Under the steady load it also changes attainment: queue rises from 0.34 with
+no stabilization to 0.66 with 300\,s, and running from 0.57 to 0.73. With short
+windows the replica count oscillates: queue makes 4.8 scale-ups and 2.8
+scale-downs per run with no stabilization, against 2.6 and 1.2 with 300\,s,
+and each re-scale-up pays the startup delay again.
+
+\textbf{Static provisioning remains the reference.} Under the steady load, two
+static replicas meet the SLO for every request at 960 pod-seconds (schedule plus
+120\,s). The best reactive policy, ttft, attains 0.64 at 3{,}123.
 
 \section{Limitations}
 \label{sec:limits}
@@ -301,7 +460,8 @@ numbers, but every threshold does.
 control plane against an emulator, and the sweeps run a simulator. Both are
 calibrated to the measured profile, and Table~\ref{tab:fidelity} reports where
 each departs from it. The emulator applies one load factor to both prefill and
-decode and therefore inflates TTFT near the knee; the simulator departs most at
+decode and therefore inflates TTFT near the knee, and its TTFT metric omits
+queueing time (Section~\ref{sec:kind}); the simulator departs most at
 16 requests/s, where a 60\,s measurement never reaches steady state. Neither
 models preemption or prefix caching. We therefore emphasize relative
 comparisons between policies and conclusions that hold in both tools.
@@ -324,7 +484,14 @@ replicas and change the backlog results.
 
 \section{Artifact}
 \label{sec:artifact}
-TODO: repository URL.
+The repository at
+\url{https://github.com/therealruthvik/llm-autoscaling-signals} contains the
+profiler and raw T4 measurements (\texttt{data/}), the cluster manifests and
+policy generator (\texttt{cluster/}), the trial and campaign drivers
+(\texttt{experiments/}), every trial's per-request log, pod timeline and
+Prometheus export (\texttt{runs/main/}), the simulator and sweep results
+(\texttt{sim/}), and the scripts that produce every table and figure in this
+paper (\texttt{analysis/}).
 
 \bibliographystyle{IEEEtran}
 \bibliography{refs}
