@@ -1,0 +1,16 @@
+{
+  "policy": "static-3",
+  "load": "step",
+  "trial": 3,
+  "out": "runs/main",
+  "startup": "73s",
+  "max_replicas": 8,
+  "stabilization": 60,
+  "queue_threshold": 5,
+  "seed": 1003,
+  "schedule": [
+    "2:60",
+    "20:120",
+    "2:180"
+  ]
+}
