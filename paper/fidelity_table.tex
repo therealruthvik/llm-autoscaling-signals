@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Single-replica fidelity: measured vLLM on T4 (mean of three sessions),
+emulator on kind, and simulator, at each offered rate. TTFT p50 and TPOT p50 in
+seconds and milliseconds; goodput in completed requests/s; KV is peak usage.}
+\label{tab:fidelity}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{r|rrr|rrr|rrr}
+\toprule
+ & \multicolumn{3}{c|}{TTFT p50 (s)} & \multicolumn{3}{c|}{TPOT p50 (ms)} & \multicolumn{3}{c}{peak KV (\%)} \\
+rate & T4 & emu & sim & T4 & emu & sim & T4 & emu & sim \\
+\midrule
+1 & 0.09 & 0.10 & 0.09 & 18 & 20 & 17 & 1 & 1 & 1 \\
+2 & 0.08 & 0.11 & 0.09 & 20 & 23 & 19 & 2 & 2 & 2 \\
+4 & 0.08 & 0.16 & 0.10 & 25 & 31 & 23 & 5 & 4 & 4 \\
+8 & 0.18 & 0.45 & 0.13 & 76 & 91 & 80 & 20 & 18 & 17 \\
+16 & 0.75 & 14.20 & 12.27 & 161 & 209 & 214 & 33 & 32 & 33 \\
+24 & 48.95 & 44.35 & 42.62 & 211 & 211 & 217 & 33 & 32 & 33 \\
+32 & 80.99 & 72.38 & 71.55 & 215 & 211 & 217 & 34 & 32 & 34 \\
+\bottomrule
+\end{tabular}
+\end{table}
