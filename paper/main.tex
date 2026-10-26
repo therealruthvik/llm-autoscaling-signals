@@ -64,7 +64,14 @@ signals compare with each other, why each fails when it fails, and how
 sensitive each is to the control-loop settings that the operator controls.
 
 This paper answers those questions with a controlled, low-cost, reproducible
-methodology. Our contributions are:
+methodology. The short answer is that, under a burst that exceeds one
+replica's capacity, no reactive signal comes close to static provisioning:
+three fixed replicas meet the latency SLO for every request, while the best
+reactive policies (running requests and a calibrated KV-cache target) meet it
+for about a third of requests and use 1.8 times the GPU time. The reason is
+not mainly which signal is chosen. Requests that queue during the startup
+delay stay on the replica that received them, so replicas added later cannot
+serve them. Our contributions are:
 \begin{itemize}
 \item A measured single-replica profile of vLLM~0.32.0 serving
   Qwen2.5-1.5B-Instruct on an NVIDIA T4, repeated in three sessions on two
@@ -481,6 +488,28 @@ work~\cite{gke2026autoscaling}.
 with lognormal lengths. Requests are routed by a Kubernetes Service, uniformly at
 random across ready pods. A load-aware gateway would route around busy
 replicas and change the backlog results.
+
+\section{Conclusion}
+\label{sec:conclusion}
+We compared seven reactive autoscaling signals for vLLM on a real Kubernetes
+control plane and in a calibrated simulator. Scaling on running requests or
+on a KV-cache target calibrated to the measured profile did best, and the
+commonly suggested KV-cache threshold of 0.8 never triggered, because the
+scheduling cap is reached long before KV-cache memory fills. Queue depth
+scaled to the replica limit without improving the SLO, and request throughput
+under-scaled because it measures served rather than offered load. The cluster
+and the simulator rank the policies almost identically (Spearman 0.97).
+
+The larger lesson is that the choice of signal matters less than where the
+waiting requests are. With a startup delay longer than the burst, every
+reactive policy adds capacity after the backlog has already formed on the
+original replica, and a Service that routes new arrivals at random cannot move
+that backlog. Shorter startup, load-aware routing, or requeueing waiting
+requests onto new replicas would attack this directly, and each changes which
+signal is best. An open question is whether a reactive signal can ever be
+good enough under bursts, or whether reactive scaling on LLM servers should be
+treated as a cost optimization layered on top of a static floor sized for the
+expected peak.
 
 \section{Artifact}
 \label{sec:artifact}
