@@ -46,10 +46,14 @@ def one(job):
     elif sweep != "base":
         cfg[sweep] = value
     arr = S.make_arrivals(S.LOADS[load], seed)
-    window = S.LOADS[load] and sum(float(x.split(":")[1]) for x in S.LOADS[load]) + 120
+    sched = sum(float(x.split(":")[1]) for x in S.LOADS[load])
     sim = S.Sim(pol, cfg, arr, seed).run()
+    # pod_seconds: schedule + 30 s, the window kind trials are polled over
+    # (analysis/summarize_trials.py). pod_seconds_tail120 also counts the
+    # scale-down tail, which is where stabilization shows up.
+    long = S.summarize(sim, window=sched + 120)["pod_seconds"]
     return {"sweep": sweep, "value": value, "policy": policy, "load": load, "seed": seed,
-            **S.summarize(sim, window=window)}
+            **S.summarize(sim, window=sched + 30), "pod_seconds_tail120": long}
 
 
 def main():

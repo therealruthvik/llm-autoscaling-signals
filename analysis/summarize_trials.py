@@ -8,7 +8,7 @@ Per trial (runs/<campaign>/<load>/<policy>/trial<k>/):
   ttft_p50/p99, tpot_p50 over successful requests
   failed          requests that errored (e.g. dropped at scale-down)
   pod_seconds     integral of pods that exist (starting, ready, or draining:
-                  each holds a GPU) over a fixed window per load, from pods.jsonl
+                  each holds a GPU) over schedule + 30 s, from pods.jsonl
   scale_lag_s     burst start -> first extra pod created (step load only)
   ready_lag_s     burst start -> first extra pod Ready (step load only)
 
@@ -25,6 +25,7 @@ from scipy import stats
 
 SLO_TTFT = 1.0
 SLO_TPOT = 0.15
+WINDOW_TAIL = 30.0  # pods are polled until ~30 s after the schedule; sim uses the same tail
 BURST_START = {"step": 60.0, "ramp": None, "steady": None}
 
 
@@ -42,8 +43,8 @@ def trial_row(d):
     tpot = np.array([r["tpot"] if r["tpot"] is not None else 0.0 for r in ok])
     meet = int(np.sum((ttft <= SLO_TTFT) & (tpot <= SLO_TPOT)))
 
-    # pod-seconds over [t0, t0 + schedule + 120 s]
-    window_end = t0 + schedule_len(cfg["schedule"]) + 120
+    # pod-seconds over [t0, t0 + schedule + WINDOW_TAIL]
+    window_end = t0 + schedule_len(cfg["schedule"]) + WINDOW_TAIL
     polls = [json.loads(l) for l in open(os.path.join(d, "pods.jsonl"))]
     polls = [p for p in polls if "pods" in p]
     pod_s, prev_t, prev_n = 0.0, None, None
