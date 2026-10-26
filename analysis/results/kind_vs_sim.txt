@@ -1,0 +1,17 @@
+ load      policy  slo kind  slo sim  pods kind  pods sim  pod err
+ step    combined     0.275    0.272       2456      2465     0.4%
+ step      kv-cal     0.322    0.304       2070      2114     2.1%
+ step  kv-default     0.064    0.068        390       390     0.0%
+ step         qps     0.120    0.120        649       651     0.2%
+ step       queue     0.256    0.272       2436      2465     1.2%
+ step     running     0.318    0.305       2111      2030    -3.9%
+ step    static-3     1.000    1.000       1170      1170     0.0%
+ step        ttft     0.196    0.198       1967      2381    21.1%
+ ramp    combined     0.533    0.565       2651      2694     1.6%
+ ramp      kv-cal     0.684    0.692       2488      2617     5.2%
+ ramp  kv-default     0.121    0.132        470       470     0.0%
+ ramp         qps     0.303    0.323        914       924     1.0%
+ ramp       queue     0.558    0.565       2688      2694     0.2%
+ ramp     running     0.696    0.689       2550      2586     1.4%
+ ramp    static-3     1.000    1.000       1410      1410     0.0%
+ ramp        ttft     0.459    0.508       2240      2601    16.1%

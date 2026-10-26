@@ -1,0 +1,26 @@
+Backlog pinning, step load: at the moment the 2nd pod becomes Ready, share of all waiting requests on the original pod;
+and time from burst end (180 s) until the original pod vs the other pods have zero waiting.
+  queue     share_on_original=1.00 (min 1.00)  original_clear_at=328s  others_clear_at=185s
+  running   share_on_original=1.00 (min 1.00)  original_clear_at=302s  others_clear_at=185s
+  kv-cal    share_on_original=1.00 (min 1.00)  original_clear_at=305s  others_clear_at=185s
+  ttft      share_on_original=1.00 (min 1.00)  original_clear_at=345s  others_clear_at=185s
+  combined  share_on_original=1.00 (min 1.00)  original_clear_at=322s  others_clear_at=185s
+
+Combined policy: max over time of sum(KV)/replicas vs 0.8 target, and of waiting/replicas vs 5
+  step: peak cluster-total KV usage = 0.398 (sum over pods); per-replica trigger fires only if total > 0.8 x replicas
+  ramp: peak cluster-total KV usage = 0.412 (sum over pods); per-replica trigger fires only if total > 0.8 x replicas
+
+Peak waiting per pod, step load (mean over 5 trials): original pod vs largest of the added pods
+  queue     original=  1088  largest_added=  0.0
+  running   original=   949  largest_added=  0.0
+  kv-cal    original=   934  largest_added=  0.0
+  ttft      original=  1182  largest_added=  0.0
+  combined  original=  1049  largest_added=  0.0
+
+SIM steady load: replica-count changes (spec) by stabilization window, mean over 5 seeds
+  queue    stab=    0s  scale-ups=4.8  scale-downs=2.8
+  queue    stab=   60s  scale-ups=4.6  scale-downs=2.4
+  queue    stab=  300s  scale-ups=2.6  scale-downs=1.2
+  running  stab=    0s  scale-ups=4.8  scale-downs=5.2
+  running  stab=   60s  scale-ups=4.8  scale-downs=4.2
+  running  stab=  300s  scale-ups=2.6  scale-downs=2.8
