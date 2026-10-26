@@ -1,0 +1,24 @@
+# Queue depth: waiting requests per replica, threshold QUEUE_T (5 = Liu & Hu 2026 KEDA baseline).
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: vllm-sim-queue
+  namespace: llm
+spec:
+  scaleTargetRef:
+    name: vllm-sim
+  minReplicaCount: 1
+  maxReplicaCount: MAX_REPLICAS
+  pollingInterval: 5
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleDown:
+          stabilizationWindowSeconds: STABILIZATION
+  triggers:
+    - type: prometheus
+      metricType: AverageValue
+      metadata:
+        serverAddress: http://prometheus-server.monitoring.svc.cluster.local:80
+        query: sum(vllm:num_requests_waiting{namespace="llm"})
+        threshold: "QUEUE_T"

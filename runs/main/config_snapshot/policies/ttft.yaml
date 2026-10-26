@@ -1,0 +1,24 @@
+# TTFT SLO signal: p90 TTFT over 1m, target 1s (HPA Value: desired = ceil(replicas * p90 / 1s)).
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: vllm-sim-ttft
+  namespace: llm
+spec:
+  scaleTargetRef:
+    name: vllm-sim
+  minReplicaCount: 1
+  maxReplicaCount: MAX_REPLICAS
+  pollingInterval: 5
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleDown:
+          stabilizationWindowSeconds: STABILIZATION
+  triggers:
+    - type: prometheus
+      metricType: Value
+      metadata:
+        serverAddress: http://prometheus-server.monitoring.svc.cluster.local:80
+        query: histogram_quantile(0.9, sum(rate(vllm:time_to_first_token_seconds_bucket{namespace="llm"}[1m])) by (le))
+        threshold: "1"
