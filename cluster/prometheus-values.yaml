@@ -1,0 +1,20 @@
+# Minimal Prometheus: server + kube-state-metrics (for replica counts).
+# Scrape interval is an RQ3 variable; 15s is the baseline.
+server:
+  global:
+    scrape_interval: 15s
+    evaluation_interval: 15s
+  persistentVolume:
+    enabled: false
+  service:
+    type: NodePort
+    nodePort: 30090
+  retention: 2d
+alertmanager:
+  enabled: false
+prometheus-pushgateway:
+  enabled: false
+prometheus-node-exporter:
+  enabled: false
+kube-state-metrics:
+  enabled: true
