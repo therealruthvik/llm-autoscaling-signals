@@ -5,9 +5,9 @@
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
 
-% DRAFT. Every number in this file must trace to a file under data/, runs/ or
-% sim/results/. Placeholders are marked TODO(measured) or TODO(sim). Simulated
-% results are always labelled as simulated in the text and captions.
+% Every number in this file traces to a file under data/, runs/, sim/results/
+% or analysis/results/ in the artifact repository. Simulated results are
+% labelled as simulated in the text and captions.
 
 \title{Which Signal Should LLM Inference Scale On?\\
 A Controlled Comparison of Reactive Kubernetes Autoscaling Signals\\
@@ -21,24 +21,26 @@ Calibrated to Measured vLLM Behavior}
 Operators who autoscale vLLM on Kubernetes must pick a metric to scale on,
 usually from vendor guidance that is not backed by controlled comparisons. We
 measured a single vLLM replica on an NVIDIA T4 in three sessions on two
-providers. We then compared reactive scaling policies and static provisioning
+providers, plus one session with long prompts. We then compared reactive scaling policies and static provisioning
 on a real Kubernetes control plane, using an emulator calibrated to those
 measurements, in 80 trials under burst and ramp workloads, and in a
 discrete-event simulator that reproduces the cluster's SLO attainment within
-0.05 for every policy. The answer depends on the workload. Under short bursts
+0.05 for every policy in that campaign. The answer depends on the workload. Under short bursts
 above one replica's capacity, three static replicas met the latency SLO for
 all requests, while the best reactive policies, which scale on running
 requests or a calibrated KV-cache target, met it for 32\% (burst) and 68--70\%
-(ramp) of requests at 1.8 times the GPU time; the 73\,s replica startup, not
-the signal, sets the outcome. On a simulated 24-hour replay of a production
+(ramp) of requests at 1.8 times the GPU time. The 73\,s replica startup, not
+the signal, sets the outcome: a bound that depends only on when the first
+added replica becomes ready ranks the policies in the measured order. On a simulated 24-hour replay of a production
 trace, the ranking reverses: scaling on offered load met the SLO for at least
 99.8\% of requests at 0.84--0.91 times the cost of the smallest sufficient
 static size, while running-request and KV-cache policies attained 0.85--0.95
 at 1.6--2.5 times the cost. These saturation signals grow faster than load,
 so the HPA's proportional rule scales in too far and the replica count
-oscillates; replaying a 30-minute window of the trace on the cluster
-reproduces the simulated results, and a two-replica burst on two T4 GPUs
-with real vLLM preserves the policy ranking. With 256-token prompts a
+oscillates. The full-day reversal is shown only in simulation; a 30-minute
+window replayed on the cluster matches the simulator within 0.02 in
+attainment, and a two-replica burst on two T4 GPUs with real vLLM preserves
+the burst ranking at 0.08--0.14 lower attainment. With 256-token prompts a
 KV-cache threshold of 0.8 never fired, because KV usage peaked at 35\% under
 overload; with 1{,}024-token prompts it fired only far past capacity, after
 the queue. A widely used vLLM emulator omits queueing time from its TTFT
@@ -80,7 +82,9 @@ reactive policies (running requests and a calibrated KV-cache target) meet it
 for about a third of requests and use 1.8 times the GPU time. The reason is
 timing more than the choice of signal. With a 73\,s replica startup, added
 capacity arrives near the end of a 120\,s burst, and the requests that queued
-in the meantime have already missed the SLO. In simulation, neither tuning
+in the meantime have already missed the SLO. A bound computed only from when
+the first added replica becomes ready caps every policy's attainment and
+ranks the policies in the measured order. In simulation, neither tuning
 the targets nor better request routing recovers them. On a day of production
 traffic, where load changes over minutes and hours, reactive scaling does
 save GPU time, but only with a signal proportional to the offered load: the
@@ -89,7 +93,7 @@ contributions are:
 \begin{itemize}
 \item A measured single-replica profile of vLLM~0.32.0 serving
   Qwen2.5-1.5B-Instruct on an NVIDIA T4, repeated in three sessions on two
-  providers, including capacity, the behavior of each candidate scaling
+  providers, with a fourth session using long prompts, including capacity, the behavior of each candidate scaling
   signal under load, and the distribution of cold-start time
   (Section~\ref{sec:profile}).
 \item A comparison of seven reactive scaling policies and static provisioning
@@ -151,6 +155,11 @@ SLOs in a hierarchical design~\cite{patke2025chiron}; SageServe scales GPU VMs
 from traffic forecasts across data centers~\cite{jaiswal2025sageserve}. TokenScale scales disaggregated prefill and decode pools on a token-rate
 signal~\cite{lai2025tokenscale}. AIBrix provides a Kubernetes control plane for
 vLLM with LLM-specific autoscalers and load-aware routing~\cite{aibrix2025}.
+Knative's pod autoscaler, which KServe uses, scales on in-flight requests per
+replica, a signal close to our running policy, and switches to a short panic
+window that does not scale in when concurrency reaches twice the
+target~\cite{knativekpa}. Llumnix migrates requests and their KV-cache state
+between vLLM instances to rebalance load~\cite{sun2024llumnix}.
 Aladdin sizes and places workers from batched-latency
 models~\cite{nie2024aladdin}, DynamoLLM reconfigures instance count, parallelism
 and GPU frequency for energy~\cite{stojkovic2025dynamollm}, and Nie et al.\
@@ -170,6 +179,14 @@ KV-cache-aware autoscaling as future work. Our study covers the signals HeteroSc
 (non-disaggregated) vLLM, under identical control loops. Our work is
 complementary to all of the above: we do not propose a controller, but measure
 how the reactive signals that operators deploy today behave, and why.
+
+\textbf{Setup times in general cloud autoscaling.} Outside LLM serving,
+Gandhi et al.\ studied capacity management for data centers whose servers
+take minutes to set up, under time-varying web load, and reduced resources
+relative to static provisioning while meeting response-time
+SLAs~\cite{gandhi2012autoscale}. Our burst results are an instance of the
+same trade-off for LLM replicas, whose setup time is long relative to the
+bursts we study.
 
 \textbf{Cold start.} Because startup delay dominates our results, work that
 shortens it bears directly on them. ServerlessLLM loads checkpoints from
@@ -211,8 +228,12 @@ measurements, it is the signal's mean value on the T4 at 6.4 requests/s, which i
 80\% of measured saturated capacity, interpolated between the 4 and
 8 requests/s levels. For example, the running target of 50 is far below the
 256-request scheduling cap because the cap is reached only after the server is
-already saturated. Section~\ref{sec:sweeps} varies every target. We also include static provisioning with three replicas,
-the smallest static size that covers the 20 requests/s peak of our workloads.
+already saturated. Section~\ref{sec:sweeps} varies every target. The running,
+kv-cal, qps and ingress targets are thus tuned to our measured workload,
+whereas queue, kv-default and combined use published defaults. We also
+include static provisioning with three replicas, the smallest static size
+that covers the 20 requests/s peak of our workloads; it assumes the peak is
+known in advance, which the reactive policies do not.
 The qps policy counts completions, which a replica can only produce up to its
 capacity; the ingress policy instead counts requests arriving at the gateway,
 which is the offered load. On the cluster the load generator exports this
@@ -410,8 +431,8 @@ Only kv-default and qps used fewer pod-seconds than static-3, and they attained
 just 0.06--0.30. This holds for short loads that exceed capacity within seconds;
 on production traffic the ranking changes (Section~\ref{sec:trace}).
 
-\textbf{Ranking.} The order is the same under both workloads: running and
-kv-cal, then queue and combined, then ttft, qps and kv-default. Because trial
+\textbf{Ranking.} The order of the means is the same under both workloads:
+running and kv-cal, then queue and combined, then ttft, qps and kv-default. Because trial
 $k$ uses the same arrivals for every policy, we compare policies by paired
 differences (mean and 95\% $t$ interval over the five pairs). Under the ramp,
 running and kv-cal beat queue by 0.138 [0.133, 0.144] and 0.126 [0.115, 0.137]
@@ -419,7 +440,8 @@ in attainment, and running beats kv-cal by a small 0.012 [0.001, 0.023]; combine
 and queue do not differ ($-$0.025 [$-$0.067, 0.017]). Under the step load,
 running and kv-cal lead queue by 0.062 [$-$0.057, 0.181] and 0.066 [$-$0.007,
 0.139], intervals that include zero, but they use 324 [2, 646] and 366 [96, 635]
-fewer pod-seconds.
+fewer pod-seconds. Under the step load we therefore read the attainment
+order only as running $\approx$ kv-cal $\geq$ queue.
 
 \textbf{Why reactive scaling loses here.} Startup delay sets the timing. For the
 five policies other than qps and kv-default, the first added pod became ready
@@ -427,6 +449,23 @@ five policies other than qps and kv-default, the first added pod became ready
 startup. The burst lasts 120\,s, so added capacity arrives in its last
 8--29\,s. Section~\ref{sec:mechanisms} explains why this capacity then
 helps less than its size suggests.
+
+\textbf{A bound that holds for any signal.}
+% Source: analysis/results/burst_bound.txt (analysis/burst_bound.py, from kind_trials.csv).
+Until an added replica is ready, every request reaches the original replica,
+which admits at most 256 requests into its batch and completes at most
+7.85 requests/s. At 20 requests/s the batch is full within 21\,s of the burst
+start; after that, arrivals join a waiting queue that grows by about
+12 requests/s, and from 22\,s on each arrival has more than one second of
+work queued ahead of it and misses the TTFT limit. Counting only these
+arrivals, up to each policy's mean time until its first added replica is
+ready (the whole burst for qps and kv-default, which add none within it),
+bounds attainment at 0.52 for kv-cal, 0.50 for running, 0.43 for combined,
+0.41 for queue, 0.36 for ttft and 0.31 for qps and kv-default, whatever the
+signal. Measured attainment lies 0.16--0.25 below each bound, in every trial,
+and in the same order. Under bursts, a policy's rank is thus set by when its
+first added replica becomes ready; the bound ignores later misses, such as
+arrivals routed to the backlogged replica.
 
 \textbf{Agreement with the simulator.} Running the simulator with the same
 policies, workloads and seeds reproduces the measured SLO attainment within
@@ -514,8 +553,9 @@ peak queue averaged 934--1{,}182 requests per policy; no added pod ever held a
 waiting request. After the burst, the original pod needed until 302--345\,s
 after load start (mean per policy) to empty its queue, more than two minutes
 after the offered load fell back to 2 requests/s (Fig.~\ref{fig:timeline}).
-vLLM has no mechanism to move waiting requests between servers, so this
-applies to real deployments with per-replica queues. Pinning lengthens the
+Stock vLLM behind a Kubernetes Service cannot move waiting requests between
+servers, so this applies to such deployments; request migration between
+instances, as in Llumnix~\cite{sun2024llumnix}, targets exactly this. Pinning lengthens the
 tail, but it is not the main cause of SLO misses: in simulation, a shared
 queue that lets new replicas take over the backlog cuts TTFT p99 by
 about 2.5 times yet does not raise attainment (Section~\ref{sec:sweeps}), because the
@@ -743,7 +783,10 @@ for ingress.
 \textbf{Saturation signals are not proportional to load, so they
 oscillate.} The HPA's average-value rule assumes that the per-replica signal
 is proportional to the load each replica receives, so that halving the load
-per replica halves the signal. Running requests are not. On the T4, the mean
+per replica halves the signal. Running requests are not. By Little's law,
+the number of running requests equals the admission rate times the time a
+request spends running, and that time grows with the batch, so the signal
+grows faster than the load. On the T4, the mean
 number of running requests per request/s of offered load was 2.4 at
 1 request/s, 3.8 at 4 and 8.9 at 8 (measured), because each request stays
 longer as the batch grows. When replicas are added, the per-replica signal
@@ -878,12 +921,14 @@ as requests arriving at the gateway. The saturation signals that did best
 under bursts, running requests and KV-cache usage, grow faster than load, so
 the HPA's proportional rule scales in too far and the cluster oscillates;
 queue depth also overshoots on backlog. A KV-cache threshold of 0.8, a common
-default, never triggered with our prompt lengths. For operators, we suggest
+default, never triggered with 256-token prompts, and with 1{,}024-token
+prompts it triggered only far past capacity. For operators, we suggest
 scaling on offered load, keeping a floor sized for the daily trough, and
 treating saturation signals as alarms rather than as the quantity to divide by
-a per-replica target. Whether these conclusions hold for long prompts, larger
-models and several real replicas is the next question; our artifact includes
-the harness to test the last of these.
+a per-replica target; we have not tested the last suggestion. A two-replica
+run on real vLLM preserved the burst ranking at lower attainment. Whether the
+trace results, which are simulated, hold with long prompts, larger models and
+more real replicas remains open.
 
 \section{Artifact}
 \label{sec:artifact}

@@ -1,0 +1,10 @@
+step load, kind cluster (emulated), 5 trials per policy
+t_fill <= 21.1 s, arrivals miss from 21.7 s after burst start until an added replica is ready
+     policy  ready_lag_s   bound  measured  bound-measured
+     kv-cal         91.0   0.516     0.322           0.194
+    running         93.7   0.497     0.318           0.179
+   combined        102.5   0.434     0.275           0.159
+      queue        105.8   0.411     0.256           0.155
+       ttft        112.4   0.364     0.196           0.168
+        qps        120.0   0.312     0.120           0.193
+ kv-default        120.0   0.312     0.064           0.248

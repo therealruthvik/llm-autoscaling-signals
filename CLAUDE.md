@@ -51,6 +51,7 @@ python analysis/followup_kind_vs_sim.py > analysis/results/followup_kind_vs_sim.
 python analysis/longctx_summary.py > analysis/results/longctx_summary.txt   # long-prompt T4 profile
 python analysis/summarize_trials.py runs/val_t4x2_v1 --csv analysis/results/val_t4x2_v1.csv > analysis/results/val_t4x2_v1_summary.txt
 python analysis/val_t4x2_compare.py > analysis/results/val_t4x2_compare.txt   # real 2xT4 vs kind vs sim, step12
+python analysis/burst_bound.py > analysis/results/burst_bound.txt   # signal-independent attainment bound, step load
 
 # Analysis -> analysis/results/*.txt, paper tables and figures
 python analysis/summarize_trials.py runs/main [--csv analysis/results/kind_trials.csv]
