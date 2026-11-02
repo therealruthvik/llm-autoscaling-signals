@@ -21,21 +21,28 @@ Calibrated to Measured vLLM Behavior}
 Operators who autoscale vLLM on Kubernetes must pick a metric to scale on,
 usually from vendor guidance that is not backed by controlled comparisons. We
 measured a single vLLM replica on an NVIDIA T4 in three sessions on two
-providers. We then compared seven reactive scaling policies and static
-provisioning on a real Kubernetes control plane, using an emulator calibrated to
-those measurements, in 80 trials under burst and ramp workloads. Finally, we swept
-control-loop parameters in a discrete-event simulator that reproduces the
-cluster's SLO attainment within 0.05 for every policy. Three static replicas met
-the latency SLO for all requests. The best reactive policies, which scale on
-running requests or a calibrated KV-cache target, met it for 32\% (burst) and
-68--70\% (ramp) of requests at 1.8 times the GPU time. Scaling on queue depth did
-worse and always ran to the replica limit, because the backlog that builds up
-during the 73\,s replica startup stays on the replica that received it. A KV-cache
-threshold of 0.8 never fired, because KV usage peaked at 35\% under overload.
-In simulation, startup delay dominated every control-loop setting, and raising
-the replica limit raised the cost of queue-based scaling with no gain in
-attainment. We also found that a widely used vLLM emulator omits queueing time
-from its TTFT metric. Code, measurements and logs are released.
+providers. We then compared reactive scaling policies and static provisioning
+on a real Kubernetes control plane, using an emulator calibrated to those
+measurements, in 80 trials under burst and ramp workloads, and in a
+discrete-event simulator that reproduces the cluster's SLO attainment within
+0.05 for every policy. The answer depends on the workload. Under short bursts
+above one replica's capacity, three static replicas met the latency SLO for
+all requests, while the best reactive policies, which scale on running
+requests or a calibrated KV-cache target, met it for 32\% (burst) and 68--70\%
+(ramp) of requests at 1.8 times the GPU time; the 73\,s replica startup, not
+the signal, sets the outcome. On a simulated 24-hour replay of a production
+trace, the ranking reverses: scaling on offered load met the SLO for at least
+99.8\% of requests at 0.84--0.91 times the cost of the smallest sufficient
+static size, while running-request and KV-cache policies attained 0.85--0.95
+at 1.6--2.5 times the cost. These saturation signals grow faster than load,
+so the HPA's proportional rule scales in too far and the replica count
+oscillates; replaying a 30-minute window of the trace on the cluster
+reproduces the simulated results, and a two-replica burst on two T4 GPUs
+with real vLLM preserves the policy ranking. With 256-token prompts a
+KV-cache threshold of 0.8 never fired, because KV usage peaked at 35\% under
+overload; with 1{,}024-token prompts it fired only far past capacity, after
+the queue. A widely used vLLM emulator omits queueing time from its TTFT
+metric. Code, measurements and logs are released.
 \end{abstract}
 
 \section{Introduction}
@@ -47,8 +54,9 @@ choose which server metric to scale on: queue depth, batch size, KV-cache
 usage, a latency signal such as time to first token (TTFT), or request
 throughput. Public guidance differs. Cloud documentation recommends queue size
 for throughput and batch size for latency-sensitive workloads and warns that
-GPU utilization is misleading~\cite{gke2026autoscaling}; project documentation
-for llm-d suggests KV-cache utilization thresholds around 0.8. These
+GPU utilization is misleading~\cite{gke2026autoscaling}; the llm-d Workload
+Variant Autoscaler treats a replica as saturated at a KV-cache utilization of
+0.8 or five queued requests by default~\cite{llmdwva}. These
 recommendations are rarely accompanied by controlled comparisons under the
 same workload and the same control loop.
 
@@ -64,7 +72,8 @@ signals compare with each other, why each fails when it fails, and how
 sensitive each is to the control-loop settings that the operator controls.
 
 This paper answers those questions with a controlled, low-cost, reproducible
-methodology. The short answer is that, under a burst that exceeds one
+methodology. The short answer is that the best signal depends on how fast the
+load changes relative to the replica startup time. Under a burst that exceeds one
 replica's capacity, no reactive signal comes close to static provisioning:
 three fixed replicas meet the latency SLO for every request, while the best
 reactive policies (running requests and a calibrated KV-cache target) meet it
@@ -72,7 +81,11 @@ for about a third of requests and use 1.8 times the GPU time. The reason is
 timing more than the choice of signal. With a 73\,s replica startup, added
 capacity arrives near the end of a 120\,s burst, and the requests that queued
 in the meantime have already missed the SLO. In simulation, neither tuning
-the targets nor better request routing recovers them. Our contributions are:
+the targets nor better request routing recovers them. On a day of production
+traffic, where load changes over minutes and hours, reactive scaling does
+save GPU time, but only with a signal proportional to the offered load: the
+saturation signals that win under bursts scale in too far and oscillate. Our
+contributions are:
 \begin{itemize}
 \item A measured single-replica profile of vLLM~0.32.0 serving
   Qwen2.5-1.5B-Instruct on an NVIDIA T4, repeated in three sessions on two
@@ -82,21 +95,29 @@ the targets nor better request routing recovers them. Our contributions are:
 \item A comparison of seven reactive scaling policies and static provisioning
   on a real Kubernetes control plane (kind, Prometheus, KEDA, HPA), with the
   server replaced by an emulator calibrated to the measured profile, under
-  identical burst and ramp workloads, five trials each
+  identical burst and ramp workloads, five paired trials each
   (Section~\ref{sec:kind}).
 \item An analysis of failure mechanisms: backlog that stays on the replica
   that received it, queue-depth overshoot driven by that backlog, a KV-cache
-  signal that cannot reach common thresholds when prompts are short, and a
+  signal that cannot reach common thresholds when prompts are short, a
   throughput signal that measures served rather than offered load
-  (Section~\ref{sec:mechanisms}).
+  (Section~\ref{sec:mechanisms}), and saturation signals that grow faster
+  than load and therefore oscillate under the HPA's proportional rule
+  (Section~\ref{sec:trace}).
 \item Evidence that the TTFT metric of a widely used vLLM emulator excludes
   queueing time, unlike vLLM, which biases TTFT-based scaling in emulated
   experiments (Section~\ref{sec:kind}).
 \item Simulated sensitivity sweeps over policy targets, rate windows, scrape
   interval, HPA sync period, stabilization window, maximum replicas, startup
-  delay and request routing, using a discrete-event simulator calibrated to
-  the same measurements, and the sensitivity of the measured results to the
-  SLO definition (Section~\ref{sec:sweeps}).
+  delay, request routing, the scheduling cap, an offered-load signal and a
+  static floor, using a discrete-event simulator calibrated to the same
+  measurements, and the sensitivity of the measured results to the SLO
+  definition (Section~\ref{sec:sweeps}).
+\item A simulated 24-hour replay of the Azure LLM inference
+  trace~\cite{azuretrace2024} at two load scales (Section~\ref{sec:trace}).
+\item A repetition of a two-replica burst comparison on two T4 GPUs with
+  real vLLM servers, which preserves the policy ranking
+  (Section~\ref{sec:kind}).
 \item All code, raw measurements and run logs (Section~\ref{sec:artifact}).
 \end{itemize}
 
@@ -129,13 +150,32 @@ autoscaler~\cite{ramani2026queueing}. Chiron uses queue size, utilization and
 SLOs in a hierarchical design~\cite{patke2025chiron}; SageServe scales GPU VMs
 from traffic forecasts across data centers~\cite{jaiswal2025sageserve}. TokenScale scales disaggregated prefill and decode pools on a token-rate
 signal~\cite{lai2025tokenscale}. AIBrix provides a Kubernetes control plane for
-vLLM with LLM-specific autoscalers and load-aware routing~\cite{aibrix2025}. Our
-work is complementary: we do not propose a controller, but measure how the
-reactive signals that operators deploy today behave, and why.
+vLLM with LLM-specific autoscalers and load-aware routing~\cite{aibrix2025}.
+Aladdin sizes and places workers from batched-latency
+models~\cite{nie2024aladdin}, DynamoLLM reconfigures instance count, parallelism
+and GPU frequency for energy~\cite{stojkovic2025dynamollm}, and Nie et al.\
+derive stability conditions for LLM serving under KV-cache memory
+limits~\cite{nie2026stability}. InferScale adds short-horizon prediction to a
+Kubernetes autoscaler and compares it with a queue-depth HPA, on a ResNet-50
+workload rather than an LLM~\cite{huang2026inferscale}.
+
+The closest prior comparison of scaling signals is HeteroScale, which evaluated
+eight candidate signals on a production fleet of prefill--decode disaggregated
+LLM serving~\cite{li2025heteroscale}: prefill and decode throughput, GPU
+utilization, SM activity, TTFT and time between tokens. It adopted decode
+throughput, found that decode GPU utilization stays high as load falls, and
+found that TTFT and time-between-token signals react late, overshoot and
+oscillate. It did not evaluate queue length or KV-cache usage, and lists
+KV-cache-aware autoscaling as future work. Our study covers the signals HeteroScale left out, on colocated
+(non-disaggregated) vLLM, under identical control loops. Our work is
+complementary to all of the above: we do not propose a controller, but measure
+how the reactive signals that operators deploy today behave, and why.
 
 \textbf{Cold start.} Because startup delay dominates our results, work that
 shortens it bears directly on them. ServerlessLLM loads checkpoints from
 storage near the GPU and live-migrates inference~\cite{fu2024serverlessllm};
+BlitzScale multicasts parameters over the GPU network and lets new instances
+serve layer by layer before loading completes~\cite{zhang2025blitzscale};
 Kabakibo et al.\ break down vLLM cold-start time~\cite{kabakibo2026breaking};
 Foundry restores captured CUDA graphs instead of re-capturing them and reports
 cold-start reductions of up to 99\%~\cite{liu2026foundry}.
@@ -173,6 +213,12 @@ measurements, it is the signal's mean value on the T4 at 6.4 requests/s, which i
 256-request scheduling cap because the cap is reached only after the server is
 already saturated. Section~\ref{sec:sweeps} varies every target. We also include static provisioning with three replicas,
 the smallest static size that covers the 20 requests/s peak of our workloads.
+The qps policy counts completions, which a replica can only produce up to its
+capacity; the ingress policy instead counts requests arriving at the gateway,
+which is the offered load. On the cluster the load generator exports this
+counter and Prometheus scrapes it like any other target. The floor policies
+keep KEDA's minimum replica count at two, a static floor with reactive scaling
+above it.
 CPU- and GPU-utilization policies are not evaluated: neither our emulator nor our
 profiles provide a faithful version of these signals
 (Section~\ref{sec:limits}).
@@ -193,8 +239,10 @@ kv-cal     & KV-cache usage & 0.06 per replica (measured) \\
 kv-default & KV-cache usage & 0.8 per replica (llm-d docs) \\
 ttft       & p90 TTFT, 1\,min & 1\,s, scaled by ratio \\
 qps        & completions/s, 1\,min & 6.4 per replica (measured) \\
-combined   & waiting OR KV & 5 / 0.8 per replica (llm-d style) \\
-static-3   & none & 3 replicas \\
+ingress    & gateway arrivals/s, 1\,min & 6.4 per replica (measured) \\
+combined   & waiting OR KV & 5 / 0.8 per replica (llm-d WVA) \\
+running-floor2 & as running & 50, minimum 2 replicas \\
+static-$n$ & none & $n$ replicas \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -271,10 +319,12 @@ Session & Provider & Driver & Cold start trial 0 \\
 1 & Kaggle & 580.178.04 & warm caches$^\dagger$ \\
 2 & Kaggle & 580.178.04 & true first boot \\
 3 & Colab  & 580.82.07  & true first boot \\
+4$^\ddagger$ & Colab & 580.82.07 & true first boot \\
 \bottomrule
 \end{tabular}\\[2pt]
 {\footnotesize $^\dagger$A smoke test earlier in the same session had populated the
-model and compilation caches.}
+model and compilation caches. $^\ddagger$Long prompts (mean 1{,}024 input
+tokens), one cold start, rates 0.5--16 requests/s.}
 \end{table}
 
 \begin{figure*}[t]
@@ -306,6 +356,24 @@ useful threshold for this workload is an order of magnitude below the common
 default. Liu and Hu report the opposite regime for long contexts, where
 KV-cache pressure dominates TTFT~\cite{liu2026decomposing}; together these suggest
 that the right KV-cache threshold depends on the prompt-length distribution.
+
+\textbf{Long prompts.} To test that regime, a fourth session repeated the
+profile with prompts four times longer (lognormal, mean 1{,}024 input tokens,
+capped at 1{,}536; outputs unchanged), one session and one cold start (Table~\ref{tab:env}).
+% Source: data/results_longctx_run1; analysis/results/longctx_summary.txt.
+Capacity falls to about 3 requests/s: TTFT p99 is 1.7\,s at 2 requests/s and
+14.1\,s at 4, and the server completes at most 2.98 requests/s (8 offered).
+KV-cache usage now reaches the common threshold, peaking at 0.85 at
+8 requests/s and 0.94 at 16, with no preemptions; running requests again
+approach the 256 cap (239 and 256). The threshold is still crossed late. At
+8 requests/s, the waiting count reached 5 after 33\,s (KV usage then 0.44),
+whereas KV usage reached 0.8 only after 113\,s, after arrivals for that level
+had stopped, with 30 requests waiting. At 4 requests/s, already past the knee,
+KV usage peaked at 0.46 and never crossed 0.8. Long prompts thus make a KV-cache
+threshold of 0.8 reachable, but on one T4 it fires only far past capacity and
+well after the queue signal. This is a single session, so we report it as a
+qualitative check rather than a calibrated profile; the simulator and emulator
+remain calibrated to the 256-token workload.
 
 \textbf{Cold start.} A true first boot, which downloads the model and compiles
 kernels, took 170\,s on Kaggle and 210\,s on Colab. Restarts with warm caches took
@@ -339,13 +407,19 @@ ramp, while using 1.8 times the pod-seconds of static-3 (2{,}070--2{,}111 step,
 2{,}488--2{,}550 ramp). Queue depth, the most commonly recommended signal,
 attained 0.26 (step) and 0.56 (ramp) at 2{,}436 and 2{,}688 pod-seconds.
 Only kv-default and qps used fewer pod-seconds than static-3, and they attained
-just 0.06--0.30.
+just 0.06--0.30. This holds for short loads that exceed capacity within seconds;
+on production traffic the ranking changes (Section~\ref{sec:trace}).
 
-\textbf{Ranking.} The order is the same under both workloads: running and kv-cal
-(indistinguishable), then queue and combined (indistinguishable), then ttft,
-qps and kv-default. The bounded signals (running, KV) beat the queue signal under
-the ramp, by 0.13--0.14 with non-overlapping intervals. Under the step load they
-lead by 0.04--0.07, within the confidence intervals.
+\textbf{Ranking.} The order is the same under both workloads: running and
+kv-cal, then queue and combined, then ttft, qps and kv-default. Because trial
+$k$ uses the same arrivals for every policy, we compare policies by paired
+differences (mean and 95\% $t$ interval over the five pairs). Under the ramp,
+running and kv-cal beat queue by 0.138 [0.133, 0.144] and 0.126 [0.115, 0.137]
+in attainment, and running beats kv-cal by a small 0.012 [0.001, 0.023]; combined
+and queue do not differ ($-$0.025 [$-$0.067, 0.017]). Under the step load,
+running and kv-cal lead queue by 0.062 [$-$0.057, 0.181] and 0.066 [$-$0.007,
+0.139], intervals that include zero, but they use 324 [2, 646] and 366 [96, 635]
+fewer pod-seconds.
 
 \textbf{Why reactive scaling loses here.} Startup delay sets the timing. For the
 five policies other than qps and kv-default, the first added pod became ready
@@ -364,6 +438,60 @@ TTFT from request arrival. On the cluster, the ttft policy therefore saw a p90
 of at most 2.35\,s while client-side TTFT p99 exceeded 100\,s, and it scaled out
 more slowly than it would against a real vLLM server. The simulator follows
 vLLM's definition.
+
+\textbf{Offered load and a static floor on the cluster.}
+% Sources: runs/followup_kind_v1 (20 trials); analysis/results/kind_followup_kind_v1_summary.txt,
+% analysis/results/paired_stats.txt, analysis/results/followup_kind_vs_sim.txt.
+We ran the ingress and running-floor2 policies on the cluster with the same
+five seeds, in a later campaign. Ingress peaked at three pods in every trial
+and attained 0.18 (step) and 0.43 (ramp) at 969 and 1{,}122 pod-seconds.
+Paired with the main campaign's trials, it beat qps by 0.064 [0.021, 0.107]
+(step) and 0.128 [0.067, 0.189] (ramp) and attained less than running
+($-$0.135 [$-$0.229, $-$0.040] and $-$0.265 [$-$0.326, $-$0.205]) at
+1{,}143 and 1{,}427 fewer pod-seconds. Running-floor2 attained 0.43 (step)
+and 0.82 (ramp), 0.106 [0.055, 0.158] and 0.120 [0.092, 0.148] above running,
+and still 0.58 and 0.18 below static-3 at about twice its pod-seconds.
+
+\textbf{Two-replica cap.} To prepare a hardware check on two GPUs, we also ran
+a smaller burst (\emph{step12}: 2 requests/s for 60\,s, 12 for 120\,s, then 2
+for 180\,s) with at most two replicas, three trials per policy. Two static
+replicas met the SLO for every request at 779 pod-seconds; running, kv-cal
+and queue attained 0.40, 0.38 and 0.30 at 660--698, barely above one static
+replica (0.27 at 390). The simulator, with the same seeds, matched every policy
+within 0.04 in attainment and 1\% in pod-seconds.
+
+\textbf{Two real replicas.}
+% Sources: runs/val_t4x2_v1 (validation/two_replica_t4.py, Kaggle T4 x2);
+% analysis/results/val_t4x2_compare.txt.
+We repeated step12 on two T4 GPUs with real vLLM 0.32.0 servers, one per GPU,
+using the same seeds. There is no Kubernetes on this testbed: a script routes
+each request uniformly at random to a ready server, scrapes each server's
+metrics every 15\,s, applies the HPA rule every 15\,s with the same targets
+and a 60\,s scale-down window, and starts the second server on the idle GPU
+when the rule asks for it (validation/RUNBOOK.md). The ranking held: two static
+replicas met the SLO for every request that the router delivered (two
+router failures in one trial, attainment 0.999--1.000), and kv-cal, running and queue attained 0.27, 0.26 and 0.22 at
+676--694 pod-seconds, against 0.19 for one static replica. Running and kv-cal
+swapped order relative to the cluster, a difference within trial-to-trial
+spread (running ranged 0.22--0.29 across seeds). The queue policy again
+brought its second replica online latest, 126\,s after the burst began,
+against 108--109\,s for running and kv-cal (cluster: 135 and 95--99\,s).
+Pod-seconds agreed with the cluster within 2.5\%. Attainment was lower on real
+hardware for every policy except static-2, by 0.08--0.14; TTFT p99 was
+correspondingly higher (47--54\,s against 34--45\,s). Part of the gap is
+startup: replicas started by the autoscaler took a median 82\,s to become
+ready (81--83\,s), against 73\,s for the initial replicas and in the
+emulator, perhaps because the serving replica on the other GPU shares the
+host's CPUs; we have not identified the rest. Nine of 28{,}830 requests failed
+with an HTTP 500 from the script's router, spread across policies including
+static-2; we count them as SLO misses.
+
+\textbf{Agreement in the follow-up campaigns.} Over these campaigns and the
+trace window below, the simulator matched the cluster within 0.06 in
+attainment for every policy except running-floor2, which the cluster
+attained 0.07 (step) and 0.09 (ramp) lower than the simulator at pod-seconds
+within 2\%; we have not identified the cause. Pod-seconds agreed within 4\%
+except for running on the trace window, where the cluster used 14\% more.
 
 \section{Failure Mechanisms}
 \label{sec:mechanisms}
@@ -423,6 +551,7 @@ second pod ready 145\,s after the step began.
 \label{sec:sweeps}
 % Sources: sim/results/sweep_v2.csv (2,415 runs); analysis/results/sweep_summary.txt;
 % sim/results/followup_v1.csv (795 runs); analysis/results/followup_summary.txt;
+% sim/results/followup2_v1.csv (720 runs); analysis/results/followup2_summary.txt;
 % analysis/results/slo_sensitivity.txt (measured).
 \begin{figure*}[t]
 \centering
@@ -488,6 +617,33 @@ window and a 15\,s scrape interval the rate has fewer than two samples and
 reads zero, as a Prometheus \texttt{rate()} over one scrape interval would,
 so the policy never scales. A 15\,s window raises ttft from 0.20 to 0.21.
 
+\textbf{Offered load sizes the cluster correctly but no sooner.} Scaling on
+requests arriving at the gateway (ingress) instead of completions removes the
+cap that makes qps under-scale: the burst corresponds to $20/6.4 \approx 3.1$
+replicas at the ingress target, and ingress peaks at three, the static size
+that serves the step load. It does not arrive sooner. Under the
+step load ingress attains 0.20 at 982 pod-seconds, against 0.31 at 2{,}030 for
+running and 0.12 at 651 for qps; under the ramp, 0.49 at 1{,}122 against 0.69
+and 0.32. Lowering its target to 4 per replica raises ramp attainment to 0.66
+at 1{,}740 pod-seconds. Like qps, it reads zero with a 15\,s window.
+
+\textbf{A static floor helps every reactive policy.} Keeping two replicas
+always on and scaling running requests above them (running-floor2) raises step
+attainment from 0.31 to 0.50 and ramp from 0.69 to 0.91, and serves every
+request under the steady load at 975 pod-seconds. The floor also makes the
+policy robust to startup delay: with a 300\,s startup, running alone falls to
+0.07 (step) and 0.14 (ramp), while running-floor2 keeps 0.42 and 0.61. Under
+bursts that exceed the floor, three static replicas still do better at lower
+cost (1.0 at 1{,}170 against 0.50 at 2{,}493 step pod-seconds).
+
+\textbf{The scheduling cap bounds the running signal.} Lowering vLLM's
+\texttt{max\_num\_seqs} from 256 to 64 limits running requests, and with it
+KV usage, on a saturated replica, so running and kv-cal scale to at most three
+replicas and attain 0.17 under the step load. Queue is unaffected (0.27 to
+0.30). In our calibration a lower cap also lowers a replica's throughput, so
+static-3 drops to 0.77. A running target must therefore sit well below
+\texttt{max\_num\_seqs}.
+
 \input{routing_table}
 
 \textbf{Routing shortens the tail but does not recover attainment.}
@@ -501,7 +657,7 @@ missed the SLO, and they load the new replicas with large batches, so requests
 that arrive afterwards decode at a slower TPOT or wait. Requests that queue during the startup delay are lost
 under any routing.
 
-\textbf{Static provisioning remains the reference.} Two static replicas attain
+\textbf{Static provisioning remains the reference for short loads.} Two static replicas attain
 0.42 under the step load at 780 pod-seconds, more than any reactive policy at
 any target we tested, at under half the cost; under the ramp they attain 0.58 at
 940. Three replicas meet the SLO for every request under every routing
@@ -516,6 +672,132 @@ raises every reactive policy by 0.04--0.07; the ranking is unchanged. Most
 misses (0.25--0.84 of all requests, depending on policy) violate both limits:
 they are requests that waited in a queue for tens of seconds, which no
 moderate SLO accepts.
+
+\section{Production Trace Replay (Simulated)}
+\label{sec:trace}
+% Sources: sim/results/trace_v1.csv (81 runs, sim/trace_study.py);
+% analysis/results/trace_summary.txt; sim/results/trace30_v1.csv (sim/trace30.py);
+% analysis/results/trace_mechanism.txt (analysis/trace_mechanism.py).
+The step, ramp and steady loads are short and exceed one replica's capacity
+within seconds, which favors static provisioning. Production traffic varies
+more slowly. We replay the arrival times of one weekday (Monday 13 May 2024,
+4{,}598{,}555 requests) of the Azure LLM inference conversation
+trace~\cite{azuretrace2024,stojkovic2025dynamollm} in the simulator. Each
+request is kept with a fixed probability chosen so that the busiest minute of
+the day offers 20 or 40 requests/s; thinning keeps the trace's bursts and
+diurnal shape. Prompt and output lengths are drawn from our lognormal mix, not
+from the trace, whose mean context of 1{,}631 tokens lies outside the
+calibrated range. At a peak of 20 requests/s, the hourly mean offered rate
+ranges from 9.9 (04:00 UTC) to 17.9 requests/s (14:00 UTC), with a daily
+mean of 12.8; at a peak of 40 it is twice that. Each configuration runs with
+three seeds that thin the trace differently. Cost is the mean number of
+replicas over the 24 hours, compared with the smallest static size that
+meets the SLO for at least 99\% of requests; static-3 at a peak of 20 and
+static-5 at a peak of 40 met it for every request. The maximum replica
+count is 8 at a peak of 20 and 16 at a peak of 40.
+
+\begin{table*}[t]
+\centering
+\caption{SIMULATED 24\,h replay of the Azure conversation trace (2024-05-13),
+mean of three seeds. Attain.: fraction of requests meeting the SLO; worst h:
+lowest hourly attainment; replicas: mean over the day (ratio to the smallest
+static size meeting the SLO); events: replica-count changes.}
+\label{tab:trace}
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+& \multicolumn{3}{c}{Peak 20 req/s} & \multicolumn{3}{c}{Peak 40 req/s} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Policy & Attain. & Worst h & Replicas & Attain. & Worst h & Replicas \\
+\midrule
+ingress        & 1.000 & 0.989 & 2.52 (0.84) & 0.998 & 0.952 & 4.56 (0.91) \\
+qps            & 0.999 & 0.973 & 2.49 (0.83) & 0.995 & 0.862 & 4.52 (0.90) \\
+running        & 0.920 & 0.722 & 5.10 (1.70) & 0.852 & 0.762 & 12.66 (2.53) \\
+kv-cal         & 0.946 & 0.758 & 4.78 (1.59) & 0.867 & 0.790 & 12.69 (2.54) \\
+queue          & 0.568 & 0.515 & 9.20 (3.07) & 0.737 & 0.675 & 18.28 (3.66) \\
+ttft           & 0.675 & 0.633 & 7.73 (2.58) & 0.748 & 0.638 & 16.22 (3.24) \\
+running-floor2 & 0.991 & 0.914 & 3.84 (1.28) & 0.783 & 0.718 & 13.46 (2.69) \\
+queue-floor2   & 0.941 & 0.549 & 2.49 (0.83) & 0.573 & 0.523 & 18.01 (3.60) \\
+ingress-floor2 & 1.000 & 1.000 & 2.52 (0.84) & 0.999 & 0.983 & 4.57 (0.91) \\
+\midrule
+static, one fewer & 0.717 & 0.000 & 2 & 0.715 & 0.000 & 4 \\
+static reference  & 1.000 & 1.000 & 3 & 1.000 & 1.000 & 5 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\textbf{On the trace, the ranking reverses.} Table~\ref{tab:trace} shows the
+result. Scaling on offered load (ingress) met the SLO for all but a handful of
+requests at 0.84 times the reference static cost at a peak of 20 and 0.91
+times at a peak of 40, with 65 and 89 replica changes over the day. The qps
+policy did almost as well: when no replica is overloaded for long,
+completions track arrivals, so the lag that hurt it under bursts mostly
+disappears. Static provisioning one replica below the reference met the SLO
+for only 0.72 of requests in both cases, missing nearly all of them in the
+busiest hours. The saturation signals that did best under bursts did worst
+here: running and kv-cal attained 0.85--0.95 at 1.6--2.5 times the reference
+cost, and queue and ttft attained 0.57--0.75 at 2.6--3.7 times. Running
+changed the replica count 1{,}546 times in a day at a peak of 20, against 65
+for ingress.
+
+\textbf{Saturation signals are not proportional to load, so they
+oscillate.} The HPA's average-value rule assumes that the per-replica signal
+is proportional to the load each replica receives, so that halving the load
+per replica halves the signal. Running requests are not. On the T4, the mean
+number of running requests per request/s of offered load was 2.4 at
+1 request/s, 3.8 at 4 and 8.9 at 8 (measured), because each request stays
+longer as the batch grows. When replicas are added, the per-replica signal
+falls faster than the per-replica load, the HPA computes too few replicas and
+scales in below what the load needs; the remaining replicas saturate, the
+signal jumps to the 256-request cap (plus the queue, for queue), and the HPA
+scales out again. In the simulated 30-minute window below (seed 1000), the running
+policy went from six replicas to two and back to six within six minutes,
+changed the replica count 35 times in 30 minutes, and at half of all HPA syncs had fewer ready
+replicas than the offered load needs at the 6.4 requests/s target (ingress:
+3\%), although it used about twice the pod-seconds. Each scale-out
+pays the 73\,s startup again. KV usage behaves the same way, because it
+follows the running batch. Under a short burst this convexity is harmless,
+because the load only rises; on a trace that rises and falls for hours it
+causes oscillation. HeteroScale reported delayed reaction, overshoot and
+oscillation for latency signals in production~\cite{li2025heteroscale}; we
+observe the same for the queue, running and KV signals that it did not evaluate.
+
+\textbf{A floor helps only when it covers the trough.} At a peak of 20, the
+trough hour needs about two replicas, so a floor of two removes most
+scale-ins that undershoot: running-floor2 attained 0.991 at 1.28 times the
+reference cost, and queue-floor2 0.941 at 0.83 times, against 0.920 and 0.568
+without the floor. At a peak of 40 the trough needs about four replicas, a
+floor of two is never binding, and the floor variants oscillate like the
+base policies (0.57--0.78). A floor of two neither helps nor hurts ingress.
+
+\textbf{A 30-minute window.} To compare with the cluster, we also replay the
+busiest-varying 30 minutes of the day (15:50--16:20~UTC at a peak of
+20 requests/s, 11.6--18.1 requests/s per minute) with three seeds, writing the
+arrivals to files that the cluster load generator replays. In simulation,
+ingress attains 0.87 at 5{,}440 pod-seconds with three replica changes, and
+static-3 attains 1.0 at 5{,}490. Ingress starts the window with one
+replica at 15 requests/s; the other two are ready after about 115\,s, and
+in the run we inspected (seed 1000) every miss arrived in the first ten
+minutes, while the backlog from that startup drained, and none afterwards. Running attains 0.88 at 10{,}255
+pod-seconds, running-floor2 0.98 at 10{,}494, queue 0.57 at 16{,}497, and
+static-2 0.71 at 3{,}660. Starting at one replica in the middle of a busy
+period favors static provisioning; over the full day, ingress starts from the
+night trough and does not pay this cost.
+
+\textbf{The window on the cluster.}
+% Sources: runs/trace30_kind_v1 (8 trials, seeds 1000-1001);
+% analysis/results/kind_trace30_kind_v1_summary.txt, analysis/results/followup_kind_vs_sim.txt.
+We replayed the same arrival files for two seeds on the kind cluster
+(emulated; 30 minutes per trial). The results match the simulator: static-3
+attained 1.00 at 5{,}490 pod-seconds, ingress 0.85 at 5{,}396 with two
+changes of the running pod count per trial, running 0.91 at 11{,}433 with 42,
+and queue 0.56 at 17{,}025 with 22, against 0.87, 0.91 and 0.57 in
+simulation with the same seeds. The oscillation is visible on the cluster:
+with a limit of eight replicas, up to 9--10 pods existed at once under
+running and 15 under queue, because pods removed during scale-in were still
+draining when new ones started. On this window ingress attained 0.066 less than
+running (95\% interval [$-$0.154, 0.022], two pairs) at 6{,}036 fewer
+pod-seconds.
 
 \section{Limitations}
 \label{sec:limits}
@@ -544,43 +826,64 @@ small and cached; a real vLLM image adds minutes to the first start on a node.
 
 \textbf{Signals and settings not evaluated.} We do not evaluate token-rate
 signals~\cite{lai2025tokenscale}; like qps, they measure served work, so we
-expect them to share its lag, but we have not tested this. We do not vary
-\texttt{max\_num\_seqs}, which bounds the running signal. We do not evaluate CPU- or GPU-utilization
+expect them to share its lag, but we have not tested this. We vary
+\texttt{max\_num\_seqs}, which bounds the running signal, only in
+simulation. We do not evaluate CPU- or GPU-utilization
 policies. The emulator's CPU use does not resemble vLLM's, and our profiling
 runs did not record GPU utilization. Prior guidance already cautions that
 GPU utilization measures duty cycle rather than useful
 work~\cite{gke2026autoscaling}.
 
-\textbf{Synthetic workloads and routing.} Loads are synthetic Poisson processes
-with lognormal lengths. On the cluster, requests are routed by a Kubernetes Service, uniformly at
-random across ready pods; load-aware routing is evaluated only in simulation.
+\textbf{Workloads and routing.} The burst and ramp loads are synthetic
+Poisson processes. The trace replay uses real arrival times from one day of
+one service, thinned to two load scales, and runs only in simulation; its
+prompt and output lengths are drawn from our lognormal mix, because the
+trace's longer contexts lie outside the calibrated range. All autoscaling workloads use
+short prompts (mean 256 tokens), the regime in which the scheduling cap
+binds before KV-cache memory. We measured a single replica with long prompts
+(Section~\ref{sec:profile}), where KV usage does reach 0.8, but only in one
+session, and we have not run autoscaling policies in that regime. On the cluster, requests
+are routed by a Kubernetes Service, uniformly at random across ready pods;
+load-aware routing is evaluated only in simulation.
 
-\textbf{No multi-replica hardware validation.} We have not repeated the policy
-comparison on several real vLLM replicas. This matters most for the ttft
-policy, whose cluster results are affected by the emulator's TTFT definition.
+\textbf{Limited hardware validation.} Our only multi-replica run on real
+vLLM uses two T4 GPUs, one burst shape, three seeds and a script in place of
+Kubernetes, Prometheus and KEDA (Section~\ref{sec:kind}). It preserved the
+policy ranking but attained 0.08--0.14 less than the emulated cluster, a
+gap we have explained only in part. It did not include the ttft policy, whose
+cluster results are affected by the emulator's TTFT definition, nor the trace,
+whose oscillation depends on how running requests grow with load.
 
 \section{Conclusion}
 \label{sec:conclusion}
-We compared seven reactive autoscaling signals for vLLM on a real Kubernetes
-control plane and in a calibrated simulator. Scaling on running requests or
-on a KV-cache target calibrated to the measured profile did best, and the
-commonly suggested KV-cache threshold of 0.8 never triggered, because the
-scheduling cap is reached long before KV-cache memory fills. Queue depth
-scaled to the replica limit without improving the SLO, and request throughput
-under-scaled because it measures served rather than offered load. The cluster
-and the simulator rank the policies almost identically (Spearman 0.97).
+We compared reactive autoscaling signals for vLLM on a real Kubernetes
+control plane and in a calibrated simulator, under bursts and on a day of
+production traffic. The cluster and the simulator rank the policies almost
+identically (Spearman 0.97). Which signal is best depends on the workload,
+and the two regimes call for different designs.
 
-The larger lesson is that the choice of signal matters less than when
-capacity arrives. With a startup delay close to the length of the burst, every
-reactive policy adds replicas after the requests that will miss the SLO have
-already queued. In simulation under the step load, tuning targets,
-shortening rate windows and changing request routing moved attainment by at most 0.07 from the defaults, while cutting startup from 73\,s to 30\,s nearly
-doubled it. Work that shortens cold
-start~\cite{fu2024serverlessllm,liu2026foundry} therefore matters more for
-reactive scaling than the choice of signal. An open question is whether a reactive signal can ever be
-good enough under bursts, or whether reactive scaling on LLM servers should be
-treated as a cost optimization layered on top of a static floor sized for the
-expected peak.
+Under bursts shorter than a few replica startup times, the choice of signal
+matters less than when capacity arrives. Every reactive policy adds replicas
+after the requests that will miss the SLO have already queued. In simulation
+under the step load, tuning targets, shortening rate windows and changing
+request routing moved attainment by at most 0.07 from the defaults, while
+cutting startup from 73\,s to 30\,s nearly doubled it. Work that shortens cold
+start~\cite{fu2024serverlessllm,liu2026foundry,zhang2025blitzscale} therefore
+matters more for burst handling than the choice of signal, and until startup
+is short, capacity for expected bursts has to be provisioned in advance.
+
+Under diurnal production traffic, reactive scaling saves GPU time over static
+provisioning, but only with a signal proportional to the offered load, such
+as requests arriving at the gateway. The saturation signals that did best
+under bursts, running requests and KV-cache usage, grow faster than load, so
+the HPA's proportional rule scales in too far and the cluster oscillates;
+queue depth also overshoots on backlog. A KV-cache threshold of 0.8, a common
+default, never triggered with our prompt lengths. For operators, we suggest
+scaling on offered load, keeping a floor sized for the daily trough, and
+treating saturation signals as alarms rather than as the quantity to divide by
+a per-replica target. Whether these conclusions hold for long prompts, larger
+models and several real replicas is the next question; our artifact includes
+the harness to test the last of these.
 
 \section{Artifact}
 \label{sec:artifact}
@@ -589,9 +892,11 @@ The repository at
 profiler and raw T4 measurements (\texttt{data/}), the cluster manifests and
 policy generator (\texttt{cluster/}), the trial and campaign drivers
 (\texttt{experiments/}), every trial's per-request log, pod timeline and
-Prometheus export (\texttt{runs/main/}), the simulator and sweep results
-(\texttt{sim/}), and the scripts that produce every table and figure in this
-paper (\texttt{analysis/}).
+Prometheus export (\texttt{runs/}), the simulator, trace replay and sweep
+results (\texttt{sim/}), the two-replica T4 validation harness and its
+runbook (\texttt{validation/}), and the scripts that produce every table and
+figure in this paper (\texttt{analysis/}). The Azure trace is not
+redistributed; \texttt{data/PROVENANCE.md} gives its URL and checksum.
 
 \bibliographystyle{IEEEtran}
 \bibliography{refs}
