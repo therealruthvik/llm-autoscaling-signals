@@ -1,0 +1,933 @@
+{"t_sched": 0.3285039588268427, "max_tokens": 43, "ok": true, "t_send": 1793586359.691928, "prompt_tokens": 761, "completion_tokens": 43, "ttft": 1.5263407230377197, "e2e": 30.058444499969482, "tpot": 0.6793229863757179}
+{"t_sched": 1.8081558986334925, "max_tokens": 45, "ok": true, "t_send": 1793586361.1737118, "prompt_tokens": 1100, "completion_tokens": 45, "ttft": 7.260655164718628, "e2e": 38.214357137680054, "tpot": 0.7034912488677285}
+{"t_sched": 3.080112239300805, "max_tokens": 34, "ok": true, "t_send": 1793586362.444545, "prompt_tokens": 1421, "completion_tokens": 34, "ttft": 14.530102968215942, "e2e": 38.33884382247925, "tpot": 0.7214259884574197}
+{"t_sched": 0.9365658598612009, "max_tokens": 54, "ok": true, "t_send": 1793586360.2993069, "prompt_tokens": 617, "completion_tokens": 54, "ttft": 4.734777927398682, "e2e": 41.91764974594116, "tpot": 0.7015556524384696}
+{"t_sched": 3.022599817064334, "max_tokens": 39, "ok": true, "t_send": 1793586362.3895128, "prompt_tokens": 1536, "completion_tokens": 39, "ttft": 13.131398677825928, "e2e": 40.56320834159851, "tpot": 0.7218879963222303}
+{"t_sched": 1.903248849575603, "max_tokens": 54, "ok": true, "t_send": 1793586361.2652566, "prompt_tokens": 325, "completion_tokens": 54, "ttft": 7.16960883140564, "e2e": 44.346335887908936, "tpot": 0.7014461238429232}
+{"t_sched": 0.828554590479697, "max_tokens": 63, "ok": true, "t_send": 1793586360.195365, "prompt_tokens": 1536, "completion_tokens": 63, "ttft": 4.380414009094238, "e2e": 47.353102684020996, "tpot": 0.6931064590331046}
+{"t_sched": 1.4148749589414704, "max_tokens": 61, "ok": true, "t_send": 1793586360.7796404, "prompt_tokens": 1117, "completion_tokens": 61, "ttft": 6.228878498077393, "e2e": 48.29496622085571, "tpot": 0.701100226243337}
+{"t_sched": 5.020307431880847, "max_tokens": 32, "ok": true, "t_send": 1793586364.3853223, "prompt_tokens": 1104, "completion_tokens": 32, "ttft": 22.345309257507324, "e2e": 44.69917893409729, "tpot": 0.7210904321362895}
+{"t_sched": 0.3553645379352814, "max_tokens": 72, "ok": true, "t_send": 1793586359.7241428, "prompt_tokens": 885, "completion_tokens": 72, "ttft": 2.1605234146118164, "e2e": 51.620644330978394, "tpot": 0.69662026620247}
+{"t_sched": 0.5705292944537605, "max_tokens": 70, "ok": true, "t_send": 1793586359.9383721, "prompt_tokens": 1536, "completion_tokens": 70, "ttft": 3.9245402812957764, "e2e": 52.14452791213989, "tpot": 0.6988394398620164}
+{"t_sched": 4.674058549208636, "max_tokens": 38, "ok": true, "t_send": 1793586364.0379353, "prompt_tokens": 566, "completion_tokens": 38, "ttft": 21.152963161468506, "e2e": 48.05116391181946, "tpot": 0.7269766524031356}
+{"t_sched": 0.1615013521177992, "max_tokens": 83, "ok": true, "t_send": 1793586359.5271823, "prompt_tokens": 1024, "completion_tokens": 83, "ttft": 0.5487191677093506, "e2e": 57.601412296295166, "tpot": 0.6957635763214856}
+{"t_sched": 7.110446270356688, "max_tokens": 29, "ok": true, "t_send": 1793586366.4730425, "prompt_tokens": 661, "completion_tokens": 29, "ttft": 32.92406129837036, "e2e": 53.00044560432434, "tpot": 0.7170104725020272}
+{"t_sched": 0.4236088677390552, "max_tokens": 84, "ok": true, "t_send": 1793586359.7972498, "prompt_tokens": 1536, "completion_tokens": 84, "ttft": 2.7288007736206055, "e2e": 60.99253726005554, "tpot": 0.7019716601773917}
+{"t_sched": 0.4249298550902535, "max_tokens": 89, "ok": true, "t_send": 1793586359.7976842, "prompt_tokens": 402, "completion_tokens": 89, "ttft": 2.728610038757324, "e2e": 64.59926271438599, "tpot": 0.7030744417147203}
+{"t_sched": 1.8255784872397913, "max_tokens": 81, "ok": true, "t_send": 1793586361.1911979, "prompt_tokens": 1520, "completion_tokens": 81, "ttft": 7.243386745452881, "e2e": 63.971606969833374, "tpot": 0.7091018408536911}
+{"t_sched": 5.6552912742038295, "max_tokens": 50, "ok": true, "t_send": 1793586365.0196693, "prompt_tokens": 1091, "completion_tokens": 50, "ttft": 24.74853277206421, "e2e": 60.15522265434265, "tpot": 0.7225385344758326}
+{"t_sched": 6.109983245007567, "max_tokens": 46, "ok": true, "t_send": 1793586365.4754894, "prompt_tokens": 1536, "completion_tokens": 46, "ttft": 27.248035430908203, "e2e": 59.699833154678345, "tpot": 0.7211496671040852}
+{"t_sched": 4.976879961209701, "max_tokens": 57, "ok": true, "t_send": 1793586364.3430185, "prompt_tokens": 1536, "completion_tokens": 57, "ttft": 22.387568950653076, "e2e": 62.93556809425354, "tpot": 0.7240699529647827}
+{"t_sched": 7.576891874314778, "max_tokens": 35, "ok": true, "t_send": 1793586366.9401574, "prompt_tokens": 382, "completion_tokens": 35, "ttft": 36.02426028251648, "e2e": 60.35337042808533, "tpot": 0.7155528138665592}
+{"t_sched": 3.2703707281916623, "max_tokens": 70, "ok": true, "t_send": 1793586362.6390193, "prompt_tokens": 1346, "completion_tokens": 70, "ttft": 15.691508054733276, "e2e": 65.39192128181458, "tpot": 0.7202947796254918}
+{"t_sched": 3.1019550832338245, "max_tokens": 73, "ok": true, "t_send": 1793586362.468365, "prompt_tokens": 1536, "completion_tokens": 73, "ttft": 15.205485582351685, "e2e": 67.14376711845398, "tpot": 0.7213638060622745}
+{"t_sched": 0.9220949401873013, "max_tokens": 94, "ok": true, "t_send": 1793586360.28536, "prompt_tokens": 720, "completion_tokens": 94, "ttft": 4.748427629470825, "e2e": 70.52119255065918, "tpot": 0.7072332007910616}
+{"t_sched": 2.9513380525708066, "max_tokens": 79, "ok": true, "t_send": 1793586362.319387, "prompt_tokens": 1061, "completion_tokens": 79, "ttft": 12.363724708557129, "e2e": 68.49239087104797, "tpot": 0.7195971684578137}
+{"t_sched": 7.648332036595903, "max_tokens": 39, "ok": true, "t_send": 1793586367.01879, "prompt_tokens": 1004, "completion_tokens": 39, "ttft": 36.597981214523315, "e2e": 63.80405855178833, "tpot": 0.7159455261732403}
+{"t_sched": 4.755596848784233, "max_tokens": 66, "ok": true, "t_send": 1793586364.1195157, "prompt_tokens": 901, "completion_tokens": 66, "ttft": 21.071428060531616, "e2e": 68.21678042411804, "tpot": 0.7253116534306453}
+{"t_sched": 7.438409258998465, "max_tokens": 43, "ok": true, "t_send": 1793586366.8070683, "prompt_tokens": 1056, "completion_tokens": 43, "ttft": 35.424744606018066, "e2e": 65.53389048576355, "tpot": 0.7168824956530616}
+{"t_sched": 2.7267745264028536, "max_tokens": 84, "ok": true, "t_send": 1793586362.0947537, "prompt_tokens": 749, "completion_tokens": 84, "ttft": 11.459314107894897, "e2e": 71.10259675979614, "tpot": 0.718592795980982}
+{"t_sched": 2.8948142986027694, "max_tokens": 84, "ok": true, "t_send": 1793586362.2618322, "prompt_tokens": 553, "completion_tokens": 84, "ttft": 11.850776433944702, "e2e": 71.62848114967346, "tpot": 0.720212387751384}
+{"t_sched": 4.119102351304412, "max_tokens": 73, "ok": true, "t_send": 1793586363.4906242, "prompt_tokens": 1482, "completion_tokens": 73, "ttft": 18.399357795715332, "e2e": 70.40499877929688, "tpot": 0.7222992214891646}
+{"t_sched": 6.064203857144129, "max_tokens": 58, "ok": true, "t_send": 1793586365.4311693, "prompt_tokens": 1536, "completion_tokens": 58, "ttft": 27.29231333732605, "e2e": 68.46837759017944, "tpot": 0.7223858833312988}
+{"t_sched": 1.0759927834050655, "max_tokens": 98, "ok": true, "t_send": 1793586360.4413717, "prompt_tokens": 1536, "completion_tokens": 98, "ttft": 5.241648435592651, "e2e": 74.1836678981781, "tpot": 0.7107415936656833}
+{"t_sched": 4.121439625392384, "max_tokens": 73, "ok": true, "t_send": 1793586363.4910398, "prompt_tokens": 1536, "completion_tokens": 73, "ttft": 19.243740558624268, "e2e": 71.14266443252563, "tpot": 0.7208174500200484}
+{"t_sched": 0.27466760436247484, "max_tokens": 111, "ok": true, "t_send": 1793586359.6395984, "prompt_tokens": 812, "completion_tokens": 111, "ttft": 1.5786123275756836, "e2e": 78.98080706596375, "tpot": 0.7036544994874434}
+{"t_sched": 5.896588660657596, "max_tokens": 67, "ok": true, "t_send": 1793586365.2671814, "prompt_tokens": 1536, "completion_tokens": 67, "ttft": 25.92518162727356, "e2e": 73.36154675483704, "tpot": 0.7187317537538933}
+{"t_sched": 2.6741424476787223, "max_tokens": 94, "ok": true, "t_send": 1793586362.0377927, "prompt_tokens": 980, "completion_tokens": 94, "ttft": 10.848288774490356, "e2e": 77.44868588447571, "tpot": 0.7161323921654814}
+{"t_sched": 0.8930779512349772, "max_tokens": 107, "ok": true, "t_send": 1793586360.2571816, "prompt_tokens": 534, "completion_tokens": 107, "ttft": 4.776309490203857, "e2e": 79.81153655052185, "tpot": 0.7078787470763584}
+{"t_sched": 3.0525281107451177, "max_tokens": 92, "ok": true, "t_send": 1793586362.4239502, "prompt_tokens": 1536, "completion_tokens": 92, "ttft": 13.835996150970459, "e2e": 78.93190956115723, "tpot": 0.7153388196295434}
+{"t_sched": 5.725562899751506, "max_tokens": 72, "ok": true, "t_send": 1793586365.0900135, "prompt_tokens": 754, "completion_tokens": 72, "ttft": 25.36831569671631, "e2e": 76.27252411842346, "tpot": 0.7169258023651552}
+{"t_sched": 0.1971991687743032, "max_tokens": 124, "ok": true, "t_send": 1793586359.5609722, "prompt_tokens": 289, "completion_tokens": 124, "ttft": 1.0971176624298096, "e2e": 87.65375566482544, "tpot": 0.7037118043356795}
+{"t_sched": 7.4572411657630315, "max_tokens": 64, "ok": true, "t_send": 1793586366.824491, "prompt_tokens": 1536, "completion_tokens": 64, "ttft": 36.13989281654358, "e2e": 81.17166304588318, "tpot": 0.7147884103986952}
+{"t_sched": 6.0262673774785265, "max_tokens": 81, "ok": true, "t_send": 1793586365.390651, "prompt_tokens": 527, "completion_tokens": 81, "ttft": 26.50876760482788, "e2e": 84.0392599105835, "tpot": 0.7191301167011261}
+{"t_sched": 0.7348148476115048, "max_tokens": 125, "ok": true, "t_send": 1793586360.1011672, "prompt_tokens": 982, "completion_tokens": 125, "ttft": 4.474291801452637, "e2e": 92.06578040122986, "tpot": 0.7063823188504865}
+{"t_sched": 11.387327256171206, "max_tokens": 33, "ok": true, "t_send": 1793586370.7583396, "prompt_tokens": 1363, "completion_tokens": 33, "ttft": 58.869200229644775, "e2e": 81.43339586257935, "tpot": 0.7051289975643158}
+{"t_sched": 2.7297370163329497, "max_tokens": 113, "ok": true, "t_send": 1793586362.0951798, "prompt_tokens": 1451, "completion_tokens": 113, "ttft": 11.458953619003296, "e2e": 91.39886331558228, "tpot": 0.7137483826705388}
+{"t_sched": 3.900618542282928, "max_tokens": 102, "ok": true, "t_send": 1793586363.2669444, "prompt_tokens": 1107, "completion_tokens": 102, "ttft": 17.867239475250244, "e2e": 90.22769832611084, "tpot": 0.7164395020739867}
+{"t_sched": 6.585689062932441, "max_tokens": 81, "ok": true, "t_send": 1793586365.951909, "prompt_tokens": 1536, "completion_tokens": 81, "ttft": 30.54332733154297, "e2e": 87.54667234420776, "tpot": 0.7125410228967667}
+{"t_sched": 2.124991173034249, "max_tokens": 120, "ok": true, "t_send": 1793586361.4944687, "prompt_tokens": 1536, "completion_tokens": 120, "ttft": 8.101006031036377, "e2e": 92.82157397270203, "tpot": 0.7119368525112376}
+{"t_sched": 0.357146389057581, "max_tokens": 133, "ok": true, "t_send": 1793586359.7245226, "prompt_tokens": 1536, "completion_tokens": 133, "ttft": 2.1601815223693848, "e2e": 95.44137644767761, "tpot": 0.7066750598676277}
+{"t_sched": 11.06458706387527, "max_tokens": 41, "ok": true, "t_send": 1793586370.4270508, "prompt_tokens": 383, "completion_tokens": 41, "ttft": 56.09230065345764, "e2e": 84.75639295578003, "tpot": 0.7165997684001922}
+{"t_sched": 7.085171879984235, "max_tokens": 80, "ok": true, "t_send": 1793586366.4527185, "prompt_tokens": 1536, "completion_tokens": 80, "ttft": 32.94436526298523, "e2e": 89.48782658576965, "tpot": 0.7157304830188993}
+{"t_sched": 2.571232813324868, "max_tokens": 121, "ok": true, "t_send": 1793586361.935468, "prompt_tokens": 1136, "completion_tokens": 121, "ttft": 10.950549602508545, "e2e": 96.96092510223389, "tpot": 0.7167439997196198}
+{"t_sched": 2.953447595651766, "max_tokens": 118, "ok": true, "t_send": 1793586362.319756, "prompt_tokens": 993, "completion_tokens": 118, "ttft": 12.363410949707031, "e2e": 96.57770872116089, "tpot": 0.7197794751224355}
+{"t_sched": 3.58981018834654, "max_tokens": 111, "ok": true, "t_send": 1793586362.9529867, "prompt_tokens": 787, "completion_tokens": 111, "ttft": 16.7846200466156, "e2e": 95.94678902626038, "tpot": 0.7196554444052956}
+{"t_sched": 8.25985366493949, "max_tokens": 70, "ok": true, "t_send": 1793586367.6251626, "prompt_tokens": 1536, "completion_tokens": 70, "ttft": 41.477797508239746, "e2e": 91.28713083267212, "tpot": 0.7218620086061782}
+{"t_sched": 11.848374581467663, "max_tokens": 40, "ok": true, "t_send": 1793586371.2145026, "prompt_tokens": 769, "completion_tokens": 40, "ttft": 59.62590932846069, "e2e": 87.71541738510132, "tpot": 0.7202372123033572}
+{"t_sched": 5.368547868646538, "max_tokens": 99, "ok": true, "t_send": 1793586364.7359319, "prompt_tokens": 1536, "completion_tokens": 99, "ttft": 24.35572385787964, "e2e": 94.99788045883179, "tpot": 0.7208373935855165}
+{"t_sched": 13.913188875500664, "max_tokens": 25, "ok": true, "t_send": 1793586373.2803736, "prompt_tokens": 1536, "completion_tokens": 25, "ttft": 69.70762062072754, "e2e": 87.33699345588684, "tpot": 0.7345543106396993}
+{"t_sched": 5.623523755467706, "max_tokens": 100, "ok": true, "t_send": 1793586364.9903462, "prompt_tokens": 1536, "completion_tokens": 100, "ttft": 24.775903701782227, "e2e": 96.39839482307434, "tpot": 0.7234587693455243}
+{"t_sched": 9.175829049696533, "max_tokens": 62, "ok": true, "t_send": 1793586368.5374904, "prompt_tokens": 298, "completion_tokens": 62, "ttft": 48.62598156929016, "e2e": 92.86392450332642, "tpot": 0.7251883608395936}
+{"t_sched": 9.45190861918105, "max_tokens": 59, "ok": true, "t_send": 1793586368.815593, "prompt_tokens": 517, "completion_tokens": 59, "ttft": 50.67213535308838, "e2e": 92.5860984325409, "tpot": 0.7226533848663856}
+{"t_sched": 9.457785206590613, "max_tokens": 59, "ok": true, "t_send": 1793586368.8239439, "prompt_tokens": 1536, "completion_tokens": 59, "ttft": 51.428581953048706, "e2e": 93.43587470054626, "tpot": 0.7242621635568554}
+{"t_sched": 3.27168458241085, "max_tokens": 118, "ok": true, "t_send": 1793586362.6394842, "prompt_tokens": 1080, "completion_tokens": 118, "ttft": 15.691074132919312, "e2e": 100.32140779495239, "tpot": 0.7233355514004699}
+{"t_sched": 3.7847948057216323, "max_tokens": 115, "ok": true, "t_send": 1793586363.1508412, "prompt_tokens": 1536, "completion_tokens": 115, "ttft": 17.263755559921265, "e2e": 99.81026864051819, "tpot": 0.7240915214806273}
+{"t_sched": 8.283206176793259, "max_tokens": 74, "ok": true, "t_send": 1793586367.648706, "prompt_tokens": 1536, "completion_tokens": 74, "ttft": 42.191980838775635, "e2e": 95.3249945640564, "tpot": 0.7278485853378087}
+{"t_sched": 4.92061375501284, "max_tokens": 109, "ok": true, "t_send": 1793586364.28702, "prompt_tokens": 1536, "completion_tokens": 109, "ttft": 21.738396167755127, "e2e": 100.0214114189148, "tpot": 0.7248418838889511}
+{"t_sched": 7.306090666252246, "max_tokens": 89, "ok": true, "t_send": 1793586366.6727073, "prompt_tokens": 1402, "completion_tokens": 89, "ttft": 34.97557544708252, "e2e": 98.43916463851929, "tpot": 0.7211752886121924}
+{"t_sched": 9.797717304294693, "max_tokens": 61, "ok": true, "t_send": 1793586369.162619, "prompt_tokens": 1262, "completion_tokens": 61, "ttft": 53.113701820373535, "e2e": 96.8035957813263, "tpot": 0.7281547705332438}
+{"t_sched": 7.2532351933134835, "max_tokens": 94, "ok": true, "t_send": 1793586366.6160629, "prompt_tokens": 865, "completion_tokens": 94, "ttft": 33.373276710510254, "e2e": 100.65084958076477, "tpot": 0.7234134597163047}
+{"t_sched": 13.431495959511583, "max_tokens": 39, "ok": true, "t_send": 1793586372.7957933, "prompt_tokens": 730, "completion_tokens": 39, "ttft": 67.30863904953003, "e2e": 95.30242037773132, "tpot": 0.7366765549308375}
+{"t_sched": 5.904231005450087, "max_tokens": 108, "ok": true, "t_send": 1793586365.2676327, "prompt_tokens": 465, "completion_tokens": 108, "ttft": 25.924766778945923, "e2e": 103.64881587028503, "tpot": 0.7263921956035578}
+{"t_sched": 6.417666359679479, "max_tokens": 103, "ok": true, "t_send": 1793586365.786003, "prompt_tokens": 1318, "completion_tokens": 103, "ttft": 28.976578950881958, "e2e": 103.13085532188416, "tpot": 0.7270019755643957}
+{"t_sched": 8.02136513000123, "max_tokens": 88, "ok": true, "t_send": 1793586367.3835287, "prompt_tokens": 540, "completion_tokens": 88, "ttft": 38.246148347854614, "e2e": 101.53480362892151, "tpot": 0.727454993916654}
+{"t_sched": 13.233436659273444, "max_tokens": 42, "ok": true, "t_send": 1793586372.5998485, "prompt_tokens": 1536, "completion_tokens": 42, "ttft": 66.04518389701843, "e2e": 96.33338522911072, "tpot": 0.7387350012616414}
+{"t_sched": 8.773740531895871, "max_tokens": 74, "ok": true, "t_send": 1793586368.137687, "prompt_tokens": 979, "completion_tokens": 74, "ttft": 48.451863050460815, "e2e": 101.61279296875, "tpot": 0.7282309205564734}
+{"t_sched": 5.073486375701117, "max_tokens": 116, "ok": true, "t_send": 1793586364.438956, "prompt_tokens": 1536, "completion_tokens": 116, "ttft": 23.083462715148926, "e2e": 106.90269637107849, "tpot": 0.7288622275642727}
+{"t_sched": 10.982800328510303, "max_tokens": 62, "ok": true, "t_send": 1793586370.3477013, "prompt_tokens": 1286, "completion_tokens": 62, "ttft": 56.171570777893066, "e2e": 101.00315809249878, "tpot": 0.7349430185849549}
+{"t_sched": 0.1829054515158137, "max_tokens": 157, "ok": true, "t_send": 1793586359.5533812, "prompt_tokens": 1500, "completion_tokens": 157, "ttft": 1.1046667098999023, "e2e": 112.55564332008362, "tpot": 0.714425693719815}
+{"t_sched": 8.250443378417692, "max_tokens": 89, "ok": true, "t_send": 1793586367.614066, "prompt_tokens": 984, "completion_tokens": 89, "ttft": 40.686506509780884, "e2e": 105.3053994178772, "tpot": 0.7343046448447488}
+{"t_sched": 11.296452436647895, "max_tokens": 61, "ok": true, "t_send": 1793586370.6624146, "prompt_tokens": 1536, "completion_tokens": 61, "ttft": 58.10927081108093, "e2e": 102.26158499717712, "tpot": 0.7358707944552104}
+{"t_sched": 12.192630366867657, "max_tokens": 55, "ok": true, "t_send": 1793586371.5579197, "prompt_tokens": 1536, "completion_tokens": 55, "ttft": 62.364036560058594, "e2e": 102.11576581001282, "tpot": 0.7361418362017031}
+{"t_sched": 5.8767929356912765, "max_tokens": 116, "ok": true, "t_send": 1793586365.2407515, "prompt_tokens": 506, "completion_tokens": 116, "ttft": 25.217616319656372, "e2e": 109.24862885475159, "tpot": 0.7307031092436417}
+{"t_sched": 8.100811501988925, "max_tokens": 94, "ok": true, "t_send": 1793586367.464179, "prompt_tokens": 712, "completion_tokens": 94, "ttft": 38.776490688323975, "e2e": 107.02942442893982, "tpot": 0.7339017596296085}
+{"t_sched": 9.582943613116207, "max_tokens": 74, "ok": true, "t_send": 1793586368.946377, "prompt_tokens": 921, "completion_tokens": 74, "ttft": 52.599433183670044, "e2e": 106.34496760368347, "tpot": 0.7362391001557651}
+{"t_sched": 2.1289587593161343, "max_tokens": 149, "ok": true, "t_send": 1793586361.4949052, "prompt_tokens": 1145, "completion_tokens": 149, "ttft": 8.100610256195068, "e2e": 115.30719566345215, "tpot": 0.7243682484369021}
+{"t_sched": 3.1925717392546282, "max_tokens": 137, "ok": true, "t_send": 1793586362.5571318, "prompt_tokens": 409, "completion_tokens": 137, "ttft": 15.116775751113892, "e2e": 114.24588561058044, "tpot": 0.7288899772307452}
+{"t_sched": 12.174646253222978, "max_tokens": 60, "ok": true, "t_send": 1793586371.5410638, "prompt_tokens": 1536, "completion_tokens": 60, "ttft": 61.67156434059143, "e2e": 105.27433729171753, "tpot": 0.7390288740901624}
+{"t_sched": 1.977616117170148, "max_tokens": 151, "ok": true, "t_send": 1793586361.340833, "prompt_tokens": 384, "completion_tokens": 151, "ttft": 7.67810583114624, "e2e": 116.32338404655457, "tpot": 0.7243012030919392}
+{"t_sched": 2.3632228040072634, "max_tokens": 148, "ok": true, "t_send": 1793586361.7284808, "prompt_tokens": 1470, "completion_tokens": 148, "ttft": 9.996178388595581, "e2e": 116.76642775535583, "tpot": 0.72632774203813}
+{"t_sched": 8.482256898946813, "max_tokens": 91, "ok": true, "t_send": 1793586367.8504968, "prompt_tokens": 1536, "completion_tokens": 91, "ttft": 44.24658203125, "e2e": 110.65531516075134, "tpot": 0.7378730800416734}
+{"t_sched": 3.9435062621506956, "max_tokens": 135, "ok": true, "t_send": 1793586363.3099399, "prompt_tokens": 1536, "completion_tokens": 135, "ttft": 17.824278116226196, "e2e": 115.84276127815247, "tpot": 0.7314765898149405}
+{"t_sched": 6.630079912798888, "max_tokens": 113, "ok": true, "t_send": 1793586365.9969792, "prompt_tokens": 1536, "completion_tokens": 113, "ttft": 31.246254920959473, "e2e": 113.16261434555054, "tpot": 0.7313952914306096}
+{"t_sched": 7.793657289222641, "max_tokens": 103, "ok": true, "t_send": 1793586367.1554947, "prompt_tokens": 305, "completion_tokens": 103, "ttft": 37.1192147731781, "e2e": 112.00468420982361, "tpot": 0.7341704391965679}
+{"t_sched": 2.21437658439004, "max_tokens": 151, "ok": true, "t_send": 1793586361.579394, "prompt_tokens": 1215, "completion_tokens": 151, "ttft": 9.467844247817993, "e2e": 118.39663624763489, "tpot": 0.7261914189656575}
+{"t_sched": 8.759635620281381, "max_tokens": 91, "ok": true, "t_send": 1793586368.1288805, "prompt_tokens": 1536, "completion_tokens": 91, "ttft": 46.98716354370117, "e2e": 113.49344229698181, "tpot": 0.7389518446392483}
+{"t_sched": 10.011613005721426, "max_tokens": 79, "ok": true, "t_send": 1793586369.3803234, "prompt_tokens": 1536, "completion_tokens": 79, "ttft": 55.035579681396484, "e2e": 112.97808241844177, "tpot": 0.7428515599324153}
+{"t_sched": 0.42975635566206477, "max_tokens": 167, "ok": true, "t_send": 1793586359.7980733, "prompt_tokens": 1505, "completion_tokens": 167, "ttft": 3.4383656978607178, "e2e": 123.37260580062866, "tpot": 0.7224949153072863}
+{"t_sched": 9.550687952851076, "max_tokens": 85, "ok": true, "t_send": 1793586368.914287, "prompt_tokens": 777, "completion_tokens": 85, "ttft": 51.90774846076965, "e2e": 114.27143025398254, "tpot": 0.7424239828473046}
+{"t_sched": 7.9874462933951, "max_tokens": 108, "ok": true, "t_send": 1793586367.3531015, "prompt_tokens": 1536, "completion_tokens": 108, "ttft": 38.27654409408569, "e2e": 117.42633891105652, "tpot": 0.7397167014184399}
+{"t_sched": 8.6704350932343, "max_tokens": 97, "ok": true, "t_send": 1793586368.0344841, "prompt_tokens": 794, "completion_tokens": 97, "ttft": 46.31873178482056, "e2e": 117.49941158294678, "tpot": 0.7414646248022715}
+{"t_sched": 11.915466111560004, "max_tokens": 73, "ok": true, "t_send": 1793586371.2808712, "prompt_tokens": 1261, "completion_tokens": 73, "ttft": 60.30289673805237, "e2e": 114.26038885116577, "tpot": 0.7494084040323893}
+{"t_sched": 14.033315447363877, "max_tokens": 57, "ok": true, "t_send": 1793586373.3982036, "prompt_tokens": 1138, "completion_tokens": 57, "ttft": 70.21727752685547, "e2e": 112.89714527130127, "tpot": 0.7621089603219714}
+{"t_sched": 6.414022399118432, "max_tokens": 126, "ok": true, "t_send": 1793586365.7856648, "prompt_tokens": 931, "completion_tokens": 126, "ttft": 28.97688055038452, "e2e": 121.18615674972534, "tpot": 0.7376735858917236}
+{"t_sched": 14.869644325641985, "max_tokens": 51, "ok": true, "t_send": 1793586374.2350547, "prompt_tokens": 1328, "completion_tokens": 51, "ttft": 75.21725583076477, "e2e": 113.63071346282959, "tpot": 0.7682671308517456}
+{"t_sched": 12.032215371628327, "max_tokens": 76, "ok": true, "t_send": 1793586371.397787, "prompt_tokens": 1536, "completion_tokens": 76, "ttft": 60.95485019683838, "e2e": 117.1768012046814, "tpot": 0.749591916402181}
+{"t_sched": 2.894094100192493, "max_tokens": 158, "ok": true, "t_send": 1793586362.2612996, "prompt_tokens": 735, "completion_tokens": 158, "ttft": 11.851277589797974, "e2e": 127.1631429195404, "tpot": 0.734470037897681}
+{"t_sched": 9.20616741258133, "max_tokens": 97, "ok": true, "t_send": 1793586368.5729783, "prompt_tokens": 1536, "completion_tokens": 97, "ttft": 49.406646966934204, "e2e": 120.86193656921387, "tpot": 0.7443252056837082}
+{"t_sched": 12.488296526157685, "max_tokens": 72, "ok": true, "t_send": 1793586371.8504734, "prompt_tokens": 294, "completion_tokens": 72, "ttft": 63.985405683517456, "e2e": 117.59211254119873, "tpot": 0.755016716433243}
+{"t_sched": 11.848968153513619, "max_tokens": 80, "ok": true, "t_send": 1793586371.2148912, "prompt_tokens": 745, "completion_tokens": 80, "ttft": 59.62561511993408, "e2e": 118.99292063713074, "tpot": 0.7514838598951509}
+{"t_sched": 6.97879911252506, "max_tokens": 127, "ok": true, "t_send": 1793586366.3434532, "prompt_tokens": 1303, "completion_tokens": 127, "ttft": 31.598029375076294, "e2e": 124.71016788482666, "tpot": 0.7389846075148809}
+{"t_sched": 8.512361918896241, "max_tokens": 108, "ok": true, "t_send": 1793586367.8749828, "prompt_tokens": 366, "completion_tokens": 108, "ttft": 44.22215127944946, "e2e": 124.08846282958984, "tpot": 0.7463958107422446}
+{"t_sched": 2.295658936031926, "max_tokens": 166, "ok": true, "t_send": 1793586361.6625116, "prompt_tokens": 1536, "completion_tokens": 166, "ttft": 10.062117099761963, "e2e": 130.92958092689514, "tpot": 0.7325296532024037}
+{"t_sched": 3.321578256123171, "max_tokens": 155, "ok": true, "t_send": 1793586362.685533, "prompt_tokens": 900, "completion_tokens": 155, "ttft": 16.408170223236084, "e2e": 129.9068865776062, "tpot": 0.7370042290006366}
+{"t_sched": 4.586876394583485, "max_tokens": 147, "ok": true, "t_send": 1793586363.9516256, "prompt_tokens": 1236, "completion_tokens": 147, "ttft": 20.68002939224243, "e2e": 128.6416506767273, "tpot": 0.739462676113599}
+{"t_sched": 4.399586110559768, "max_tokens": 148, "ok": true, "t_send": 1793586363.7626615, "prompt_tokens": 587, "completion_tokens": 148, "ttft": 20.868921041488647, "e2e": 129.6940405368805, "tpot": 0.7403063790327837}
+{"t_sched": 11.245221094685027, "max_tokens": 88, "ok": true, "t_send": 1793586370.6104045, "prompt_tokens": 1252, "completion_tokens": 88, "ttft": 57.43355345726013, "e2e": 122.85760831832886, "tpot": 0.7519998276370695}
+{"t_sched": 7.914674266986855, "max_tokens": 122, "ok": true, "t_send": 1793586367.2784195, "prompt_tokens": 792, "completion_tokens": 122, "ttft": 37.6003315448761, "e2e": 127.49201393127441, "tpot": 0.742905666020291}
+{"t_sched": 16.237180188010907, "max_tokens": 52, "ok": true, "t_send": 1793586375.601667, "prompt_tokens": 1117, "completion_tokens": 52, "ttft": 80.36897349357605, "e2e": 119.87375283241272, "tpot": 0.774585672453338}
+{"t_sched": 6.834499479336198, "max_tokens": 135, "ok": true, "t_send": 1793586366.2008383, "prompt_tokens": 1536, "completion_tokens": 135, "ttft": 31.042429447174072, "e2e": 129.9268298149109, "tpot": 0.7379395178894499}
+{"t_sched": 20.701357236248292, "max_tokens": 14, "ok": true, "t_send": 1793586380.0675805, "prompt_tokens": 1453, "completion_tokens": 14, "ttft": 106.24716258049011, "e2e": 116.09854769706726, "tpot": 0.7577766821934626}
+{"t_sched": 8.554688877940249, "max_tokens": 114, "ok": true, "t_send": 1793586367.9201703, "prompt_tokens": 1536, "completion_tokens": 114, "ttft": 45.805168867111206, "e2e": 129.77455115318298, "tpot": 0.7430912013602468}
+{"t_sched": 11.764457030887964, "max_tokens": 91, "ok": true, "t_send": 1793586371.1289494, "prompt_tokens": 843, "completion_tokens": 91, "ttft": 59.13880252838135, "e2e": 126.5698573589325, "tpot": 0.7492330551147461}
+{"t_sched": 10.799750881525297, "max_tokens": 100, "ok": true, "t_send": 1793586370.1641352, "prompt_tokens": 778, "completion_tokens": 100, "ttft": 55.66194295883179, "e2e": 129.65616536140442, "tpot": 0.7474155233363913}
+{"t_sched": 1.0595631890460409, "max_tokens": 187, "ok": true, "t_send": 1793586360.4220884, "prompt_tokens": 401, "completion_tokens": 187, "ttft": 5.26089882850647, "e2e": 141.12604641914368, "tpot": 0.7304572341262653}
+{"t_sched": 2.1605208110750076, "max_tokens": 180, "ok": true, "t_send": 1793586361.5300524, "prompt_tokens": 1536, "completion_tokens": 180, "ttft": 8.74981951713562, "e2e": 140.01962661743164, "tpot": 0.7333504740752321}
+{"t_sched": 6.521226734465219, "max_tokens": 145, "ok": true, "t_send": 1793586365.8874102, "prompt_tokens": 1536, "completion_tokens": 145, "ttft": 29.704607248306274, "e2e": 136.39697003364563, "tpot": 0.7409186446004443}
+{"t_sched": 8.76887508195985, "max_tokens": 117, "ok": true, "t_send": 1793586368.1373847, "prompt_tokens": 1536, "completion_tokens": 117, "ttft": 48.129464864730835, "e2e": 134.1485779285431, "tpot": 0.7415434923665277}
+{"t_sched": 16.879769220415216, "max_tokens": 55, "ok": true, "t_send": 1793586376.256347, "prompt_tokens": 1532, "completion_tokens": 55, "ttft": 84.36502456665039, "e2e": 126.04714274406433, "tpot": 0.7718896865844727}
+{"t_sched": 0.15026303774787467, "max_tokens": 200, "ok": true, "t_send": 1793586359.5148742, "prompt_tokens": 548, "completion_tokens": 200, "ttft": 0.24422717094421387, "e2e": 144.29681515693665, "tpot": 0.7238817238927486}
+{"t_sched": 11.19472121700007, "max_tokens": 103, "ok": true, "t_send": 1793586370.5617886, "prompt_tokens": 1536, "completion_tokens": 103, "ttft": 56.762781620025635, "e2e": 133.26036262512207, "tpot": 0.7499548150043861}
+{"t_sched": 12.277805051589121, "max_tokens": 93, "ok": true, "t_send": 1793586371.6449273, "prompt_tokens": 1536, "completion_tokens": 93, "ttft": 63.0149462223053, "e2e": 132.17788648605347, "tpot": 0.7517700402633004}
+{"t_sched": 16.540471542141802, "max_tokens": 61, "ok": true, "t_send": 1793586375.9080768, "prompt_tokens": 1536, "completion_tokens": 61, "ttft": 81.50512361526489, "e2e": 127.92707800865173, "tpot": 0.7736978888511657}
+{"t_sched": 12.409040411641296, "max_tokens": 93, "ok": true, "t_send": 1793586371.7718108, "prompt_tokens": 356, "completion_tokens": 93, "ttft": 63.44255065917969, "e2e": 132.70955348014832, "tpot": 0.7529013441956561}
+{"t_sched": 19.654470785655494, "max_tokens": 34, "ok": true, "t_send": 1793586379.018293, "prompt_tokens": 837, "completion_tokens": 34, "ttft": 100.1737585067749, "e2e": 125.48062658309937, "tpot": 0.7668725432771625}
+{"t_sched": 8.20435116405019, "max_tokens": 134, "ok": true, "t_send": 1793586367.5710375, "prompt_tokens": 773, "completion_tokens": 134, "ttft": 39.418845891952515, "e2e": 138.63369250297546, "tpot": 0.745975711291894}
+{"t_sched": 13.962735768565032, "max_tokens": 83, "ok": true, "t_send": 1793586373.3259044, "prompt_tokens": 433, "completion_tokens": 83, "ttft": 70.28955698013306, "e2e": 132.8946659564972, "tpot": 0.7634416149883736}
+{"t_sched": 8.700311544924176, "max_tokens": 125, "ok": true, "t_send": 1793586368.0639517, "prompt_tokens": 770, "completion_tokens": 125, "ttft": 46.28932166099548, "e2e": 138.74240684509277, "tpot": 0.7455886371674076}
+{"t_sched": 8.948682580399055, "max_tokens": 121, "ok": true, "t_send": 1793586368.314464, "prompt_tokens": 1278, "completion_tokens": 121, "ttft": 48.848910331726074, "e2e": 138.49402570724487, "tpot": 0.7470420519510905}
+{"t_sched": 15.478710650291557, "max_tokens": 74, "ok": true, "t_send": 1793586374.8419642, "prompt_tokens": 909, "completion_tokens": 74, "ttft": 76.6861023902893, "e2e": 132.831467628479, "tpot": 0.7690937747694042}
+{"t_sched": 8.192744402935332, "max_tokens": 137, "ok": true, "t_send": 1793586367.5578737, "prompt_tokens": 1496, "completion_tokens": 137, "ttft": 39.43197464942932, "e2e": 140.9599587917328, "tpot": 0.746509173337151}
+{"t_sched": 18.5455851318544, "max_tokens": 53, "ok": true, "t_send": 1793586377.9098296, "prompt_tokens": 781, "completion_tokens": 53, "ttft": 90.19718074798584, "e2e": 130.63097310066223, "tpot": 0.7775714214031513}
+{"t_sched": 9.24603496437314, "max_tokens": 122, "ok": true, "t_send": 1793586368.6119096, "prompt_tokens": 1536, "completion_tokens": 122, "ttft": 50.11128902435303, "e2e": 140.60688281059265, "tpot": 0.7478968604537081}
+{"t_sched": 14.703497731032485, "max_tokens": 81, "ok": true, "t_send": 1793586374.0676029, "prompt_tokens": 640, "completion_tokens": 81, "ttft": 73.95544481277466, "e2e": 135.16184663772583, "tpot": 0.7650736331939697}
+{"t_sched": 10.119917889845436, "max_tokens": 115, "ok": true, "t_send": 1793586369.4848564, "prompt_tokens": 997, "completion_tokens": 115, "ttft": 54.9310781955719, "e2e": 140.50017666816711, "tpot": 0.7506054786213657}
+{"t_sched": 7.750654614474399, "max_tokens": 146, "ok": true, "t_send": 1793586367.1154168, "prompt_tokens": 1364, "completion_tokens": 146, "ttft": 37.15926194190979, "e2e": 144.941472530365, "tpot": 0.7433250460131415}
+{"t_sched": 14.309832018841469, "max_tokens": 87, "ok": true, "t_send": 1793586373.6720016, "prompt_tokens": 427, "completion_tokens": 87, "ttft": 72.88153719902039, "e2e": 138.3937075138092, "tpot": 0.7617685711661051}
+{"t_sched": 14.43126878033314, "max_tokens": 87, "ok": true, "t_send": 1793586373.797714, "prompt_tokens": 1536, "completion_tokens": 87, "ttft": 73.45961213111877, "e2e": 138.93798732757568, "tpot": 0.7613681416178859}
+{"t_sched": 8.134956062032533, "max_tokens": 145, "ok": true, "t_send": 1793586367.4995759, "prompt_tokens": 1123, "completion_tokens": 145, "ttft": 38.741132497787476, "e2e": 146.08093404769897, "tpot": 0.7454146560695436}
+{"t_sched": 13.890393513361687, "max_tokens": 94, "ok": true, "t_send": 1793586373.2580416, "prompt_tokens": 1536, "completion_tokens": 94, "ttft": 69.7298276424408, "e2e": 140.33369207382202, "tpot": 0.7591805586250879}
+{"t_sched": 17.72801251731536, "max_tokens": 66, "ok": true, "t_send": 1793586377.0922534, "prompt_tokens": 876, "completion_tokens": 66, "ttft": 86.50284910202026, "e2e": 136.51360082626343, "tpot": 0.7693931909707876}
+{"t_sched": 4.274058345039628, "max_tokens": 178, "ok": true, "t_send": 1793586363.6370645, "prompt_tokens": 751, "completion_tokens": 178, "ttft": 19.6672306060791, "e2e": 150.6717460155487, "tpot": 0.7401379771151785}
+{"t_sched": 12.315009613029131, "max_tokens": 106, "ok": true, "t_send": 1793586371.6787095, "prompt_tokens": 790, "completion_tokens": 106, "ttft": 63.535568952560425, "e2e": 142.6429328918457, "tpot": 0.7534026940663655}
+{"t_sched": 21.32080494466763, "max_tokens": 31, "ok": true, "t_send": 1793586380.6831708, "prompt_tokens": 406, "completion_tokens": 31, "ttft": 111.93912124633789, "e2e": 134.48910212516785, "tpot": 0.7516554991404215}
+{"t_sched": 16.727151523073662, "max_tokens": 74, "ok": true, "t_send": 1793586376.0935812, "prompt_tokens": 1536, "completion_tokens": 74, "ttft": 83.66233921051025, "e2e": 139.8180811405182, "tpot": 0.7692557589648521}
+{"t_sched": 3.8386512332930285, "max_tokens": 186, "ok": true, "t_send": 1793586363.2021904, "prompt_tokens": 689, "completion_tokens": 186, "ttft": 17.21243906021118, "e2e": 154.29207825660706, "tpot": 0.7409705445573137}
+{"t_sched": 15.092091338685371, "max_tokens": 89, "ok": true, "t_send": 1793586374.4555612, "prompt_tokens": 808, "completion_tokens": 89, "ttft": 75.71948885917664, "e2e": 143.05887579917908, "tpot": 0.7652142345905304}
+{"t_sched": 16.596403429903216, "max_tokens": 80, "ok": true, "t_send": 1793586375.957503, "prompt_tokens": 102, "completion_tokens": 80, "ttft": 81.45577955245972, "e2e": 142.42068886756897, "tpot": 0.771701139739797}
+{"t_sched": 8.324515592907392, "max_tokens": 146, "ok": true, "t_send": 1793586367.6903143, "prompt_tokens": 934, "completion_tokens": 146, "ttft": 42.93985342979431, "e2e": 151.30630493164062, "tpot": 0.7473543150671598}
+{"t_sched": 13.767576479832195, "max_tokens": 103, "ok": true, "t_send": 1793586373.1314175, "prompt_tokens": 689, "completion_tokens": 103, "ttft": 68.25625872612, "e2e": 145.8740246295929, "tpot": 0.7609578441171085}
+{"t_sched": 20.91751762817163, "max_tokens": 43, "ok": true, "t_send": 1793586380.286649, "prompt_tokens": 1084, "completion_tokens": 43, "ttft": 106.70866680145264, "e2e": 138.73820114135742, "tpot": 0.7626020000094459}
+{"t_sched": 7.320288389971037, "max_tokens": 159, "ok": true, "t_send": 1793586366.6855705, "prompt_tokens": 1536, "completion_tokens": 159, "ttft": 35.5461688041687, "e2e": 153.1396849155426, "tpot": 0.7442623195768912}
+{"t_sched": 11.583957371113112, "max_tokens": 120, "ok": true, "t_send": 1793586370.945572, "prompt_tokens": 103, "completion_tokens": 120, "ttft": 59.321651458740234, "e2e": 148.88667964935303, "tpot": 0.7526466545938444}
+{"t_sched": 13.514915130544106, "max_tokens": 107, "ok": true, "t_send": 1793586372.8840678, "prompt_tokens": 963, "completion_tokens": 107, "ttft": 67.22044777870178, "e2e": 147.60451793670654, "tpot": 0.7583150053923985}
+{"t_sched": 15.968227814894494, "max_tokens": 89, "ok": true, "t_send": 1793586375.3304412, "prompt_tokens": 342, "completion_tokens": 89, "ttft": 77.5022041797638, "e2e": 145.16224217414856, "tpot": 0.7688632959669287}
+{"t_sched": 12.538571027281137, "max_tokens": 113, "ok": true, "t_send": 1793586371.9045122, "prompt_tokens": 1011, "completion_tokens": 113, "ttft": 64.61341190338135, "e2e": 149.42958545684814, "tpot": 0.7572865592581886}
+{"t_sched": 14.916015736289287, "max_tokens": 95, "ok": true, "t_send": 1793586374.2800994, "prompt_tokens": 587, "completion_tokens": 95, "ttft": 75.17226767539978, "e2e": 147.05749464035034, "tpot": 0.7647356631908011}
+{"t_sched": 16.50676266820609, "max_tokens": 85, "ok": true, "t_send": 1793586375.8747532, "prompt_tokens": 849, "completion_tokens": 85, "ttft": 80.7214868068695, "e2e": 145.46650338172913, "tpot": 0.770772914091746}
+{"t_sched": 16.509486291487786, "max_tokens": 84, "ok": true, "t_send": 1793586375.875248, "prompt_tokens": 601, "completion_tokens": 84, "ttft": 81.53781461715698, "e2e": 145.466126203537, "tpot": 0.7702197597687503}
+{"t_sched": 19.589286571510335, "max_tokens": 58, "ok": true, "t_send": 1793586378.9590225, "prompt_tokens": 1467, "completion_tokens": 58, "ttft": 99.5779161453247, "e2e": 143.0828456878662, "tpot": 0.7632431147391336}
+{"t_sched": 2.1577450495790336, "max_tokens": 209, "ok": true, "t_send": 1793586361.5295358, "prompt_tokens": 604, "completion_tokens": 209, "ttft": 8.066015481948853, "e2e": 161.25747966766357, "tpot": 0.7364970101759984}
+{"t_sched": 5.357372029598373, "max_tokens": 182, "ok": true, "t_send": 1793586364.7244828, "prompt_tokens": 1443, "completion_tokens": 182, "ttft": 23.655720472335815, "e2e": 158.06329154968262, "tpot": 0.7425827940524612}
+{"t_sched": 18.736215161772602, "max_tokens": 71, "ok": true, "t_send": 1793586378.1020427, "prompt_tokens": 1536, "completion_tokens": 71, "ttft": 92.49998307228088, "e2e": 146.41995072364807, "tpot": 0.7702842235565186}
+{"t_sched": 22.874503317396645, "max_tokens": 32, "ok": true, "t_send": 1793586382.2409031, "prompt_tokens": 1500, "completion_tokens": 32, "ttft": 118.47649931907654, "e2e": 142.2955892086029, "tpot": 0.7683494937035346}
+{"t_sched": 5.9116996098976795, "max_tokens": 180, "ok": true, "t_send": 1793586365.283275, "prompt_tokens": 1536, "completion_tokens": 180, "ttft": 26.615875959396362, "e2e": 159.79617190361023, "tpot": 0.744015874809393}
+{"t_sched": 8.536039208220506, "max_tokens": 151, "ok": true, "t_send": 1793586367.9025748, "prompt_tokens": 1395, "completion_tokens": 151, "ttft": 44.98464798927307, "e2e": 157.18032503128052, "tpot": 0.7479707304636637}
+{"t_sched": 6.23721042535944, "max_tokens": 178, "ok": true, "t_send": 1793586365.6017957, "prompt_tokens": 685, "completion_tokens": 178, "ttft": 28.526024103164673, "e2e": 160.25029754638672, "tpot": 0.7442045373431707}
+{"t_sched": 2.5350892221492876, "max_tokens": 210, "ok": true, "t_send": 1793586361.9034133, "prompt_tokens": 1346, "completion_tokens": 210, "ttft": 10.4118492603302, "e2e": 164.80239081382751, "tpot": 0.7387101992465662}
+{"t_sched": 6.230167938597989, "max_tokens": 180, "ok": true, "t_send": 1793586365.5959969, "prompt_tokens": 1536, "completion_tokens": 180, "ttft": 27.883389472961426, "e2e": 161.11260437965393, "tpot": 0.7442966999288377}
+{"t_sched": 9.519350911266269, "max_tokens": 143, "ok": true, "t_send": 1793586368.8832738, "prompt_tokens": 915, "completion_tokens": 143, "ttft": 51.93871593475342, "e2e": 158.60023283958435, "tpot": 0.7511369073894661}
+{"t_sched": 16.70294114754189, "max_tokens": 90, "ok": true, "t_send": 1793586376.0670037, "prompt_tokens": 878, "completion_tokens": 90, "ttft": 82.8724889755249, "e2e": 151.42747807502747, "tpot": 0.7702799834562152}
+{"t_sched": 7.036580509946987, "max_tokens": 176, "ok": true, "t_send": 1793586366.4051607, "prompt_tokens": 1412, "completion_tokens": 176, "ttft": 32.235625982284546, "e2e": 162.61575365066528, "tpot": 0.7450288268498012}
+{"t_sched": 12.345996537382224, "max_tokens": 125, "ok": true, "t_send": 1793586371.709017, "prompt_tokens": 587, "completion_tokens": 125, "ttft": 63.505306005477905, "e2e": 157.3186593055725, "tpot": 0.7565587086062278}
+{"t_sched": 9.01281837020655, "max_tokens": 151, "ok": true, "t_send": 1793586368.3767357, "prompt_tokens": 993, "completion_tokens": 151, "ttft": 48.78668975830078, "e2e": 161.53911972045898, "tpot": 0.7516822497049968}
+{"t_sched": 9.380721444690831, "max_tokens": 148, "ok": true, "t_send": 1793586368.7482436, "prompt_tokens": 1536, "completion_tokens": 148, "ttft": 50.739463090896606, "e2e": 161.16820740699768, "tpot": 0.7512154027718265}
+{"t_sched": 16.622824290349936, "max_tokens": 95, "ok": true, "t_send": 1793586375.986691, "prompt_tokens": 1063, "completion_tokens": 95, "ttft": 82.15813899040222, "e2e": 154.6247260570526, "tpot": 0.7709054388898484}
+{"t_sched": 19.4266687372007, "max_tokens": 70, "ok": true, "t_send": 1793586378.7914891, "prompt_tokens": 1188, "completion_tokens": 70, "ttft": 98.91487765312195, "e2e": 151.83471274375916, "tpot": 0.7669460393380427}
+{"t_sched": 5.3806006839172795, "max_tokens": 192, "ok": true, "t_send": 1793586364.7429807, "prompt_tokens": 484, "completion_tokens": 192, "ttft": 24.348714113235474, "e2e": 166.7046356201172, "tpot": 0.7453185475933615}
+{"t_sched": 8.206271735994402, "max_tokens": 166, "ok": true, "t_send": 1793586367.5715933, "prompt_tokens": 547, "completion_tokens": 166, "ttft": 39.99801564216614, "e2e": 163.87782859802246, "tpot": 0.7507814941984234}
+{"t_sched": 10.84720477599488, "max_tokens": 142, "ok": true, "t_send": 1793586370.2113502, "prompt_tokens": 1144, "completion_tokens": 142, "ttft": 56.30769443511963, "e2e": 162.82862854003906, "tpot": 0.7554636982315821}
+{"t_sched": 17.347681910647154, "max_tokens": 93, "ok": true, "t_send": 1793586376.709903, "prompt_tokens": 325, "completion_tokens": 93, "ttft": 86.28717112541199, "e2e": 157.20266914367676, "tpot": 0.7708198039428048}
+{"t_sched": 12.172123423722025, "max_tokens": 136, "ok": true, "t_send": 1793586371.540562, "prompt_tokens": 357, "completion_tokens": 136, "ttft": 60.812153577804565, "e2e": 163.12811613082886, "tpot": 0.7578954166836209}
+{"t_sched": 2.5106950473889884, "max_tokens": 221, "ok": true, "t_send": 1793586361.873327, "prompt_tokens": 505, "completion_tokens": 221, "ttft": 10.441891193389893, "e2e": 173.36964893341064, "tpot": 0.7405803366140886}
+{"t_sched": 14.574568708806861, "max_tokens": 115, "ok": true, "t_send": 1793586373.9407659, "prompt_tokens": 1536, "completion_tokens": 115, "ttft": 74.08218097686768, "e2e": 161.31114983558655, "tpot": 0.7651657702630026}
+{"t_sched": 19.20260427164492, "max_tokens": 80, "ok": true, "t_send": 1793586378.566033, "prompt_tokens": 982, "completion_tokens": 80, "ttft": 95.94653749465942, "e2e": 156.69131445884705, "tpot": 0.768920279756377}
+{"t_sched": 18.790622520719182, "max_tokens": 87, "ok": true, "t_send": 1793586378.1557298, "prompt_tokens": 1536, "completion_tokens": 87, "ttft": 92.44633603096008, "e2e": 158.71330499649048, "tpot": 0.7705453329308088}
+{"t_sched": 18.84962728573333, "max_tokens": 86, "ok": true, "t_send": 1793586378.212983, "prompt_tokens": 840, "completion_tokens": 86, "ttft": 93.15370059013367, "e2e": 158.6569788455963, "tpot": 0.7706206518061021}
+{"t_sched": 14.148927383405468, "max_tokens": 123, "ok": true, "t_send": 1793586373.5145872, "prompt_tokens": 1102, "completion_tokens": 123, "ttft": 71.46441292762756, "e2e": 164.94884538650513, "tpot": 0.7662651773358955}
+{"t_sched": 14.750010962982987, "max_tokens": 120, "ok": true, "t_send": 1793586374.1154983, "prompt_tokens": 392, "completion_tokens": 120, "ttft": 73.9076759815216, "e2e": 165.1309950351715, "tpot": 0.7665818398740111}
+{"t_sched": 21.21128260487627, "max_tokens": 62, "ok": true, "t_send": 1793586380.5783565, "prompt_tokens": 820, "completion_tokens": 62, "ttft": 112.04389953613281, "e2e": 158.6882884502411, "tpot": 0.7646601747293942}
+{"t_sched": 13.352426084904991, "max_tokens": 133, "ok": true, "t_send": 1793586372.7183516, "prompt_tokens": 1536, "completion_tokens": 133, "ttft": 66.80108547210693, "e2e": 167.1961634159088, "tpot": 0.7605681744488803}
+{"t_sched": 8.5881540885772, "max_tokens": 169, "ok": true, "t_send": 1793586367.9531617, "prompt_tokens": 1536, "completion_tokens": 169, "ttft": 46.399564027786255, "e2e": 172.73574948310852, "tpot": 0.7520006483509427}
+{"t_sched": 11.385788456758918, "max_tokens": 150, "ok": true, "t_send": 1793586370.7577949, "prompt_tokens": 553, "completion_tokens": 150, "ttft": 58.0139274597168, "e2e": 170.62655520439148, "tpot": 0.7557889055085663}
+{"t_sched": 16.99710205681687, "max_tokens": 105, "ok": true, "t_send": 1793586376.3634555, "prompt_tokens": 1536, "completion_tokens": 105, "ttft": 85.05895137786865, "e2e": 165.0279655456543, "tpot": 0.7689321751777942}
+{"t_sched": 21.996291367669134, "max_tokens": 60, "ok": true, "t_send": 1793586381.3604543, "prompt_tokens": 561, "completion_tokens": 60, "ttft": 114.80834484100342, "e2e": 160.0403027534485, "tpot": 0.7666420896174544}
+{"t_sched": 20.651003286329754, "max_tokens": 76, "ok": true, "t_send": 1793586380.0139654, "prompt_tokens": 500, "completion_tokens": 76, "ttft": 105.55434775352478, "e2e": 163.02544593811035, "tpot": 0.7662719122568766}
+{"t_sched": 22.415546989951704, "max_tokens": 59, "ok": true, "t_send": 1793586381.779534, "prompt_tokens": 731, "completion_tokens": 59, "ttft": 116.51261305809021, "e2e": 161.27330899238586, "tpot": 0.7717307970441621}
+{"t_sched": 21.80349847284586, "max_tokens": 64, "ok": true, "t_send": 1793586381.1663034, "prompt_tokens": 457, "completion_tokens": 64, "ttft": 114.31778025627136, "e2e": 162.28113985061646, "tpot": 0.7613190923418317}
+{"t_sched": 18.404882446322564, "max_tokens": 101, "ok": true, "t_send": 1793586377.7674496, "prompt_tokens": 507, "completion_tokens": 101, "ttft": 89.52093362808228, "e2e": 166.44799947738647, "tpot": 0.7692603611946106}
+{"t_sched": 19.36702882484644, "max_tokens": 89, "ok": true, "t_send": 1793586378.7304974, "prompt_tokens": 870, "completion_tokens": 89, "ttft": 98.1015031337738, "e2e": 165.4873034954071, "tpot": 0.7657470079985532}
+{"t_sched": 0.6808141828436733, "max_tokens": 247, "ok": true, "t_send": 1793586360.044739, "prompt_tokens": 889, "completion_tokens": 247, "ttft": 3.818213701248169, "e2e": 184.74314713478088, "tpot": 0.7354667264271558}
+{"t_sched": 24.280809253456006, "max_tokens": 40, "ok": true, "t_send": 1793586383.6458523, "prompt_tokens": 626, "completion_tokens": 40, "ttft": 131.5327250957489, "e2e": 161.18050980567932, "tpot": 0.760192620448577}
+{"t_sched": 8.426541051875464, "max_tokens": 180, "ok": true, "t_send": 1793586367.7926757, "prompt_tokens": 1501, "completion_tokens": 180, "ttft": 43.57687592506409, "e2e": 177.70094656944275, "tpot": 0.7492960125374395}
+{"t_sched": 13.546869308910692, "max_tokens": 139, "ok": true, "t_send": 1793586372.909173, "prompt_tokens": 264, "completion_tokens": 139, "ttft": 67.77237510681152, "e2e": 172.59148859977722, "tpot": 0.759558259576991}
+{"t_sched": 13.62042965840247, "max_tokens": 138, "ok": true, "t_send": 1793586372.9854252, "prompt_tokens": 1299, "completion_tokens": 138, "ttft": 68.40223169326782, "e2e": 172.51543927192688, "tpot": 0.7599499817312199}
+{"t_sched": 22.487517992963486, "max_tokens": 64, "ok": true, "t_send": 1793586381.8507977, "prompt_tokens": 546, "completion_tokens": 64, "ttft": 116.44138312339783, "e2e": 164.56011772155762, "tpot": 0.7637882194821797}
+{"t_sched": 4.341055817656726, "max_tokens": 225, "ok": true, "t_send": 1793586363.7058146, "prompt_tokens": 1143, "completion_tokens": 225, "ttft": 19.59851837158203, "e2e": 185.15721154212952, "tpot": 0.7391009820359093}
+{"t_sched": 13.617743733813048, "max_tokens": 145, "ok": true, "t_send": 1793586372.9849467, "prompt_tokens": 780, "completion_tokens": 145, "ttft": 67.69666624069214, "e2e": 175.88463878631592, "tpot": 0.7513048301140467}
+{"t_sched": 16.06952629186694, "max_tokens": 129, "ok": true, "t_send": 1793586375.4342117, "prompt_tokens": 1042, "completion_tokens": 129, "ttft": 78.08735799789429, "e2e": 174.25872135162354, "tpot": 0.7513381280004978}
+{"t_sched": 22.80610105543358, "max_tokens": 69, "ok": true, "t_send": 1793586382.1713066, "prompt_tokens": 1076, "completion_tokens": 69, "ttft": 117.67299580574036, "e2e": 167.5446434020996, "tpot": 0.733405260478749}
+{"t_sched": 6.934117299245073, "max_tokens": 208, "ok": true, "t_send": 1793586366.299086, "prompt_tokens": 846, "completion_tokens": 208, "ttft": 31.642364978790283, "e2e": 183.62020874023438, "tpot": 0.7341920903339478}
+{"t_sched": 24.09113932275818, "max_tokens": 55, "ok": true, "t_send": 1793586383.4562333, "prompt_tokens": 906, "completion_tokens": 55, "ttft": 127.87584137916565, "e2e": 166.48494720458984, "tpot": 0.7149816663176926}
+{"t_sched": 21.759964124052463, "max_tokens": 78, "ok": true, "t_send": 1793586381.128411, "prompt_tokens": 625, "completion_tokens": 78, "ttft": 113.67792129516602, "e2e": 169.65616655349731, "tpot": 0.726981698692619}
+{"t_sched": 9.645782843786911, "max_tokens": 177, "ok": true, "t_send": 1793586369.0121863, "prompt_tokens": 1443, "completion_tokens": 177, "ttft": 53.26409959793091, "e2e": 183.46009612083435, "tpot": 0.7397494424473156}
+{"t_sched": 14.288103547420578, "max_tokens": 144, "ok": true, "t_send": 1793586373.6533124, "prompt_tokens": 1364, "completion_tokens": 144, "ttft": 72.9001841545105, "e2e": 179.69331765174866, "tpot": 0.7468046158343762}
+{"t_sched": 19.29456884536123, "max_tokens": 104, "ok": true, "t_send": 1793586378.6603317, "prompt_tokens": 837, "completion_tokens": 104, "ttft": 98.17163252830505, "e2e": 174.69393515586853, "tpot": 0.7429133757804204}
+{"t_sched": 27.558973649757824, "max_tokens": 28, "ok": true, "t_send": 1793586386.922351, "prompt_tokens": 859, "completion_tokens": 28, "ttft": 148.35876417160034, "e2e": 166.44895887374878, "tpot": 0.6700044826224998}
+{"t_sched": 6.248808696775395, "max_tokens": 218, "ok": true, "t_send": 1793586365.6128578, "prompt_tokens": 1034, "completion_tokens": 218, "ttft": 28.515037059783936, "e2e": 188.47255659103394, "tpot": 0.7371227246825047}
+{"t_sched": 7.648578387243952, "max_tokens": 205, "ok": true, "t_send": 1793586367.0194046, "prompt_tokens": 988, "completion_tokens": 205, "ttft": 36.59740924835205, "e2e": 187.0663938522339, "tpot": 0.7375926316953173}
+{"t_sched": 13.606264116909813, "max_tokens": 153, "ok": true, "t_send": 1793586372.969589, "prompt_tokens": 799, "completion_tokens": 153, "ttft": 67.71199035644531, "e2e": 181.12490582466125, "tpot": 0.7461370888509249}
+{"t_sched": 10.222948380822459, "max_tokens": 176, "ok": true, "t_send": 1793586369.5945733, "prompt_tokens": 1536, "completion_tokens": 176, "ttft": 55.6025915145874, "e2e": 185.26530742645264, "tpot": 0.7409267548152378}
+{"t_sched": 21.184532891305576, "max_tokens": 88, "ok": true, "t_send": 1793586380.5502095, "prompt_tokens": 1536, "completion_tokens": 88, "ttft": 110.53898787498474, "e2e": 174.32962822914124, "tpot": 0.7332249153619526}
+{"t_sched": 21.91301354115116, "max_tokens": 82, "ok": true, "t_send": 1793586381.278347, "prompt_tokens": 709, "completion_tokens": 82, "ttft": 114.20579743385315, "e2e": 173.60230779647827, "tpot": 0.7332844881363857}
+{"t_sched": 24.182787070388386, "max_tokens": 60, "ok": true, "t_send": 1793586383.5471451, "prompt_tokens": 1139, "completion_tokens": 60, "ttft": 130.07006812095642, "e2e": 172.84755182266235, "tpot": 0.7250364432900639}
+{"t_sched": 18.689910790753864, "max_tokens": 118, "ok": true, "t_send": 1793586378.0534384, "prompt_tokens": 598, "completion_tokens": 118, "ttft": 91.7213773727417, "e2e": 179.20097708702087, "tpot": 0.7476880489251553}
+{"t_sched": 21.942305259216727, "max_tokens": 84, "ok": true, "t_send": 1793586381.30716, "prompt_tokens": 1142, "completion_tokens": 84, "ttft": 114.86152052879333, "e2e": 175.9568157196045, "tpot": 0.7360870866890413}
+{"t_sched": 16.016599248165264, "max_tokens": 141, "ok": true, "t_send": 1793586375.382768, "prompt_tokens": 1007, "completion_tokens": 141, "ttft": 77.44998407363892, "e2e": 182.67230224609375, "tpot": 0.7515866960797991}
+{"t_sched": 11.7804539639376, "max_tokens": 173, "ok": true, "t_send": 1793586371.1445374, "prompt_tokens": 873, "completion_tokens": 173, "ttft": 59.695781230926514, "e2e": 187.7617223262787, "tpot": 0.7445688164511393}
+{"t_sched": 20.44815949057515, "max_tokens": 102, "ok": true, "t_send": 1793586379.8135314, "prompt_tokens": 1083, "completion_tokens": 102, "ttft": 104.10230088233948, "e2e": 179.10141706466675, "tpot": 0.7425648009422983}
+{"t_sched": 22.162311328542184, "max_tokens": 86, "ok": true, "t_send": 1793586381.5237322, "prompt_tokens": 141, "completion_tokens": 86, "ttft": 114.64515209197998, "e2e": 177.39437198638916, "tpot": 0.7382253394407384}
+{"t_sched": 23.490114476176075, "max_tokens": 72, "ok": true, "t_send": 1793586382.8535209, "prompt_tokens": 829, "completion_tokens": 72, "ttft": 123.98764181137085, "e2e": 176.07090783119202, "tpot": 0.7335616837085133}
+{"t_sched": 12.918367627607667, "max_tokens": 165, "ok": true, "t_send": 1793586372.284167, "prompt_tokens": 1206, "completion_tokens": 165, "ttft": 64.91937303543091, "e2e": 187.50164532661438, "tpot": 0.7474524102559904}
+{"t_sched": 22.601852198069388, "max_tokens": 84, "ok": true, "t_send": 1793586381.9652326, "prompt_tokens": 425, "completion_tokens": 84, "ttft": 116.32698130607605, "e2e": 177.834734916687, "tpot": 0.7410564939659762}
+{"t_sched": 23.52464136805057, "max_tokens": 71, "ok": true, "t_send": 1793586382.8898652, "prompt_tokens": 1536, "completion_tokens": 71, "ttft": 125.66707587242126, "e2e": 176.916353225708, "tpot": 0.7321313415254865}
+{"t_sched": 19.82821932241652, "max_tokens": 109, "ok": true, "t_send": 1793586379.1906035, "prompt_tokens": 491, "completion_tokens": 109, "ttft": 100.825767993927, "e2e": 181.3394467830658, "tpot": 0.7454963326454163}
+{"t_sched": 21.15022123289302, "max_tokens": 96, "ok": true, "t_send": 1793586380.5132134, "prompt_tokens": 494, "completion_tokens": 96, "ttft": 109.71559524536133, "e2e": 180.02010250091553, "tpot": 0.7400466868751927}
+{"t_sched": 1.5978615612901703, "max_tokens": 265, "ok": true, "t_send": 1793586360.9643214, "prompt_tokens": 1536, "completion_tokens": 265, "ttft": 6.78592324256897, "e2e": 200.18304109573364, "tpot": 0.7325645332986658}
+{"t_sched": 18.994628505891587, "max_tokens": 121, "ok": true, "t_send": 1793586378.3590271, "prompt_tokens": 1059, "completion_tokens": 121, "ttft": 93.79262256622314, "e2e": 183.56509685516357, "tpot": 0.748101407289505}
+{"t_sched": 14.068837390837992, "max_tokens": 159, "ok": true, "t_send": 1793586373.4314709, "prompt_tokens": 489, "completion_tokens": 159, "ttft": 70.8333854675293, "e2e": 189.3291618824005, "tpot": 0.7499727901024155}
+{"t_sched": 17.37806801554124, "max_tokens": 133, "ok": true, "t_send": 1793586376.742103, "prompt_tokens": 1051, "completion_tokens": 133, "ttft": 86.85280394554138, "e2e": 186.0225386619568, "tpot": 0.7512853488777623}
+{"t_sched": 25.625907968888047, "max_tokens": 55, "ok": true, "t_send": 1793586384.992008, "prompt_tokens": 1536, "completion_tokens": 55, "ttft": 138.69679355621338, "e2e": 177.79007053375244, "tpot": 0.7239480371828433}
+{"t_sched": 13.04583397750178, "max_tokens": 171, "ok": true, "t_send": 1793586372.4105694, "prompt_tokens": 950, "completion_tokens": 171, "ttft": 64.79300427436829, "e2e": 192.00938057899475, "tpot": 0.7483307123184204}
+{"t_sched": 26.318761249195052, "max_tokens": 50, "ok": true, "t_send": 1793586385.6849158, "prompt_tokens": 990, "completion_tokens": 50, "ttft": 143.37468910217285, "e2e": 178.76600813865662, "tpot": 0.7222667372956568}
+{"t_sched": 9.92317154362866, "max_tokens": 191, "ok": true, "t_send": 1793586369.2898567, "prompt_tokens": 1536, "completion_tokens": 191, "ttft": 54.419129610061646, "e2e": 195.84730529785156, "tpot": 0.744347660165084}
+{"t_sched": 22.215609389446346, "max_tokens": 92, "ok": true, "t_send": 1793586381.5811956, "prompt_tokens": 1483, "completion_tokens": 92, "ttft": 116.14054775238037, "e2e": 183.56585955619812, "tpot": 0.7409364391159226}
+{"t_sched": 23.643565932534308, "max_tokens": 76, "ok": true, "t_send": 1793586383.0083287, "prompt_tokens": 1197, "completion_tokens": 76, "ttft": 127.00333714485168, "e2e": 182.14607977867126, "tpot": 0.7352353604634603}
+{"t_sched": 17.850954761859814, "max_tokens": 135, "ok": true, "t_send": 1793586377.2163289, "prompt_tokens": 1536, "completion_tokens": 135, "ttft": 87.92795014381409, "e2e": 188.73471784591675, "tpot": 0.7522886866953835}
+{"t_sched": 22.18378839741766, "max_tokens": 95, "ok": true, "t_send": 1793586381.549243, "prompt_tokens": 1536, "completion_tokens": 95, "ttft": 115.47820353507996, "e2e": 185.27305698394775, "tpot": 0.7424974593710392}
+{"t_sched": 22.9707867060695, "max_tokens": 88, "ok": true, "t_send": 1793586382.3401406, "prompt_tokens": 1536, "completion_tokens": 88, "ttft": 119.9738519191742, "e2e": 184.4824993610382, "tpot": 0.7414779252019422}
+{"t_sched": 1.9760966487828768, "max_tokens": 271, "ok": true, "t_send": 1793586361.3404164, "prompt_tokens": 281, "completion_tokens": 271, "ttft": 7.678483963012695, "e2e": 206.26026821136475, "tpot": 0.7354870972809968}
+{"t_sched": 22.317366525513272, "max_tokens": 95, "ok": true, "t_send": 1793586381.679875, "prompt_tokens": 432, "completion_tokens": 95, "ttft": 116.04195070266724, "e2e": 185.94373035430908, "tpot": 0.7436333209910291}
+{"t_sched": 8.21265975431847, "max_tokens": 216, "ok": true, "t_send": 1793586367.5834844, "prompt_tokens": 1536, "completion_tokens": 216, "ttft": 40.717058420181274, "e2e": 200.8832049369812, "tpot": 0.7449574215467586}
+{"t_sched": 24.16474094617118, "max_tokens": 77, "ok": true, "t_send": 1793586383.5270398, "prompt_tokens": 390, "completion_tokens": 77, "ttft": 129.23998403549194, "e2e": 185.74033951759338, "tpot": 0.7434097873537164}
+{"t_sched": 14.051748474783812, "max_tokens": 168, "ok": true, "t_send": 1793586373.4167538, "prompt_tokens": 810, "completion_tokens": 168, "ttft": 70.84806203842163, "e2e": 196.73878026008606, "tpot": 0.7538361035421223}
+{"t_sched": 24.33598732752981, "max_tokens": 75, "ok": true, "t_send": 1793586383.7020626, "prompt_tokens": 1536, "completion_tokens": 75, "ttft": 131.47661232948303, "e2e": 186.46878719329834, "tpot": 0.7431361675262451}
+{"t_sched": 29.190324841287566, "max_tokens": 34, "ok": true, "t_send": 1793586388.557236, "prompt_tokens": 1536, "completion_tokens": 34, "ttft": 157.8648111820221, "e2e": 181.6217246055603, "tpot": 0.71990434328715}
+{"t_sched": 15.5157437117371, "max_tokens": 158, "ok": true, "t_send": 1793586374.879949, "prompt_tokens": 959, "completion_tokens": 158, "ttft": 77.31886339187622, "e2e": 195.96737241744995, "tpot": 0.7557187201870474}
+{"t_sched": 12.203830335401365, "max_tokens": 187, "ok": true, "t_send": 1793586371.5670571, "prompt_tokens": 717, "completion_tokens": 187, "ttft": 62.35502505302429, "e2e": 201.61837458610535, "tpot": 0.748727285733787}
+{"t_sched": 16.688421329615718, "max_tokens": 152, "ok": true, "t_send": 1793586376.0544286, "prompt_tokens": 1536, "completion_tokens": 152, "ttft": 82.88497591018677, "e2e": 197.13787031173706, "tpot": 0.7566412063623895}
+{"t_sched": 19.286151019626153, "max_tokens": 131, "ok": true, "t_send": 1793586378.6597054, "prompt_tokens": 1506, "completion_tokens": 131, "ttft": 96.64867067337036, "e2e": 194.53661441802979, "tpot": 0.7529836489604069}
+{"t_sched": 27.396933332365, "max_tokens": 55, "ok": true, "t_send": 1793586386.7605665, "prompt_tokens": 840, "completion_tokens": 55, "ttft": 147.94552874565125, "e2e": 187.3069291114807, "tpot": 0.7289133071899414}
+{"t_sched": 20.327908227700217, "max_tokens": 123, "ok": true, "t_send": 1793586379.691047, "prompt_tokens": 859, "completion_tokens": 123, "ttft": 103.52050495147705, "e2e": 195.03342008590698, "tpot": 0.7501052715739266}
+{"t_sched": 23.662082275755118, "max_tokens": 87, "ok": true, "t_send": 1793586383.0263069, "prompt_tokens": 644, "completion_tokens": 87, "ttft": 127.6604015827179, "e2e": 191.7072513103485, "tpot": 0.74472999295523}
+{"t_sched": 24.62715565645021, "max_tokens": 80, "ok": true, "t_send": 1793586383.9915183, "prompt_tokens": 1210, "completion_tokens": 80, "ttft": 132.68306708335876, "e2e": 191.3919439315796, "tpot": 0.7431493559970132}
+{"t_sched": 24.66728011753347, "max_tokens": 79, "ok": true, "t_send": 1793586384.0395288, "prompt_tokens": 1049, "completion_tokens": 79, "ttft": 133.5159194469452, "e2e": 191.34408593177795, "tpot": 0.7413858633774978}
+{"t_sched": 4.479143640948868, "max_tokens": 260, "ok": true, "t_send": 1793586363.8426259, "prompt_tokens": 541, "completion_tokens": 260, "ttft": 20.788992881774902, "e2e": 213.04482173919678, "tpot": 0.7422924115390851}
+{"t_sched": 15.460324825048238, "max_tokens": 168, "ok": true, "t_send": 1793586374.825183, "prompt_tokens": 1017, "completion_tokens": 168, "ttft": 76.0259211063385, "e2e": 202.06903767585754, "tpot": 0.7547486799205848}
+{"t_sched": 7.274890266030596, "max_tokens": 239, "ok": true, "t_send": 1793586366.6398945, "prompt_tokens": 1536, "completion_tokens": 239, "ttft": 34.15419626235962, "e2e": 210.58432054519653, "tpot": 0.7413027396723002}
+{"t_sched": 13.185403549079894, "max_tokens": 187, "ok": true, "t_send": 1793586372.5492697, "prompt_tokens": 648, "completion_tokens": 187, "ttft": 65.2389829158783, "e2e": 204.67894291877747, "tpot": 0.7496768441251529}
+{"t_sched": 17.47375656138026, "max_tokens": 152, "ok": true, "t_send": 1793586376.8373573, "prompt_tokens": 701, "completion_tokens": 152, "ttft": 86.75762677192688, "e2e": 200.39435052871704, "tpot": 0.7525606076448959}
+{"t_sched": 18.600070422800272, "max_tokens": 146, "ok": true, "t_send": 1793586377.9653425, "prompt_tokens": 1536, "completion_tokens": 146, "ttft": 90.97593331336975, "e2e": 199.97126507759094, "tpot": 0.7516913479772107}
+{"t_sched": 14.195296859048451, "max_tokens": 179, "ok": true, "t_send": 1793586373.563298, "prompt_tokens": 1181, "completion_tokens": 179, "ttft": 71.41580367088318, "e2e": 205.25634241104126, "tpot": 0.7519126969776796}
+{"t_sched": 23.014140342456272, "max_tokens": 103, "ok": true, "t_send": 1793586382.377582, "prompt_tokens": 585, "completion_tokens": 103, "ttft": 120.61383366584778, "e2e": 196.45395588874817, "tpot": 0.7435262834324556}
+{"t_sched": 15.692334832321785, "max_tokens": 170, "ok": true, "t_send": 1793586375.0541008, "prompt_tokens": 230, "completion_tokens": 170, "ttft": 77.14477515220642, "e2e": 204.6857407093048, "tpot": 0.7546797165503869}
+{"t_sched": 13.278689493729084, "max_tokens": 189, "ok": true, "t_send": 1793586372.6449733, "prompt_tokens": 1536, "completion_tokens": 189, "ttft": 66.87435245513916, "e2e": 207.80057764053345, "tpot": 0.7496072003181945}
+{"t_sched": 15.858789049926848, "max_tokens": 170, "ok": true, "t_send": 1793586375.2234323, "prompt_tokens": 701, "completion_tokens": 170, "ttft": 77.60910940170288, "e2e": 205.2229619026184, "tpot": 0.7551111624791071}
+{"t_sched": 19.28906089336119, "max_tokens": 140, "ok": true, "t_send": 1793586378.660011, "prompt_tokens": 1536, "completion_tokens": 140, "ttft": 97.50133442878723, "e2e": 201.7902970314026, "tpot": 0.7502797524706065}
+{"t_sched": 20.957857279079004, "max_tokens": 125, "ok": true, "t_send": 1793586380.3213632, "prompt_tokens": 920, "completion_tokens": 125, "ttft": 107.56918716430664, "e2e": 200.13204741477966, "tpot": 0.7464741064656165}
+{"t_sched": 24.778627778410378, "max_tokens": 86, "ok": true, "t_send": 1793586384.1444404, "prompt_tokens": 1536, "completion_tokens": 86, "ttft": 134.2578480243683, "e2e": 197.07692122459412, "tpot": 0.7390348294202019}
+{"t_sched": 9.806854355075599, "max_tokens": 214, "ok": true, "t_send": 1793586369.1712174, "prompt_tokens": 717, "completion_tokens": 214, "ttft": 53.70241355895996, "e2e": 212.91348123550415, "tpot": 0.7474694576621616}
+{"t_sched": 15.227199780551558, "max_tokens": 175, "ok": true, "t_send": 1793586374.5913553, "prompt_tokens": 870, "completion_tokens": 175, "ttft": 76.25967192649841, "e2e": 207.49726605415344, "tpot": 0.7542386342739237}
+{"t_sched": 27.10226826720952, "max_tokens": 68, "ok": true, "t_send": 1793586386.4665384, "prompt_tokens": 993, "completion_tokens": 68, "ttft": 146.6121301651001, "e2e": 195.63905501365662, "tpot": 0.7317439869268617}
+{"t_sched": 11.471185765964266, "max_tokens": 206, "ok": true, "t_send": 1793586370.8376029, "prompt_tokens": 1536, "completion_tokens": 206, "ttft": 59.429274559020996, "e2e": 212.85468554496765, "tpot": 0.7484161853790283}
+{"t_sched": 16.18311540282997, "max_tokens": 172, "ok": true, "t_send": 1793586375.554059, "prompt_tokens": 1536, "completion_tokens": 172, "ttft": 78.8026647567749, "e2e": 208.139662027359, "tpot": 0.7563562588384974}
+{"t_sched": 19.074630159928287, "max_tokens": 148, "ok": true, "t_send": 1793586378.439609, "prompt_tokens": 950, "completion_tokens": 148, "ttft": 94.50117087364197, "e2e": 205.25777888298035, "tpot": 0.7534457161313012}
+{"t_sched": 30.37322541983318, "max_tokens": 37, "ok": true, "t_send": 1793586389.7402408, "prompt_tokens": 499, "completion_tokens": 37, "ttft": 165.90240740776062, "e2e": 193.97778272628784, "tpot": 0.7798692915174696}
+{"t_sched": 18.115405558811094, "max_tokens": 157, "ok": true, "t_send": 1793586377.4782531, "prompt_tokens": 574, "completion_tokens": 157, "ttft": 89.22684717178345, "e2e": 207.1019332408905, "tpot": 0.7556039553422195}
+{"t_sched": 12.448410568896444, "max_tokens": 201, "ok": true, "t_send": 1793586371.812517, "prompt_tokens": 668, "completion_tokens": 201, "ttft": 63.40195083618164, "e2e": 213.46995949745178, "tpot": 0.7503394520282746}
+{"t_sched": 8.787912330079301, "max_tokens": 228, "ok": true, "t_send": 1793586368.1541834, "prompt_tokens": 673, "completion_tokens": 228, "ttft": 48.43540406227112, "e2e": 217.87287282943726, "tpot": 0.7464201754935512}
+{"t_sched": 13.058418921827306, "max_tokens": 198, "ok": true, "t_send": 1793586372.4219937, "prompt_tokens": 603, "completion_tokens": 198, "ttft": 65.36621046066284, "e2e": 213.60731172561646, "tpot": 0.7524923648931048}
+{"t_sched": 13.814526554723017, "max_tokens": 192, "ok": true, "t_send": 1793586373.178072, "prompt_tokens": 638, "completion_tokens": 192, "ttft": 68.95973324775696, "e2e": 212.8513731956482, "tpot": 0.7533589620240696}
+{"t_sched": 14.24690960960601, "max_tokens": 188, "ok": true, "t_send": 1793586373.611598, "prompt_tokens": 1106, "completion_tokens": 188, "ttft": 72.19584107398987, "e2e": 213.1760811805725, "tpot": 0.7539046052942939}
+{"t_sched": 19.57345002265543, "max_tokens": 147, "ok": true, "t_send": 1793586378.9395306, "prompt_tokens": 1536, "completion_tokens": 147, "ttft": 99.59732985496521, "e2e": 209.4612855911255, "tpot": 0.752492272690551}
+{"t_sched": 19.639253239988847, "max_tokens": 146, "ok": true, "t_send": 1793586379.0026932, "prompt_tokens": 873, "completion_tokens": 146, "ttft": 100.18926358222961, "e2e": 209.40056824684143, "tpot": 0.7531652664316112}
+{"t_sched": 9.306580676716973, "max_tokens": 229, "ok": true, "t_send": 1793586368.6700122, "prompt_tokens": 867, "completion_tokens": 229, "ttft": 50.05346608161926, "e2e": 220.57661700248718, "tpot": 0.7479082230936017}
+{"t_sched": 25.52698715530127, "max_tokens": 92, "ok": true, "t_send": 1793586384.8910458, "prompt_tokens": 1079, "completion_tokens": 92, "ttft": 137.16051173210144, "e2e": 205.2296438217163, "tpot": 0.7480116335900275}
+{"t_sched": 20.727628730028197, "max_tokens": 140, "ok": true, "t_send": 1793586380.0912614, "prompt_tokens": 805, "completion_tokens": 140, "ttft": 106.2235279083252, "e2e": 210.6156108379364, "tpot": 0.7510216407638659}
+{"t_sched": 24.791833520403458, "max_tokens": 97, "ok": true, "t_send": 1793586384.1538603, "prompt_tokens": 502, "completion_tokens": 97, "ttft": 134.8786518573761, "e2e": 206.5581340789795, "tpot": 0.7466605106989542}
+{"t_sched": 31.914265907940052, "max_tokens": 34, "ok": true, "t_send": 1793586391.2868433, "prompt_tokens": 1163, "completion_tokens": 34, "ttft": 173.88071203231812, "e2e": 199.44136118888855, "tpot": 0.7745619181430701}
+{"t_sched": 17.778382466496193, "max_tokens": 170, "ok": true, "t_send": 1793586377.145222, "prompt_tokens": 921, "completion_tokens": 170, "ttft": 87.20205116271973, "e2e": 215.33066415786743, "tpot": 0.7581557945386898}
+{"t_sched": 21.198717566567595, "max_tokens": 135, "ok": true, "t_send": 1793586380.5642915, "prompt_tokens": 1536, "completion_tokens": 135, "ttft": 111.43058609962463, "e2e": 211.91733264923096, "tpot": 0.7499005883487303}
+{"t_sched": 24.825107883242335, "max_tokens": 98, "ok": true, "t_send": 1793586384.188978, "prompt_tokens": 1014, "completion_tokens": 98, "ttft": 135.681578874588, "e2e": 208.3007094860077, "tpot": 0.7486501674062198}
+{"t_sched": 28.48539043050889, "max_tokens": 68, "ok": true, "t_send": 1793586387.85138, "prompt_tokens": 1490, "completion_tokens": 68, "ttft": 155.21402525901794, "e2e": 204.6524419784546, "tpot": 0.7378841193754282}
+{"t_sched": 12.485011172689946, "max_tokens": 210, "ok": true, "t_send": 1793586371.8501508, "prompt_tokens": 928, "completion_tokens": 210, "ttft": 63.985649824142456, "e2e": 221.4683666229248, "tpot": 0.753503067071358}
+{"t_sched": 16.041616264752054, "max_tokens": 187, "ok": true, "t_send": 1793586375.4055848, "prompt_tokens": 875, "completion_tokens": 187, "ttft": 78.11595034599304, "e2e": 219.46836948394775, "tpot": 0.7599588158310101}
+{"t_sched": 30.60688661211344, "max_tokens": 49, "ok": true, "t_send": 1793586389.9736795, "prompt_tokens": 1353, "completion_tokens": 49, "ttft": 167.31212902069092, "e2e": 204.9344780445099, "tpot": 0.7837920486927032}
+{"t_sched": 10.383188665923734, "max_tokens": 228, "ok": true, "t_send": 1793586369.7469134, "prompt_tokens": 698, "completion_tokens": 228, "ttft": 55.45028018951416, "e2e": 225.96774125099182, "tpot": 0.751177524154932}
+{"t_sched": 22.974174720985786, "max_tokens": 125, "ok": true, "t_send": 1793586382.3406017, "prompt_tokens": 801, "completion_tokens": 125, "ttft": 119.97343397140503, "e2e": 213.38354587554932, "tpot": 0.7532903725101102}
+{"t_sched": 31.816140410208792, "max_tokens": 42, "ok": true, "t_send": 1793586391.1838171, "prompt_tokens": 1370, "completion_tokens": 42, "ttft": 172.42227458953857, "e2e": 204.55954098701477, "tpot": 0.78383398637539}
+{"t_sched": 20.57977394812816, "max_tokens": 149, "ok": true, "t_send": 1793586379.9450219, "prompt_tokens": 1446, "completion_tokens": 149, "ttft": 104.86282396316528, "e2e": 216.44064688682556, "tpot": 0.7539036435049933}
+{"t_sched": 25.507370913138487, "max_tokens": 100, "ok": true, "t_send": 1793586384.8706286, "prompt_tokens": 639, "completion_tokens": 100, "ttft": 137.1808898448944, "e2e": 211.52257227897644, "tpot": 0.7509209363147465}
+{"t_sched": 8.361117115992476, "max_tokens": 251, "ok": true, "t_send": 1793586367.7270505, "prompt_tokens": 1536, "completion_tokens": 251, "ttft": 43.6424674987793, "e2e": 230.8216474056244, "tpot": 0.7487163867950439}
+{"t_sched": 32.004871835544535, "max_tokens": 42, "ok": true, "t_send": 1793586391.373783, "prompt_tokens": 1534, "completion_tokens": 42, "ttft": 175.4664602279663, "e2e": 207.21220326423645, "tpot": 0.7742794606743789}
+{"t_sched": 19.191951444220006, "max_tokens": 168, "ok": true, "t_send": 1793586378.5571687, "prompt_tokens": 1368, "completion_tokens": 168, "ttft": 95.95536780357361, "e2e": 221.5362057685852, "tpot": 0.7519722441713254}
+{"t_sched": 17.165212751110975, "max_tokens": 185, "ok": true, "t_send": 1793586376.5317032, "prompt_tokens": 1536, "completion_tokens": 185, "ttft": 85.75589609146118, "e2e": 223.7992331981659, "tpot": 0.7502351157043291}
+{"t_sched": 18.67041719797899, "max_tokens": 176, "ok": true, "t_send": 1793586378.03599, "prompt_tokens": 1450, "completion_tokens": 176, "ttft": 90.90532374382019, "e2e": 222.29538106918335, "tpot": 0.7507999338422503}
+{"t_sched": 23.53630135865062, "max_tokens": 125, "ok": true, "t_send": 1793586382.900279, "prompt_tokens": 1006, "completion_tokens": 125, "ttft": 125.65669369697571, "e2e": 217.4395215511322, "tpot": 0.7401835399289285}
+{"t_sched": 31.798835733961536, "max_tokens": 51, "ok": true, "t_send": 1793586391.1755152, "prompt_tokens": 1536, "completion_tokens": 51, "ttft": 171.61556816101074, "e2e": 209.18514370918274, "tpot": 0.7513862228393555}
+{"t_sched": 33.267155391307625, "max_tokens": 36, "ok": true, "t_send": 1793586392.6319933, "prompt_tokens": 807, "completion_tokens": 36, "ttft": 182.12372970581055, "e2e": 207.7312252521515, "tpot": 0.7316358021327427}
+{"t_sched": 29.273766402812832, "max_tokens": 75, "ok": true, "t_send": 1793586388.6388829, "prompt_tokens": 360, "completion_tokens": 75, "ttft": 158.48777198791504, "e2e": 212.24373626708984, "tpot": 0.726430851059991}
+{"t_sched": 19.709037856629635, "max_tokens": 164, "ok": true, "t_send": 1793586379.0839527, "prompt_tokens": 1536, "completion_tokens": 164, "ttft": 100.93231558799744, "e2e": 222.39211010932922, "tpot": 0.745150235532983}
+{"t_sched": 23.044082844963935, "max_tokens": 133, "ok": true, "t_send": 1793586382.409683, "prompt_tokens": 1536, "completion_tokens": 133, "ttft": 121.43412756919861, "e2e": 219.07250022888184, "tpot": 0.7396839170744924}
+{"t_sched": 26.15951800173937, "max_tokens": 104, "ok": true, "t_send": 1793586385.5217648, "prompt_tokens": 549, "completion_tokens": 104, "ttft": 140.37260723114014, "e2e": 215.96706533432007, "tpot": 0.7339259860585037}
+{"t_sched": 27.872855595359898, "max_tokens": 91, "ok": true, "t_send": 1793586387.2355263, "prompt_tokens": 383, "completion_tokens": 91, "ttft": 148.79851937294006, "e2e": 214.25682973861694, "tpot": 0.7273116138246324}
+{"t_sched": 14.443038427414628, "max_tokens": 208, "ok": true, "t_send": 1793586373.8082309, "prompt_tokens": 930, "completion_tokens": 208, "ttft": 73.44919037818909, "e2e": 228.52739119529724, "tpot": 0.7491696859903382}
+{"t_sched": 20.494528862416484, "max_tokens": 160, "ok": true, "t_send": 1793586379.85739, "prompt_tokens": 136, "completion_tokens": 160, "ttft": 104.05847549438477, "e2e": 222.4843933582306, "tpot": 0.7448165881558784}
+{"t_sched": 21.459513222843768, "max_tokens": 148, "ok": true, "t_send": 1793586380.8268764, "prompt_tokens": 1536, "completion_tokens": 148, "ttft": 112.66855001449585, "e2e": 221.51580905914307, "tpot": 0.7404540963724356}
+{"t_sched": 24.271368845565597, "max_tokens": 120, "ok": true, "t_send": 1793586383.636889, "prompt_tokens": 1099, "completion_tokens": 120, "ttft": 130.71427297592163, "e2e": 218.71290349960327, "tpot": 0.7394835227677802}
+{"t_sched": 27.72996418414015, "max_tokens": 93, "ok": true, "t_send": 1793586387.0917642, "prompt_tokens": 382, "completion_tokens": 93, "ttft": 148.1894817352295, "e2e": 215.26429057121277, "tpot": 0.7290650994881339}
+{"t_sched": 26.130796668523743, "max_tokens": 106, "ok": true, "t_send": 1793586385.497576, "prompt_tokens": 1435, "completion_tokens": 106, "ttft": 140.39672183990479, "e2e": 217.67102217674255, "tpot": 0.7359449954259963}
+{"t_sched": 26.641044609263393, "max_tokens": 100, "ok": true, "t_send": 1793586386.020812, "prompt_tokens": 1536, "completion_tokens": 100, "ttft": 144.61781358718872, "e2e": 217.14813804626465, "tpot": 0.7326289114325938}
+{"t_sched": 14.861788991472062, "max_tokens": 208, "ok": true, "t_send": 1793586374.2246552, "prompt_tokens": 649, "completion_tokens": 208, "ttft": 74.505291223526, "e2e": 229.79192638397217, "tpot": 0.7501639962772241}
+{"t_sched": 15.613274404947928, "max_tokens": 204, "ok": true, "t_send": 1793586374.9780896, "prompt_tokens": 1109, "completion_tokens": 204, "ttft": 77.22075462341309, "e2e": 229.88644528388977, "tpot": 0.752034785125056}
+{"t_sched": 31.241990289225726, "max_tokens": 59, "ok": true, "t_send": 1793586390.6061702, "prompt_tokens": 847, "completion_tokens": 59, "ttft": 170.5884017944336, "e2e": 214.2867031097412, "tpot": 0.7534145980045713}
+{"t_sched": 7.248827475209504, "max_tokens": 278, "ok": true, "t_send": 1793586366.6128974, "prompt_tokens": 838, "completion_tokens": 278, "ttft": 33.376412868499756, "e2e": 238.9375581741333, "tpot": 0.7420926989200743}
+{"t_sched": 18.01758598530089, "max_tokens": 186, "ok": true, "t_send": 1793586377.3848329, "prompt_tokens": 1269, "completion_tokens": 186, "ttft": 89.32018160820007, "e2e": 228.17210054397583, "tpot": 0.7505504389066954}
+{"t_sched": 28.102759772926124, "max_tokens": 91, "ok": true, "t_send": 1793586387.4661021, "prompt_tokens": 726, "completion_tokens": 91, "ttft": 152.47284531593323, "e2e": 218.1074743270874, "tpot": 0.7292721642388238}
+{"t_sched": 30.44997591084363, "max_tokens": 67, "ok": true, "t_send": 1793586389.8173027, "prompt_tokens": 1536, "completion_tokens": 67, "ttft": 166.58670258522034, "e2e": 216.6256067752838, "tpot": 0.7581641601793694}
+{"t_sched": 1.1577637538310286, "max_tokens": 328, "ok": true, "t_send": 1793586360.5246866, "prompt_tokens": 1536, "completion_tokens": 328, "ttft": 5.867791414260864, "e2e": 246.75396919250488, "tpot": 0.7366546381504164}
+{"t_sched": 26.312303381833484, "max_tokens": 108, "ok": true, "t_send": 1793586385.6777382, "prompt_tokens": 1427, "completion_tokens": 108, "ttft": 142.6561427116394, "e2e": 221.61968064308167, "tpot": 0.7379601157714273}
+{"t_sched": 26.37105346557408, "max_tokens": 108, "ok": true, "t_send": 1793586385.7337596, "prompt_tokens": 575, "completion_tokens": 108, "ttft": 143.32588267326355, "e2e": 222.41483283042908, "tpot": 0.7391483070694398}
+{"t_sched": 24.520467893911217, "max_tokens": 126, "ok": true, "t_send": 1793586383.8840888, "prompt_tokens": 824, "completion_tokens": 126, "ttft": 132.0474317073822, "e2e": 224.88867139816284, "tpot": 0.7427293128967285}
+{"t_sched": 23.233452214991715, "max_tokens": 142, "ok": true, "t_send": 1793586382.5968573, "prompt_tokens": 598, "completion_tokens": 142, "ttft": 121.90952277183533, "e2e": 226.99280261993408, "tpot": 0.7452709404289299}
+{"t_sched": 25.98686096715318, "max_tokens": 115, "ok": true, "t_send": 1793586385.3492103, "prompt_tokens": 550, "completion_tokens": 115, "ttft": 139.7725203037262, "e2e": 224.2467176914215, "tpot": 0.7410011040536981}
+{"t_sched": 9.471856183954946, "max_tokens": 256, "ok": true, "t_send": 1793586368.8343809, "prompt_tokens": 572, "completion_tokens": 256, "ttft": 51.41820311546326, "e2e": 241.39518928527832, "tpot": 0.7450074999940162}
+{"t_sched": 20.033362396268846, "max_tokens": 172, "ok": true, "t_send": 1793586379.3989928, "prompt_tokens": 1536, "completion_tokens": 172, "ttft": 102.97788071632385, "e2e": 230.8376579284668, "tpot": 0.747717493458798}
+{"t_sched": 21.716513156090283, "max_tokens": 157, "ok": true, "t_send": 1793586381.0801084, "prompt_tokens": 715, "completion_tokens": 157, "ttft": 113.7261118888855, "e2e": 229.9755175113678, "tpot": 0.7451878847220005}
+{"t_sched": 12.306382049435229, "max_tokens": 239, "ok": true, "t_send": 1793586371.6689231, "prompt_tokens": 610, "completion_tokens": 239, "ttft": 62.99102210998535, "e2e": 240.85275149345398, "tpot": 0.7473178390695268}
+{"t_sched": 24.110320060254384, "max_tokens": 136, "ok": true, "t_send": 1793586383.4752672, "prompt_tokens": 1058, "completion_tokens": 136, "ttft": 128.6111707687378, "e2e": 229.05434274673462, "tpot": 0.7440229186305294}
+{"t_sched": 19.10984138808896, "max_tokens": 187, "ok": true, "t_send": 1793586378.4788802, "prompt_tokens": 1325, "completion_tokens": 187, "ttft": 95.20844221115112, "e2e": 234.79278874397278, "tpot": 0.750453047854926}
+{"t_sched": 23.433111948748532, "max_tokens": 145, "ok": true, "t_send": 1793586382.80033, "prompt_tokens": 1536, "completion_tokens": 145, "ttft": 123.4440438747406, "e2e": 230.47720623016357, "tpot": 0.7432853728532791}
+{"t_sched": 28.544977116141553, "max_tokens": 96, "ok": true, "t_send": 1793586387.9072237, "prompt_tokens": 510, "completion_tokens": 96, "ttft": 155.55191612243652, "e2e": 225.37535905838013, "tpot": 0.7349827967191997}
+{"t_sched": 3.5470132183021374, "max_tokens": 318, "ok": true, "t_send": 1793586362.9127839, "prompt_tokens": 1536, "completion_tokens": 318, "ttft": 16.180956840515137, "e2e": 251.07124543190002, "tpot": 0.7409785305287936}
+{"t_sched": 25.449627839950097, "max_tokens": 127, "ok": true, "t_send": 1793586384.816835, "prompt_tokens": 1536, "completion_tokens": 127, "ttft": 136.54246830940247, "e2e": 230.02688908576965, "tpot": 0.7419392551694598}
+{"t_sched": 28.023506298204065, "max_tokens": 104, "ok": true, "t_send": 1793586387.3880615, "prompt_tokens": 1356, "completion_tokens": 104, "ttft": 151.8918228149414, "e2e": 227.461683511734, "tpot": 0.7336872897101837}
+{"t_sched": 24.934068191027027, "max_tokens": 130, "ok": true, "t_send": 1793586384.298882, "prompt_tokens": 1403, "completion_tokens": 130, "ttft": 135.57170867919922, "e2e": 231.4019753932953, "tpot": 0.7428697245989659}
+{"t_sched": 27.02638042509584, "max_tokens": 113, "ok": true, "t_send": 1793586386.3919842, "prompt_tokens": 1095, "completion_tokens": 113, "ttft": 146.68660521507263, "e2e": 229.3136601448059, "tpot": 0.737740865775517}
+{"t_sched": 16.189169637562372, "max_tokens": 215, "ok": true, "t_send": 1793586375.5544548, "prompt_tokens": 1517, "completion_tokens": 215, "ttft": 79.641925573349, "e2e": 240.9777512550354, "tpot": 0.7539052417345136}
+{"t_sched": 33.37299136155213, "max_tokens": 56, "ok": true, "t_send": 1793586392.7407374, "prompt_tokens": 938, "completion_tokens": 56, "ttft": 182.65621376037598, "e2e": 223.82391715049744, "tpot": 0.7484999916770242}
+{"t_sched": 7.348516889416401, "max_tokens": 290, "ok": true, "t_send": 1793586366.7110448, "prompt_tokens": 668, "completion_tokens": 290, "ttft": 35.52073407173157, "e2e": 250.55588555335999, "tpot": 0.7440657500164731}
+{"t_sched": 25.66155966351219, "max_tokens": 127, "ok": true, "t_send": 1793586385.0269191, "prompt_tokens": 1536, "completion_tokens": 127, "ttft": 139.51537537574768, "e2e": 233.13665223121643, "tpot": 0.7430254448027838}
+{"t_sched": 32.67991526980178, "max_tokens": 64, "ok": true, "t_send": 1793586392.0439885, "prompt_tokens": 745, "completion_tokens": 64, "ttft": 178.83967661857605, "e2e": 226.14373540878296, "tpot": 0.7508569520617289}
+{"t_sched": 34.027425110683815, "max_tokens": 48, "ok": true, "t_send": 1793586393.3926964, "prompt_tokens": 471, "completion_tokens": 48, "ttft": 189.44740676879883, "e2e": 224.79974579811096, "tpot": 0.752148892017121}
+{"t_sched": 22.986372310829164, "max_tokens": 156, "ok": true, "t_send": 1793586382.3564026, "prompt_tokens": 1111, "completion_tokens": 156, "ttft": 120.63487529754639, "e2e": 236.6014425754547, "tpot": 0.748170889577558}
+{"t_sched": 26.80574532253021, "max_tokens": 120, "ok": true, "t_send": 1793586386.1683502, "prompt_tokens": 488, "completion_tokens": 120, "ttft": 144.47046828269958, "e2e": 232.7946617603302, "tpot": 0.7422194901634666}
+{"t_sched": 26.971444373405514, "max_tokens": 118, "ok": true, "t_send": 1793586386.3384304, "prompt_tokens": 1536, "completion_tokens": 118, "ttft": 146.02159237861633, "e2e": 232.62681484222412, "tpot": 0.7402146107111222}
+{"t_sched": 28.08771230660108, "max_tokens": 108, "ok": true, "t_send": 1793586387.4520311, "prompt_tokens": 848, "completion_tokens": 108, "ttft": 152.48684096336365, "e2e": 231.5145492553711, "tpot": 0.7385760935667519}
+{"t_sched": 20.287687775560673, "max_tokens": 183, "ok": true, "t_send": 1793586379.6545866, "prompt_tokens": 1536, "completion_tokens": 183, "ttft": 103.55688047409058, "e2e": 240.0418405532837, "tpot": 0.7499169360150347}
+{"t_sched": 28.829702097414486, "max_tokens": 101, "ok": true, "t_send": 1793586388.1955223, "prompt_tokens": 869, "completion_tokens": 101, "ttft": 157.34139108657837, "e2e": 231.50943565368652, "tpot": 0.741679584980011}
+{"t_sched": 12.52190717912407, "max_tokens": 246, "ok": true, "t_send": 1793586371.886966, "prompt_tokens": 1093, "completion_tokens": 246, "ttft": 64.63083338737488, "e2e": 248.65692162513733, "tpot": 0.7511265414101737}
+{"t_sched": 18.198346823353788, "max_tokens": 204, "ok": true, "t_send": 1793586377.5616546, "prompt_tokens": 690, "completion_tokens": 204, "ttft": 89.72669410705566, "e2e": 242.98573231697083, "tpot": 0.7549702721863545}
+{"t_sched": 22.295555934590265, "max_tokens": 165, "ok": true, "t_send": 1793586381.6592646, "prompt_tokens": 977, "completion_tokens": 165, "ttft": 116.06252646446228, "e2e": 238.8911406993866, "tpot": 0.7489544996401158}
+{"t_sched": 23.8751295007601, "max_tokens": 147, "ok": true, "t_send": 1793586383.2397428, "prompt_tokens": 1111, "completion_tokens": 147, "ttft": 128.09229516983032, "e2e": 237.31197023391724, "tpot": 0.7480794958872338}
+{"t_sched": 24.116027060079823, "max_tokens": 148, "ok": true, "t_send": 1793586383.4816325, "prompt_tokens": 965, "completion_tokens": 148, "ttft": 128.60483932495117, "e2e": 238.53815269470215, "tpot": 0.7478450755683743}
+{"t_sched": 26.50643062557473, "max_tokens": 125, "ok": true, "t_send": 1793586385.8720913, "prompt_tokens": 1536, "completion_tokens": 125, "ttft": 144.07089376449585, "e2e": 236.14891839027405, "tpot": 0.74256411867757}
+{"t_sched": 7.810661660035479, "max_tokens": 295, "ok": true, "t_send": 1793586367.1742826, "prompt_tokens": 1022, "completion_tokens": 295, "ttft": 37.704430103302, "e2e": 257.14575958251953, "tpot": 0.7463987092582547}
+{"t_sched": 20.919216021165646, "max_tokens": 185, "ok": true, "t_send": 1793586380.2870865, "prompt_tokens": 1536, "completion_tokens": 185, "ttft": 107.60342860221863, "e2e": 245.7449152469635, "tpot": 0.7507681742958401}
+{"t_sched": 31.838618592570825, "max_tokens": 84, "ok": true, "t_send": 1793586391.2079136, "prompt_tokens": 702, "completion_tokens": 84, "ttft": 173.25119066238403, "e2e": 236.32362365722656, "tpot": 0.7599078747163336}
+{"t_sched": 31.999432472615055, "max_tokens": 82, "ok": true, "t_send": 1793586391.3646479, "prompt_tokens": 1361, "completion_tokens": 82, "ttft": 174.60858964920044, "e2e": 236.1670880317688, "tpot": 0.7599806667845926}
+{"t_sched": 33.02807723625345, "max_tokens": 74, "ok": true, "t_send": 1793586392.3983765, "prompt_tokens": 1355, "completion_tokens": 74, "ttft": 180.82870221138, "e2e": 235.67322182655334, "tpot": 0.7512940641951887}
+{"t_sched": 30.685658064963928, "max_tokens": 95, "ok": true, "t_send": 1793586390.0514078, "prompt_tokens": 1536, "completion_tokens": 95, "ttft": 168.03917288780212, "e2e": 239.27781224250793, "tpot": 0.7578566277280767}
+{"t_sched": 33.07903974986899, "max_tokens": 75, "ok": true, "t_send": 1793586392.444415, "prompt_tokens": 1536, "completion_tokens": 75, "ttft": 181.6310589313507, "e2e": 236.89448475837708, "tpot": 0.7468020819328927}
+{"t_sched": 34.83451743194717, "max_tokens": 57, "ok": true, "t_send": 1793586394.2001612, "prompt_tokens": 1270, "completion_tokens": 57, "ttft": 193.36429953575134, "e2e": 235.1416254043579, "tpot": 0.7460225054195949}
+{"t_sched": 28.496621337059125, "max_tokens": 119, "ok": true, "t_send": 1793586387.8602962, "prompt_tokens": 762, "completion_tokens": 119, "ttft": 155.20521807670593, "e2e": 241.71245002746582, "tpot": 0.7331109370215464}
+{"t_sched": 21.107618058671218, "max_tokens": 190, "ok": true, "t_send": 1793586380.4746614, "prompt_tokens": 1536, "completion_tokens": 190, "ttft": 108.99001669883728, "e2e": 249.80109524726868, "tpot": 0.7450317781438273}
+{"t_sched": 29.417920762527913, "max_tokens": 115, "ok": true, "t_send": 1793586388.7804322, "prompt_tokens": 469, "completion_tokens": 115, "ttft": 158.34641909599304, "e2e": 242.29340362548828, "tpot": 0.7363764194020054}
+{"t_sched": 4.2067056725483445, "max_tokens": 337, "ok": true, "t_send": 1793586363.5718362, "prompt_tokens": 1312, "completion_tokens": 337, "ttft": 19.163002729415894, "e2e": 268.0820345878601, "tpot": 0.7408302277326584}
+{"t_sched": 10.418382086178259, "max_tokens": 277, "ok": true, "t_send": 1793586369.7817833, "prompt_tokens": 341, "completion_tokens": 277, "ttft": 56.04424810409546, "e2e": 261.87254786491394, "tpot": 0.745754461357559}
+{"t_sched": 20.601743451567817, "max_tokens": 197, "ok": true, "t_send": 1793586379.9674435, "prompt_tokens": 1536, "completion_tokens": 197, "ttft": 105.60079979896545, "e2e": 251.69316816329956, "tpot": 0.745368764108541}
+{"t_sched": 23.604853570584027, "max_tokens": 166, "ok": true, "t_send": 1793586382.968927, "prompt_tokens": 1097, "completion_tokens": 166, "ttft": 127.04270362854004, "e2e": 249.28954601287842, "tpot": 0.7408808245803371}
+{"t_sched": 15.04223817731695, "max_tokens": 245, "ok": true, "t_send": 1793586374.40821, "prompt_tokens": 1536, "completion_tokens": 245, "ttft": 75.76680588722229, "e2e": 258.5381042957306, "tpot": 0.7490602028174479}
+{"t_sched": 16.224501788980298, "max_tokens": 237, "ok": true, "t_send": 1793586375.5892918, "prompt_tokens": 1247, "completion_tokens": 237, "ttft": 80.3812358379364, "e2e": 257.3593327999115, "tpot": 0.749906865216918}
+{"t_sched": 33.737068501873296, "max_tokens": 75, "ok": true, "t_send": 1793586393.1011794, "prompt_tokens": 856, "completion_tokens": 75, "ttft": 184.86872172355652, "e2e": 239.87700390815735, "tpot": 0.7433522778588373}
+{"t_sched": 20.163161165269216, "max_tokens": 204, "ok": true, "t_send": 1793586379.5273988, "prompt_tokens": 715, "completion_tokens": 204, "ttft": 102.8495135307312, "e2e": 254.1943962574005, "tpot": 0.7455409219112302}
+{"t_sched": 1.5267853281744626, "max_tokens": 364, "ok": true, "t_send": 1793586360.892307, "prompt_tokens": 1279, "completion_tokens": 364, "ttft": 6.116265058517456, "e2e": 273.6944932937622, "tpot": 0.7371297283277696}
+{"t_sched": 30.418386173057133, "max_tokens": 106, "ok": true, "t_send": 1793586389.78108, "prompt_tokens": 447, "completion_tokens": 106, "ttft": 165.8616647720337, "e2e": 244.82358741760254, "tpot": 0.7520177069164458}
+{"t_sched": 27.132845289223496, "max_tokens": 139, "ok": true, "t_send": 1793586386.4969463, "prompt_tokens": 1256, "completion_tokens": 139, "ttft": 147.44118881225586, "e2e": 249.01374864578247, "tpot": 0.7360323926676875}
+{"t_sched": 29.54778981836143, "max_tokens": 115, "ok": true, "t_send": 1793586388.9118242, "prompt_tokens": 712, "completion_tokens": 115, "ttft": 160.8170371055603, "e2e": 246.60249590873718, "tpot": 0.7525034536395157}
+{"t_sched": 33.827343877299164, "max_tokens": 76, "ok": true, "t_send": 1793586393.192592, "prompt_tokens": 1110, "completion_tokens": 76, "ttft": 187.30234098434448, "e2e": 243.06900811195374, "tpot": 0.7435544649759929}
+{"t_sched": 18.97977292542671, "max_tokens": 221, "ok": true, "t_send": 1793586378.3491812, "prompt_tokens": 1536, "completion_tokens": 221, "ttft": 93.80238628387451, "e2e": 258.7772409915924, "tpot": 0.7498853650960056}
+{"t_sched": 21.560557552209197, "max_tokens": 193, "ok": true, "t_send": 1793586380.928567, "prompt_tokens": 916, "completion_tokens": 193, "ttft": 113.87751197814941, "e2e": 257.10794591903687, "tpot": 0.7459914597372214}
+{"t_sched": 36.935561763040106, "max_tokens": 48, "ok": true, "t_send": 1793586396.3007886, "prompt_tokens": 1009, "completion_tokens": 48, "ttft": 206.0759608745575, "e2e": 241.75781536102295, "tpot": 0.7591865519259838}
+{"t_sched": 22.906703538880684, "max_tokens": 185, "ok": true, "t_send": 1793586382.2726443, "prompt_tokens": 1460, "completion_tokens": 185, "ttft": 119.30943417549133, "e2e": 256.69508695602417, "tpot": 0.7466607404791791}
+{"t_sched": 25.938203169024238, "max_tokens": 154, "ok": true, "t_send": 1793586385.3014493, "prompt_tokens": 478, "completion_tokens": 154, "ttft": 139.82006978988647, "e2e": 253.66973733901978, "tpot": 0.7441017471886928}
+{"t_sched": 21.20745451602703, "max_tokens": 198, "ok": true, "t_send": 1793586380.5780258, "prompt_tokens": 1536, "completion_tokens": 198, "ttft": 112.04419302940369, "e2e": 259.2356986999512, "tpot": 0.7471645810277329}
+{"t_sched": 39.400672464185455, "max_tokens": 32, "ok": true, "t_send": 1793586398.7668424, "prompt_tokens": 1346, "completion_tokens": 32, "ttft": 217.80752873420715, "e2e": 241.07111024856567, "tpot": 0.7504356061258624}
+{"t_sched": 26.853736490360767, "max_tokens": 148, "ok": true, "t_send": 1793586386.2229671, "prompt_tokens": 1536, "completion_tokens": 148, "ttft": 145.26855945587158, "e2e": 254.46753120422363, "tpot": 0.7428494489111868}
+{"t_sched": 30.25878317217421, "max_tokens": 114, "ok": true, "t_send": 1793586389.624595, "prompt_tokens": 1384, "completion_tokens": 114, "ttft": 165.27797889709473, "e2e": 251.07433366775513, "tpot": 0.7592590783549621}
+{"t_sched": 3.058335458461673, "max_tokens": 359, "ok": true, "t_send": 1793586362.4243517, "prompt_tokens": 1536, "completion_tokens": 359, "ttft": 13.835631370544434, "e2e": 279.93729519844055, "tpot": 0.7433005071885093}
+{"t_sched": 21.558540808370214, "max_tokens": 199, "ok": true, "t_send": 1793586380.928176, "prompt_tokens": 974, "completion_tokens": 199, "ttft": 113.25550556182861, "e2e": 261.43979048728943, "tpot": 0.7484046750598483}
+{"t_sched": 25.973178342842495, "max_tokens": 158, "ok": true, "t_send": 1793586385.3362925, "prompt_tokens": 478, "completion_tokens": 158, "ttft": 139.78533291816711, "e2e": 257.03813457489014, "tpot": 0.7468325818420216}
+{"t_sched": 19.839401007298424, "max_tokens": 217, "ok": true, "t_send": 1793586379.2058456, "prompt_tokens": 1536, "completion_tokens": 217, "ttft": 101.63535690307617, "e2e": 264.01837730407715, "tpot": 0.7517729103565216}
+{"t_sched": 8.298031924333877, "max_tokens": 314, "ok": true, "t_send": 1793586367.6615174, "prompt_tokens": 749, "completion_tokens": 314, "ttft": 42.17918872833252, "e2e": 276.28147554397583, "tpot": 0.7479303743892585}
+{"t_sched": 22.715560110732103, "max_tokens": 193, "ok": true, "t_send": 1793586382.0835645, "prompt_tokens": 1536, "completion_tokens": 193, "ttft": 117.7607057094574, "e2e": 261.8636496067047, "tpot": 0.7505357513825098}
+{"t_sched": 33.50242897098015, "max_tokens": 90, "ok": true, "t_send": 1793586392.8694694, "prompt_tokens": 882, "completion_tokens": 90, "ttft": 184.06289267539978, "e2e": 251.08905458450317, "tpot": 0.7531020051977607}
+{"t_sched": 15.240968826542716, "max_tokens": 259, "ok": true, "t_send": 1793586374.603688, "prompt_tokens": 663, "completion_tokens": 259, "ttft": 76.24737691879272, "e2e": 270.9327874183655, "tpot": 0.7545942696490029}
+{"t_sched": 24.99048723848521, "max_tokens": 168, "ok": true, "t_send": 1793586384.3524706, "prompt_tokens": 398, "completion_tokens": 168, "ttft": 136.16481852531433, "e2e": 261.186425447464, "tpot": 0.7486319727526454}
+{"t_sched": 30.06730598106893, "max_tokens": 121, "ok": true, "t_send": 1793586389.4337857, "prompt_tokens": 1536, "completion_tokens": 121, "ttft": 164.69657230377197, "e2e": 256.112046957016, "tpot": 0.7617950777212779}
+{"t_sched": 34.81455714229973, "max_tokens": 79, "ok": true, "t_send": 1793586394.1778975, "prompt_tokens": 683, "completion_tokens": 79, "ttft": 192.64008903503418, "e2e": 251.37286734580994, "tpot": 0.7529834631161813}
+{"t_sched": 31.7987524223928, "max_tokens": 111, "ok": true, "t_send": 1793586391.1749177, "prompt_tokens": 917, "completion_tokens": 111, "ttft": 171.6161289215088, "e2e": 255.2865171432495, "tpot": 0.7606310866095803}
+{"t_sched": 37.863793401835885, "max_tokens": 49, "ok": true, "t_send": 1793586397.2395544, "prompt_tokens": 1385, "completion_tokens": 49, "ttft": 212.38230443000793, "e2e": 249.24016571044922, "tpot": 0.7678705255190531}
+{"t_sched": 31.899158702849416, "max_tokens": 110, "ok": true, "t_send": 1793586391.2695577, "prompt_tokens": 1536, "completion_tokens": 110, "ttft": 173.18967247009277, "e2e": 256.05085468292236, "tpot": 0.7601934485479233}
+{"t_sched": 32.65838102910513, "max_tokens": 102, "ok": true, "t_send": 1793586392.022227, "prompt_tokens": 879, "completion_tokens": 102, "ttft": 178.86133885383606, "e2e": 255.3015637397766, "tpot": 0.7568332181118502}
+{"t_sched": 33.28671758186332, "max_tokens": 97, "ok": true, "t_send": 1793586392.6507545, "prompt_tokens": 638, "completion_tokens": 97, "ttft": 182.1050410270691, "e2e": 254.67339944839478, "tpot": 0.7559194788336754}
+{"t_sched": 36.219636353218235, "max_tokens": 69, "ok": true, "t_send": 1793586395.589873, "prompt_tokens": 934, "completion_tokens": 69, "ttft": 200.8286247253418, "e2e": 251.74933385849, "tpot": 0.7488301817108604}
+{"t_sched": 4.347286677590598, "max_tokens": 355, "ok": true, "t_send": 1793586363.715432, "prompt_tokens": 1536, "completion_tokens": 355, "ttft": 20.32726216316223, "e2e": 284.44638872146606, "tpot": 0.7460990086787165}
+{"t_sched": 28.42944845484499, "max_tokens": 143, "ok": true, "t_send": 1793586387.7957664, "prompt_tokens": 1536, "completion_tokens": 143, "ttft": 154.47777104377747, "e2e": 260.3776652812958, "tpot": 0.7457734228859485}
+{"t_sched": 8.20563671961576, "max_tokens": 323, "ok": true, "t_send": 1793586367.5713184, "prompt_tokens": 438, "completion_tokens": 323, "ttft": 39.997596740722656, "e2e": 281.4086287021637, "tpot": 0.7497234351886726}
+{"t_sched": 28.42398130491206, "max_tokens": 145, "ok": true, "t_send": 1793586387.7868423, "prompt_tokens": 353, "completion_tokens": 145, "ttft": 153.626038312912, "e2e": 261.2015178203583, "tpot": 0.7470514310730828}
+{"t_sched": 23.550935016312756, "max_tokens": 188, "ok": true, "t_send": 1793586382.9149544, "prompt_tokens": 1062, "completion_tokens": 188, "ttft": 126.33963203430176, "e2e": 266.9285945892334, "tpot": 0.7518121507716051}
+{"t_sched": 32.39862077900176, "max_tokens": 107, "ok": true, "t_send": 1793586391.7623537, "prompt_tokens": 744, "completion_tokens": 107, "ttft": 177.51948499679565, "e2e": 258.092426776886, "tpot": 0.7601212375568893}
+{"t_sched": 26.22182922606558, "max_tokens": 165, "ok": true, "t_send": 1793586385.5894115, "prompt_tokens": 1201, "completion_tokens": 165, "ttft": 141.9247522354126, "e2e": 264.9022538661957, "tpot": 0.7498623292620589}
+{"t_sched": 35.331854975133645, "max_tokens": 81, "ok": true, "t_send": 1793586394.6970909, "prompt_tokens": 1536, "completion_tokens": 81, "ttft": 195.44171690940857, "e2e": 255.80580735206604, "tpot": 0.754550215601921}
+{"t_sched": 9.865790454605373, "max_tokens": 305, "ok": true, "t_send": 1793586369.2293296, "prompt_tokens": 706, "completion_tokens": 305, "ttft": 53.64439535140991, "e2e": 282.11957001686096, "tpot": 0.7515628079050466}
+{"t_sched": 27.58434165075009, "max_tokens": 156, "ok": true, "t_send": 1793586386.9466543, "prompt_tokens": 291, "completion_tokens": 156, "ttft": 148.33451986312866, "e2e": 264.4072206020355, "tpot": 0.7488555308311217}
+{"t_sched": 35.904562345637395, "max_tokens": 77, "ok": true, "t_send": 1793586395.268215, "prompt_tokens": 465, "completion_tokens": 77, "ttft": 198.76666474342346, "e2e": 256.0967667102814, "tpot": 0.7543425152176305}
+{"t_sched": 26.21959708821536, "max_tokens": 167, "ok": true, "t_send": 1793586385.589079, "prompt_tokens": 1536, "completion_tokens": 167, "ttft": 141.92502546310425, "e2e": 266.42254424095154, "tpot": 0.7499828913125647}
+{"t_sched": 37.106886935703, "max_tokens": 63, "ok": true, "t_send": 1793586396.4931707, "prompt_tokens": 1238, "completion_tokens": 63, "ttft": 208.40944504737854, "e2e": 256.37043499946594, "tpot": 0.7735631004456551}
+{"t_sched": 25.006840379824613, "max_tokens": 178, "ok": true, "t_send": 1793586384.3697295, "prompt_tokens": 772, "completion_tokens": 178, "ttft": 136.14765644073486, "e2e": 269.2511374950409, "tpot": 0.7519966209002134}
+{"t_sched": 33.341687202870204, "max_tokens": 104, "ok": true, "t_send": 1793586392.7167788, "prompt_tokens": 752, "completion_tokens": 104, "ttft": 182.68009757995605, "e2e": 260.91415429115295, "tpot": 0.7595533213569122}
+{"t_sched": 34.28247557532557, "max_tokens": 92, "ok": true, "t_send": 1793586393.6477487, "prompt_tokens": 1264, "completion_tokens": 92, "ttft": 190.9578948020935, "e2e": 259.9861435890198, "tpot": 0.7585515189956833}
+{"t_sched": 35.54020209957419, "max_tokens": 84, "ok": true, "t_send": 1793586394.9033833, "prompt_tokens": 633, "completion_tokens": 84, "ttft": 195.83096265792847, "e2e": 258.73606514930725, "tpot": 0.7578588566148138}
+{"t_sched": 23.263060733555427, "max_tokens": 200, "ok": true, "t_send": 1793586382.6289468, "prompt_tokens": 1536, "completion_tokens": 200, "ttft": 122.74290204048157, "e2e": 272.58820056915283, "tpot": 0.7529909946211618}
+{"t_sched": 29.684144260438362, "max_tokens": 137, "ok": true, "t_send": 1793586389.0511558, "prompt_tokens": 1536, "completion_tokens": 137, "ttft": 161.7467339038849, "e2e": 266.17252683639526, "tpot": 0.7678361377295326}
+{"t_sched": 30.934771507756935, "max_tokens": 126, "ok": true, "t_send": 1793586390.2974215, "prompt_tokens": 770, "completion_tokens": 126, "ttft": 169.52114343643188, "e2e": 264.9270851612091, "tpot": 0.76324684715271}
+{"t_sched": 29.89342820249401, "max_tokens": 136, "ok": true, "t_send": 1793586389.267545, "prompt_tokens": 1513, "completion_tokens": 136, "ttft": 163.23208808898926, "e2e": 266.7690477371216, "tpot": 0.7669399120189525}
+{"t_sched": 32.037994182981976, "max_tokens": 117, "ok": true, "t_send": 1793586391.4036021, "prompt_tokens": 1536, "completion_tokens": 117, "ttft": 176.24651741981506, "e2e": 264.63613414764404, "tpot": 0.7619787557371731}
+{"t_sched": 37.84211553650253, "max_tokens": 62, "ok": true, "t_send": 1793586397.2104146, "prompt_tokens": 726, "completion_tokens": 62, "ttft": 211.59348964691162, "e2e": 258.86023211479187, "tpot": 0.7748632978220455}
+{"t_sched": 23.12278079996075, "max_tokens": 203, "ok": true, "t_send": 1793586382.4867663, "prompt_tokens": 876, "completion_tokens": 203, "ttft": 122.01958012580872, "e2e": 274.41493129730225, "tpot": 0.7544320219814187}
+{"t_sched": 20.021748748400885, "max_tokens": 234, "ok": true, "t_send": 1793586379.3866825, "prompt_tokens": 1034, "completion_tokens": 234, "ttft": 102.26558828353882, "e2e": 278.3457610607147, "tpot": 0.7557084785510542}
+{"t_sched": 35.65397048680874, "max_tokens": 88, "ok": true, "t_send": 1793586395.0196457, "prompt_tokens": 1536, "completion_tokens": 88, "ttft": 196.57956385612488, "e2e": 262.72549700737, "tpot": 0.7602739032657667}
+{"t_sched": 43.161544294685775, "max_tokens": 22, "ok": true, "t_send": 1793586402.5245173, "prompt_tokens": 516, "completion_tokens": 22, "ttft": 239.0178370475769, "e2e": 255.89184093475342, "tpot": 0.8035205432346889}
+{"t_sched": 24.255780472850915, "max_tokens": 193, "ok": true, "t_send": 1793586383.6232595, "prompt_tokens": 1536, "completion_tokens": 193, "ttft": 130.72779822349548, "e2e": 275.54892015457153, "tpot": 0.7542760980625948}
+{"t_sched": 29.271275900166835, "max_tokens": 150, "ok": true, "t_send": 1793586388.638422, "prompt_tokens": 1536, "completion_tokens": 150, "ttft": 158.48815488815308, "e2e": 270.5373194217682, "tpot": 0.7520073180230672}
+{"t_sched": 35.84384986167084, "max_tokens": 87, "ok": true, "t_send": 1793586395.2074475, "prompt_tokens": 993, "completion_tokens": 87, "ttft": 198.82739901542664, "e2e": 263.9759290218353, "tpot": 0.7575401677641758}
+{"t_sched": 37.665483309688156, "max_tokens": 67, "ok": true, "t_send": 1793586397.0353885, "prompt_tokens": 1536, "completion_tokens": 67, "ttft": 211.13151097297668, "e2e": 262.1533532142639, "tpot": 0.7730571862423059}
+{"t_sched": 39.60189317007958, "max_tokens": 54, "ok": true, "t_send": 1793586398.9735997, "prompt_tokens": 1536, "completion_tokens": 54, "ttft": 220.0132110118866, "e2e": 261.0188331604004, "tpot": 0.7736892880133863}
+{"t_sched": 6.413424342807604, "max_tokens": 357, "ok": true, "t_send": 1793586365.7852855, "prompt_tokens": 1074, "completion_tokens": 357, "ttft": 28.342701196670532, "e2e": 294.93946290016174, "tpot": 0.7488670985350449}
+{"t_sched": 23.341938997004352, "max_tokens": 206, "ok": true, "t_send": 1793586382.7073278, "prompt_tokens": 1223, "completion_tokens": 206, "ttft": 123.53696060180664, "e2e": 278.01877903938293, "tpot": 0.7535695145769817}
+{"t_sched": 21.140874963365025, "max_tokens": 228, "ok": true, "t_send": 1793586380.506741, "prompt_tokens": 1536, "completion_tokens": 228, "ttft": 109.72194504737854, "e2e": 281.05401587486267, "tpot": 0.7547665314527335}
+{"t_sched": 35.38191083122629, "max_tokens": 94, "ok": true, "t_send": 1793586394.7508132, "prompt_tokens": 722, "completion_tokens": 94, "ttft": 195.98342323303223, "e2e": 266.8216950893402, "tpot": 0.7617011147160684}
+{"t_sched": 39.212593162273485, "max_tokens": 62, "ok": true, "t_send": 1793586398.5754983, "prompt_tokens": 600, "completion_tokens": 62, "ttft": 215.47415113449097, "e2e": 263.0047559738159, "tpot": 0.7791891137107474}
+{"t_sched": 2.5940501038262855, "max_tokens": 452, "ok": false, "t_send": 1793586361.9555707, "error": "TimeoutError()"}
+{"t_sched": 33.74823164701962, "max_tokens": 111, "ok": true, "t_send": 1793586393.119223, "prompt_tokens": 1536, "completion_tokens": 111, "ttft": 185.73929142951965, "e2e": 269.8457350730896, "tpot": 0.7646033113653009}
+{"t_sched": 40.60465571665336, "max_tokens": 49, "ok": true, "t_send": 1793586399.9850216, "prompt_tokens": 1536, "completion_tokens": 49, "ttft": 226.08644199371338, "e2e": 263.0001890659332, "tpot": 0.7690305312474569}
+{"t_sched": 25.560829435825536, "max_tokens": 187, "ok": true, "t_send": 1793586384.9264276, "prompt_tokens": 1395, "completion_tokens": 187, "ttft": 138.76224970817566, "e2e": 278.8974530696869, "tpot": 0.7534145578261344}
+{"t_sched": 31.581726121549224, "max_tokens": 134, "ok": true, "t_send": 1793586390.9477327, "prompt_tokens": 1097, "completion_tokens": 134, "ttft": 171.00730228424072, "e2e": 272.8801226615906, "tpot": 0.765960555327566}
+{"t_sched": 3.9680356881630203, "max_tokens": 512, "ok": false, "t_send": 1793586363.3311508, "error": "TimeoutError()"}
+{"t_sched": 31.979995389040962, "max_tokens": 132, "ok": true, "t_send": 1793586391.3431714, "prompt_tokens": 594, "completion_tokens": 132, "ttft": 173.82442021369934, "e2e": 274.25070977211, "tpot": 0.7666122804161246}
+{"t_sched": 33.64790114510467, "max_tokens": 116, "ok": true, "t_send": 1793586393.011709, "prompt_tokens": 721, "completion_tokens": 116, "ttft": 184.24766373634338, "e2e": 272.5827703475952, "tpot": 0.7681308228036632}
+{"t_sched": 30.22069003791173, "max_tokens": 147, "ok": true, "t_send": 1793586389.5864046, "prompt_tokens": 945, "completion_tokens": 147, "ttft": 164.54406905174255, "e2e": 276.657151222229, "tpot": 0.7678972319380878}
+{"t_sched": 38.5911804933958, "max_tokens": 71, "ok": true, "t_send": 1793586397.9553542, "prompt_tokens": 919, "completion_tokens": 71, "ttft": 213.8388032913208, "e2e": 268.3086414337158, "tpot": 0.7781324761254447}
+{"t_sched": 25.540918787442774, "max_tokens": 192, "ok": true, "t_send": 1793586384.903651, "prompt_tokens": 669, "completion_tokens": 192, "ttft": 137.91301202774048, "e2e": 282.1977581977844, "tpot": 0.7554171172736203}
+{"t_sched": 28.722704075253887, "max_tokens": 164, "ok": true, "t_send": 1793586388.0847774, "prompt_tokens": 391, "completion_tokens": 164, "ttft": 156.15547609329224, "e2e": 279.01781153678894, "tpot": 0.7537562437584063}
+{"t_sched": 33.40718051115757, "max_tokens": 121, "ok": true, "t_send": 1793586392.7726102, "prompt_tokens": 696, "completion_tokens": 121, "ttft": 182.62445521354675, "e2e": 274.33406138420105, "tpot": 0.7642461061477661}
+{"t_sched": 35.31426656921116, "max_tokens": 103, "ok": true, "t_send": 1793586394.6800935, "prompt_tokens": 1536, "completion_tokens": 103, "ttft": 194.60298824310303, "e2e": 272.4304521083832, "tpot": 0.7630135358548632}
+{"t_sched": 36.75048695748645, "max_tokens": 85, "ok": true, "t_send": 1793586396.1137033, "prompt_tokens": 694, "completion_tokens": 85, "ttft": 205.39811420440674, "e2e": 270.99972462654114, "tpot": 0.7809707919756571}
+{"t_sched": 35.4341355386958, "max_tokens": 102, "ok": true, "t_send": 1793586394.796367, "prompt_tokens": 370, "completion_tokens": 102, "ttft": 195.9379403591156, "e2e": 273.00540947914124, "tpot": 0.7630434225101282}
+{"t_sched": 8.760906009487801, "max_tokens": 416, "ok": false, "t_send": 1793586368.1292393, "error": "TimeoutError()"}
+{"t_sched": 27.712746008787278, "max_tokens": 179, "ok": true, "t_send": 1793586387.0748885, "prompt_tokens": 429, "completion_tokens": 179, "ttft": 148.2063226699829, "e2e": 282.17787742614746, "tpot": 0.7526321732596065}
+{"t_sched": 25.2549628576339, "max_tokens": 198, "ok": true, "t_send": 1793586384.6272852, "prompt_tokens": 1033, "completion_tokens": 198, "ttft": 136.73198008537292, "e2e": 285.32952880859375, "tpot": 0.7543018626682649}
+{"t_sched": 10.863896178375509, "max_tokens": 406, "ok": false, "t_send": 1793586370.229473, "error": "TimeoutError()"}
+{"t_sched": 22.988136258832707, "max_tokens": 223, "ok": true, "t_send": 1793586382.3567324, "prompt_tokens": 757, "completion_tokens": 223, "ttft": 120.63464069366455, "e2e": 288.46977257728577, "tpot": 0.7560136715571085}
+{"t_sched": 11.175331015392734, "max_tokens": 330, "ok": false, "t_send": 1793586370.5406647, "error": "TimeoutError()"}
+{"t_sched": 21.490588175215997, "max_tokens": 236, "ok": true, "t_send": 1793586380.855335, "prompt_tokens": 836, "completion_tokens": 236, "ttft": 113.32831311225891, "e2e": 290.61337423324585, "tpot": 0.7544041846660857}
+{"t_sched": 28.187344132861593, "max_tokens": 175, "ok": true, "t_send": 1793586387.5547287, "prompt_tokens": 748, "completion_tokens": 175, "ttft": 153.17787432670593, "e2e": 283.91709327697754, "tpot": 0.7513743570481224}
+{"t_sched": 12.538305491832476, "max_tokens": 380, "ok": false, "t_send": 1793586371.9042447, "error": "TimeoutError()"}
+{"t_sched": 12.441620008051995, "max_tokens": 475, "ok": false, "t_send": 1793586371.805567, "error": "TimeoutError()"}
+{"t_sched": 11.964196605875227, "max_tokens": 446, "ok": false, "t_send": 1793586371.3271024, "error": "TimeoutError()"}
+{"t_sched": 24.72886768780387, "max_tokens": 205, "ok": true, "t_send": 1793586384.0984783, "prompt_tokens": 1536, "completion_tokens": 205, "ttft": 134.3037383556366, "e2e": 288.2210462093353, "tpot": 0.7544962436545128}
+{"t_sched": 32.837176471225916, "max_tokens": 132, "ok": true, "t_send": 1793586392.2013848, "prompt_tokens": 699, "completion_tokens": 132, "ttft": 180.20736002922058, "e2e": 280.1206843852997, "tpot": 0.7626966046922989}
+{"t_sched": 36.224722131592365, "max_tokens": 101, "ok": true, "t_send": 1793586395.5904982, "prompt_tokens": 268, "completion_tokens": 101, "ttft": 200.82809686660767, "e2e": 276.73556184768677, "tpot": 0.7590739607810975}
+{"t_sched": 32.36468979500475, "max_tokens": 138, "ok": true, "t_send": 1793586391.7310922, "prompt_tokens": 889, "completion_tokens": 138, "ttft": 176.781183719635, "e2e": 281.40733551979065, "tpot": 0.7636783871337445}
+{"t_sched": 39.51580305001513, "max_tokens": 73, "ok": true, "t_send": 1793586398.8795736, "prompt_tokens": 698, "completion_tokens": 73, "ttft": 218.432190656662, "e2e": 274.2720971107483, "tpot": 0.7755531999799941}
+{"t_sched": 39.97022639055119, "max_tokens": 70, "ok": true, "t_send": 1793586399.3373523, "prompt_tokens": 1536, "completion_tokens": 70, "ttft": 222.06531643867493, "e2e": 275.30862951278687, "tpot": 0.7716411196667216}
+{"t_sched": 15.853089035109706, "max_tokens": 512, "ok": false, "t_send": 1793586375.2170033, "error": "TimeoutError()"}
+{"t_sched": 15.789731726399166, "max_tokens": 468, "ok": false, "t_send": 1793586375.155819, "error": "TimeoutError()"}
+{"t_sched": 16.252167537662828, "max_tokens": 356, "ok": false, "t_send": 1793586375.6153636, "error": "TimeoutError()"}
+{"t_sched": 27.914497827248518, "max_tokens": 186, "ok": true, "t_send": 1793586387.2817717, "prompt_tokens": 1536, "completion_tokens": 186, "ttft": 149.61215543746948, "e2e": 288.9657771587372, "tpot": 0.7532624412227321}
+{"t_sched": 33.02772478080723, "max_tokens": 137, "ok": true, "t_send": 1793586392.39799, "prompt_tokens": 1008, "completion_tokens": 137, "ttft": 180.0108458995819, "e2e": 283.85757303237915, "tpot": 0.7635721090961906}
+{"t_sched": 17.214124051121193, "max_tokens": 288, "ok": false, "t_send": 1793586376.578872, "error": "TimeoutError()"}
+{"t_sched": 16.913509948406077, "max_tokens": 421, "ok": false, "t_send": 1793586376.2784882, "error": "TimeoutError()"}
+{"t_sched": 17.777021250253565, "max_tokens": 393, "ok": false, "t_send": 1793586377.1447787, "error": "TimeoutError()"}
+{"t_sched": 23.85319385279376, "max_tokens": 222, "ok": true, "t_send": 1793586383.215913, "prompt_tokens": 454, "completion_tokens": 222, "ttft": 127.47082877159119, "e2e": 294.421315908432, "tpot": 0.755431720034569}
+{"t_sched": 34.02023466214702, "max_tokens": 126, "ok": true, "t_send": 1793586393.3920805, "prompt_tokens": 1536, "completion_tokens": 126, "ttft": 188.72555422782898, "e2e": 284.2478725910187, "tpot": 0.7641780338287354}
+{"t_sched": 34.03850900079115, "max_tokens": 124, "ok": true, "t_send": 1793586393.4076235, "prompt_tokens": 1536, "completion_tokens": 124, "ttft": 190.31576561927795, "e2e": 284.23484921455383, "tpot": 0.7635680892603184}
+{"t_sched": 17.91244509521058, "max_tokens": 327, "ok": false, "t_send": 1793586377.2785203, "error": "TimeoutError()"}
+{"t_sched": 18.119411818034063, "max_tokens": 512, "ok": false, "t_send": 1793586377.4842722, "error": "TimeoutError()"}
+{"t_sched": 34.56244420652162, "max_tokens": 122, "ok": true, "t_send": 1793586393.9262102, "prompt_tokens": 574, "completion_tokens": 122, "ttft": 192.13144636154175, "e2e": 284.480122089386, "tpot": 0.7632115458653979}
+{"t_sched": 34.966828545496874, "max_tokens": 120, "ok": true, "t_send": 1793586394.332576, "prompt_tokens": 817, "completion_tokens": 120, "ttft": 193.23191690444946, "e2e": 284.07392621040344, "tpot": 0.7633776704804236}
+{"t_sched": 43.54417790600321, "max_tokens": 44, "ok": true, "t_send": 1793586402.9063876, "prompt_tokens": 285, "completion_tokens": 44, "ttft": 241.77089619636536, "e2e": 275.5120255947113, "tpot": 0.784675864286201}
+{"t_sched": 33.76383487578868, "max_tokens": 130, "ok": true, "t_send": 1793586393.135417, "prompt_tokens": 1536, "completion_tokens": 130, "ttft": 187.35927534103394, "e2e": 286.0334415435791, "tpot": 0.7649154164070306}
+{"t_sched": 19.109542776355454, "max_tokens": 491, "ok": false, "t_send": 1793586378.478549, "error": "TimeoutError()"}
+{"t_sched": 28.79721086716735, "max_tokens": 180, "ok": true, "t_send": 1793586388.166257, "prompt_tokens": 1536, "completion_tokens": 180, "ttft": 156.66745495796204, "e2e": 291.67379450798035, "tpot": 0.7542248344954166}
+{"t_sched": 34.180268951883974, "max_tokens": 126, "ok": true, "t_send": 1793586393.545924, "prompt_tokens": 1536, "completion_tokens": 126, "ttft": 191.05968832969666, "e2e": 286.299170255661, "tpot": 0.7619150180816651}
+{"t_sched": 40.89573874519398, "max_tokens": 68, "ok": true, "t_send": 1793586400.2630305, "prompt_tokens": 1536, "completion_tokens": 68, "ttft": 227.8220133781433, "e2e": 279.5910394191742, "tpot": 0.7726708276947932}
+{"t_sched": 20.808707548841994, "max_tokens": 308, "ok": false, "t_send": 1793586380.172095, "error": "TimeoutError()"}
+{"t_sched": 29.371589163855838, "max_tokens": 178, "ok": true, "t_send": 1793586388.7345843, "prompt_tokens": 580, "completion_tokens": 178, "ttft": 158.39214277267456, "e2e": 291.78023529052734, "tpot": 0.753604634333465}
+{"t_sched": 39.446947029403994, "max_tokens": 83, "ok": true, "t_send": 1793586398.8122768, "prompt_tokens": 1257, "completion_tokens": 83, "ttft": 218.49943256378174, "e2e": 281.719309091568, "tpot": 0.7709729758704581}
+{"t_sched": 42.174227304981464, "max_tokens": 57, "ok": true, "t_send": 1793586401.5414977, "prompt_tokens": 1478, "completion_tokens": 57, "ttft": 234.73353219032288, "e2e": 279.0030128955841, "tpot": 0.7905252490724836}
+{"t_sched": 21.027622516793514, "max_tokens": 385, "ok": false, "t_send": 1793586380.3988967, "error": "TimeoutError()"}
+{"t_sched": 42.38840998072066, "max_tokens": 57, "ok": true, "t_send": 1793586401.755494, "prompt_tokens": 1536, "completion_tokens": 57, "ttft": 235.41216254234314, "e2e": 279.59102272987366, "tpot": 0.7888787005628858}
+{"t_sched": 40.633021842189684, "max_tokens": 73, "ok": true, "t_send": 1793586399.9996705, "prompt_tokens": 992, "completion_tokens": 73, "ttft": 226.81646490097046, "e2e": 282.11803221702576, "tpot": 0.7680763138665093}
+{"t_sched": 22.67536557861529, "max_tokens": 338, "ok": false, "t_send": 1793586382.0422962, "error": "TimeoutError()"}
+{"t_sched": 36.65730011935665, "max_tokens": 107, "ok": true, "t_send": 1793586396.0208688, "prompt_tokens": 1013, "completion_tokens": 107, "ttft": 204.88158750534058, "e2e": 286.6901812553406, "tpot": 0.7717781449263951}
+{"t_sched": 23.495657893125266, "max_tokens": 282, "ok": false, "t_send": 1793586382.8627806, "error": "TimeoutError()"}
+{"t_sched": 23.483691984644178, "max_tokens": 279, "ok": false, "t_send": 1793586382.846346, "error": "TimeoutError()"}
+{"t_sched": 37.6394579330931, "max_tokens": 100, "ok": true, "t_send": 1793586397.0218325, "prompt_tokens": 1536, "completion_tokens": 100, "ttft": 210.2997841835022, "e2e": 286.52974462509155, "tpot": 0.769998863489941}
+{"t_sched": 24.799029480660725, "max_tokens": 508, "ok": false, "t_send": 1793586384.1612873, "error": "TimeoutError()"}
+{"t_sched": 24.451581115022286, "max_tokens": 238, "ok": false, "t_send": 1793586383.8177545, "error": "TimeoutError()"}
+{"t_sched": 24.16852875169935, "max_tokens": 390, "ok": false, "t_send": 1793586383.5333457, "error": "TimeoutError()"}
+{"t_sched": 24.013651337152826, "max_tokens": 512, "ok": false, "t_send": 1793586383.3765888, "error": "TimeoutError()"}
+{"t_sched": 33.75360515626304, "max_tokens": 138, "ok": true, "t_send": 1793586393.1195948, "prompt_tokens": 1526, "completion_tokens": 138, "ttft": 186.6482002735138, "e2e": 291.1704909801483, "tpot": 0.7629320169017263}
+{"t_sched": 34.00687254456267, "max_tokens": 136, "ok": true, "t_send": 1793586393.3719506, "prompt_tokens": 1037, "completion_tokens": 136, "ttft": 187.87042903900146, "e2e": 290.9195032119751, "tpot": 0.7633258872561984}
+{"t_sched": 28.034452493795065, "max_tokens": 195, "ok": true, "t_send": 1793586387.401046, "prompt_tokens": 1144, "completion_tokens": 195, "ttft": 151.8788721561432, "e2e": 297.72697472572327, "tpot": 0.751793944958559}
+{"t_sched": 37.12820287049039, "max_tokens": 105, "ok": true, "t_send": 1793586396.4938993, "prompt_tokens": 692, "completion_tokens": 105, "ttft": 209.09928965568542, "e2e": 289.3986210823059, "tpot": 0.7721082293070279}
+{"t_sched": 26.643390723996053, "max_tokens": 512, "ok": false, "t_send": 1793586386.0212739, "error": "TimeoutError()"}
+{"t_sched": 26.172864827297268, "max_tokens": 263, "ok": false, "t_send": 1793586385.5372624, "error": "TimeoutError()"}
+{"t_sched": 35.672167454802434, "max_tokens": 125, "ok": true, "t_send": 1793586395.0379171, "prompt_tokens": 1536, "completion_tokens": 125, "ttft": 197.47629642486572, "e2e": 291.5512945652008, "tpot": 0.7586684534626622}
+{"t_sched": 38.91240171105034, "max_tokens": 97, "ok": true, "t_send": 1793586398.2756073, "prompt_tokens": 456, "completion_tokens": 97, "ttft": 214.27908182144165, "e2e": 288.3211839199066, "tpot": 0.771271196504434}
+{"t_sched": 40.905363926138186, "max_tokens": 76, "ok": true, "t_send": 1793586400.2737513, "prompt_tokens": 1485, "completion_tokens": 76, "ttft": 228.6136999130249, "e2e": 286.3290944099426, "tpot": 0.7695376841227214}
+{"t_sched": 27.257077917128996, "max_tokens": 230, "ok": false, "t_send": 1793586386.623585, "error": "TimeoutError()"}
+{"t_sched": 27.740408475836734, "max_tokens": 243, "ok": false, "t_send": 1793586387.105143, "error": "TimeoutError()"}
+{"t_sched": 37.68627880101526, "max_tokens": 103, "ok": true, "t_send": 1793586397.053994, "prompt_tokens": 667, "completion_tokens": 103, "ttft": 211.74970173835754, "e2e": 290.2258448600769, "tpot": 0.7693731340707517}
+{"t_sched": 44.397974353263294, "max_tokens": 45, "ok": true, "t_send": 1793586403.7631855, "prompt_tokens": 1536, "completion_tokens": 45, "ttft": 249.8960018157959, "e2e": 283.53738236427307, "tpot": 0.7645750425078652}
+{"t_sched": 41.208965067438335, "max_tokens": 75, "ok": true, "t_send": 1793586400.5725968, "prompt_tokens": 767, "completion_tokens": 75, "ttft": 229.74081015586853, "e2e": 287.5928478240967, "tpot": 0.7817831844896883}
+{"t_sched": 27.99614769747477, "max_tokens": 269, "ok": false, "t_send": 1793586387.3619142, "error": "TimeoutError()"}
+{"t_sched": 28.80215713457177, "max_tokens": 204, "ok": false, "t_send": 1793586388.1665895, "error": "TimeoutError()"}
+{"t_sched": 28.522359017770768, "max_tokens": 500, "ok": false, "t_send": 1793586387.8859365, "error": "TimeoutError()"}
+{"t_sched": 28.260477213702053, "max_tokens": 237, "ok": false, "t_send": 1793586387.6250684, "error": "TimeoutError()"}
+{"t_sched": 28.185633980740587, "max_tokens": 247, "ok": false, "t_send": 1793586387.5543478, "error": "TimeoutError()"}
+{"t_sched": 28.00252525381748, "max_tokens": 228, "ok": false, "t_send": 1793586387.367552, "error": "TimeoutError()"}
+{"t_sched": 27.984614524539392, "max_tokens": 320, "ok": false, "t_send": 1793586387.3490806, "error": "TimeoutError()"}
+{"t_sched": 29.532632417793266, "max_tokens": 209, "ok": false, "t_send": 1793586388.8951814, "error": "TimeoutError()"}
+{"t_sched": 29.803592751505974, "max_tokens": 361, "ok": false, "t_send": 1793586389.1703155, "error": "TimeoutError()"}
+{"t_sched": 29.483132701787078, "max_tokens": 322, "ok": false, "t_send": 1793586388.8503926, "error": "TimeoutError()"}
+{"t_sched": 29.479625761224074, "max_tokens": 301, "ok": false, "t_send": 1793586388.8499544, "error": "TimeoutError()"}
+{"t_sched": 37.11593214979949, "max_tokens": 110, "ok": true, "t_send": 1793586396.4935508, "prompt_tokens": 1291, "completion_tokens": 110, "ttft": 209.0994997024536, "e2e": 293.0957541465759, "tpot": 0.7706069946289062}
+{"t_sched": 30.822915219772526, "max_tokens": 232, "ok": false, "t_send": 1793586390.189911, "error": "TimeoutError()"}
+{"t_sched": 30.74129579434826, "max_tokens": 239, "ok": false, "t_send": 1793586390.1072187, "error": "TimeoutError()"}
+{"t_sched": 29.89377999466598, "max_tokens": 307, "ok": false, "t_send": 1793586389.2680075, "error": "TimeoutError()"}
+{"t_sched": 30.604358412342847, "max_tokens": 223, "ok": false, "t_send": 1793586389.973266, "error": "TimeoutError()"}
+{"t_sched": 33.81312503462974, "max_tokens": 146, "ok": true, "t_send": 1793586393.1753254, "prompt_tokens": 467, "completion_tokens": 146, "ttft": 187.3194944858551, "e2e": 298.0581908226013, "tpot": 0.7637146242733659}
+{"t_sched": 31.33910475669325, "max_tokens": 453, "ok": false, "t_send": 1793586390.700759, "error": "TimeoutError()"}
+{"t_sched": 31.305201416974423, "max_tokens": 264, "ok": false, "t_send": 1793586390.6670446, "error": "TimeoutError()"}
+{"t_sched": 31.102395559260152, "max_tokens": 320, "ok": false, "t_send": 1793586390.4696448, "error": "TimeoutError()"}
+{"t_sched": 31.030827518482848, "max_tokens": 276, "ok": false, "t_send": 1793586390.3956053, "error": "TimeoutError()"}
+{"t_sched": 30.896694292118564, "max_tokens": 214, "ok": false, "t_send": 1793586390.2642252, "error": "TimeoutError()"}
+{"t_sched": 34.33983985249133, "max_tokens": 141, "ok": true, "t_send": 1793586393.7032843, "prompt_tokens": 774, "completion_tokens": 141, "ttft": 191.607976436615, "e2e": 298.36765813827515, "tpot": 0.7625676836286273}
+{"t_sched": 32.25335114462855, "max_tokens": 171, "ok": false, "t_send": 1793586391.6178153, "error": "TimeoutError()"}
+{"t_sched": 32.81383295530251, "max_tokens": 508, "ok": false, "t_send": 1793586392.1809185, "error": "TimeoutError()"}
+{"t_sched": 32.460148863748444, "max_tokens": 215, "ok": false, "t_send": 1793586391.8265746, "error": "TimeoutError()"}
+{"t_sched": 32.354528519882635, "max_tokens": 251, "ok": false, "t_send": 1793586391.721148, "error": "TimeoutError()"}
+{"t_sched": 32.5965886411921, "max_tokens": 311, "ok": false, "t_send": 1793586391.9633882, "error": "TimeoutError()"}
+{"t_sched": 41.034988139413, "max_tokens": 83, "ok": true, "t_send": 1793586400.399441, "prompt_tokens": 809, "completion_tokens": 83, "ttft": 228.95079922676086, "e2e": 292.32451820373535, "tpot": 0.7728490684090591}
+{"t_sched": 42.14787765073875, "max_tokens": 74, "ok": true, "t_send": 1793586401.5153644, "prompt_tokens": 1536, "completion_tokens": 74, "ttft": 234.03626680374146, "e2e": 291.21138858795166, "tpot": 0.7832196477341326}
+{"t_sched": 44.23447361341333, "max_tokens": 55, "ok": true, "t_send": 1793586403.6062062, "prompt_tokens": 790, "completion_tokens": 55, "ttft": 247.77553844451904, "e2e": 289.12481355667114, "tpot": 0.7657257230193527}
+{"t_sched": 32.918347145572895, "max_tokens": 180, "ok": false, "t_send": 1793586392.2795959, "error": "TimeoutError()"}
+{"t_sched": 33.41322355815154, "max_tokens": 161, "ok": false, "t_send": 1793586392.7820365, "error": "TimeoutError()"}
+{"t_sched": 33.50377231801569, "max_tokens": 195, "ok": false, "t_send": 1793586392.869936, "error": "TimeoutError()"}
+{"t_sched": 33.06227311080377, "max_tokens": 175, "ok": false, "t_send": 1793586392.4250722, "error": "TimeoutError()"}
+{"t_sched": 44.56945207897289, "max_tokens": 52, "ok": true, "t_send": 1793586403.9322062, "prompt_tokens": 588, "completion_tokens": 52, "ttft": 250.55338072776794, "e2e": 289.58908796310425, "tpot": 0.7654045937108058}
+{"t_sched": 34.77175790075248, "max_tokens": 233, "ok": false, "t_send": 1793586394.1379247, "error": "TimeoutError()"}
+{"t_sched": 34.474615470807194, "max_tokens": 219, "ok": false, "t_send": 1793586393.839993, "error": "TimeoutError()"}
+{"t_sched": 34.036515918337905, "max_tokens": 150, "ok": false, "t_send": 1793586393.4064486, "error": "TimeoutError()"}
+{"t_sched": 34.02059961646097, "max_tokens": 236, "ok": false, "t_send": 1793586393.3923984, "error": "TimeoutError()"}
+{"t_sched": 45.099931361485886, "max_tokens": 50, "ok": true, "t_send": 1793586404.465825, "prompt_tokens": 1536, "completion_tokens": 50, "ttft": 252.47599411010742, "e2e": 289.84275579452515, "tpot": 0.7625337620170749}
+{"t_sched": 42.7725713899634, "max_tokens": 73, "ok": true, "t_send": 1793586402.1386287, "prompt_tokens": 1536, "completion_tokens": 73, "ttft": 236.8580837249756, "e2e": 292.9901330471039, "tpot": 0.7796108623345693}
+{"t_sched": 35.8088126735424, "max_tokens": 171, "ok": false, "t_send": 1793586395.1738815, "error": "TimeoutError()"}
+{"t_sched": 35.735914266418845, "max_tokens": 175, "ok": false, "t_send": 1793586395.100223, "error": "TimeoutError()"}
+{"t_sched": 35.1478959867024, "max_tokens": 252, "ok": false, "t_send": 1793586394.5113635, "error": "TimeoutError()"}
+{"t_sched": 34.98818950493991, "max_tokens": 206, "ok": false, "t_send": 1793586394.3586595, "error": "TimeoutError()"}
+{"t_sched": 37.925638961816254, "max_tokens": 112, "ok": true, "t_send": 1793586397.2889342, "prompt_tokens": 818, "completion_tokens": 112, "ttft": 212.98849964141846, "e2e": 298.62788820266724, "tpot": 0.7715252047186499}
+{"t_sched": 36.79549784565176, "max_tokens": 179, "ok": false, "t_send": 1793586396.1581516, "error": "TimeoutError()"}
+{"t_sched": 36.64125515647407, "max_tokens": 153, "ok": false, "t_send": 1793586396.0090497, "error": "TimeoutError()"}
+{"t_sched": 36.635808056188424, "max_tokens": 165, "ok": false, "t_send": 1793586396.0005002, "error": "TimeoutError()"}
+{"t_sched": 36.5910861269469, "max_tokens": 191, "ok": false, "t_send": 1793586395.9552908, "error": "TimeoutError()"}
+{"t_sched": 36.503401210382584, "max_tokens": 189, "ok": false, "t_send": 1793586395.8669405, "error": "TimeoutError()"}
+{"t_sched": 36.466156838704904, "max_tokens": 223, "ok": false, "t_send": 1793586395.8308933, "error": "TimeoutError()"}
+{"t_sched": 36.4503921508681, "max_tokens": 179, "ok": false, "t_send": 1793586395.8134272, "error": "TimeoutError()"}
+{"t_sched": 36.358922066140764, "max_tokens": 260, "ok": false, "t_send": 1793586395.7271876, "error": "TimeoutError()"}
+{"t_sched": 36.35471178198957, "max_tokens": 142, "ok": false, "t_send": 1793586395.7180865, "error": "TimeoutError()"}
+{"t_sched": 36.15928439361146, "max_tokens": 301, "ok": false, "t_send": 1793586395.5232694, "error": "TimeoutError()"}
+{"t_sched": 36.080710982677694, "max_tokens": 498, "ok": false, "t_send": 1793586395.4464378, "error": "TimeoutError()"}
+{"t_sched": 36.064030861265, "max_tokens": 147, "ok": false, "t_send": 1793586395.4317198, "error": "TimeoutError()"}
+{"t_sched": 35.98515536717876, "max_tokens": 149, "ok": false, "t_send": 1793586395.3501518, "error": "TimeoutError()"}
+{"t_sched": 37.15350547899093, "max_tokens": 119, "ok": true, "t_send": 1793586396.5153632, "prompt_tokens": 173, "completion_tokens": 119, "ttft": 209.07791256904602, "e2e": 299.98804092407227, "tpot": 0.7704241477836997}
+{"t_sched": 39.96422828752815, "max_tokens": 100, "ok": true, "t_send": 1793586399.336569, "prompt_tokens": 1536, "completion_tokens": 100, "ttft": 221.23990035057068, "e2e": 297.17238450050354, "tpot": 0.7669939850315903}
+{"t_sched": 37.644952502555654, "max_tokens": 223, "ok": false, "t_send": 1793586397.0223782, "error": "TimeoutError()"}
+{"t_sched": 37.23555066441711, "max_tokens": 197, "ok": false, "t_send": 1793586396.601192, "error": "TimeoutError()"}
+{"t_sched": 37.06014351700906, "max_tokens": 213, "ok": false, "t_send": 1793586396.453962, "error": "TimeoutError()"}
+{"t_sched": 37.03816686715762, "max_tokens": 242, "ok": false, "t_send": 1793586396.4098969, "error": "TimeoutError()"}
+{"t_sched": 37.80331445156992, "max_tokens": 142, "ok": false, "t_send": 1793586397.1667001, "error": "TimeoutError()"}
+{"t_sched": 37.005365677012946, "max_tokens": 199, "ok": false, "t_send": 1793586396.375517, "error": "TimeoutError()"}
+{"t_sched": 40.45932012685742, "max_tokens": 98, "ok": true, "t_send": 1793586399.8262553, "prompt_tokens": 330, "completion_tokens": 98, "ttft": 223.05399417877197, "e2e": 297.43573570251465, "tpot": 0.7668210821053416}
+{"t_sched": 38.958184653147114, "max_tokens": 112, "ok": true, "t_send": 1793586398.3200145, "prompt_tokens": 245, "completion_tokens": 112, "ttft": 214.23471236228943, "e2e": 299.60479497909546, "tpot": 0.7690991259909965}
+{"t_sched": 38.06441731399207, "max_tokens": 144, "ok": false, "t_send": 1793586397.4257758, "error": "TimeoutError()"}
+{"t_sched": 38.432100856678595, "max_tokens": 189, "ok": false, "t_send": 1793586397.7965384, "error": "TimeoutError()"}
+{"t_sched": 38.69704906272911, "max_tokens": 163, "ok": false, "t_send": 1793586398.062524, "error": "TimeoutError()"}
+{"t_sched": 38.66604545761109, "max_tokens": 229, "ok": false, "t_send": 1793586398.0304132, "error": "TimeoutError()"}
+{"t_sched": 38.11843335270738, "max_tokens": 202, "ok": false, "t_send": 1793586397.4866729, "error": "TimeoutError()"}
+{"t_sched": 38.03925973791619, "max_tokens": 267, "ok": false, "t_send": 1793586397.4032402, "error": "TimeoutError()"}
+{"t_sched": 39.11629648776373, "max_tokens": 112, "ok": true, "t_send": 1793586398.4815948, "prompt_tokens": 917, "completion_tokens": 112, "ttft": 214.8180708885193, "e2e": 300.2208983898163, "tpot": 0.7693938757922199}
+{"t_sched": 39.2298552857221, "max_tokens": 254, "ok": false, "t_send": 1793586398.595571, "error": "TimeoutError()"}
+{"t_sched": 39.6051002620198, "max_tokens": 118, "ok": false, "t_send": 1793586398.9740348, "error": "TimeoutError()"}
+{"t_sched": 39.52385315862409, "max_tokens": 204, "ok": false, "t_send": 1793586398.8895166, "error": "TimeoutError()"}
+{"t_sched": 39.150122069517685, "max_tokens": 112, "ok": false, "t_send": 1793586398.5178063, "error": "TimeoutError()"}
+{"t_sched": 39.305914577496765, "max_tokens": 389, "ok": false, "t_send": 1793586398.6732197, "error": "TimeoutError()"}
+{"t_sched": 39.15310913757193, "max_tokens": 133, "ok": false, "t_send": 1793586398.5182166, "error": "TimeoutError()"}
+{"t_sched": 39.63419363797861, "max_tokens": 179, "ok": false, "t_send": 1793586398.999718, "error": "TimeoutError()"}
+{"t_sched": 39.174783823574685, "max_tokens": 277, "ok": false, "t_send": 1793586398.5369, "error": "TimeoutError()"}
+{"t_sched": 41.30604700328808, "max_tokens": 89, "ok": true, "t_send": 1793586400.6721387, "prompt_tokens": 1536, "completion_tokens": 89, "ttft": 230.4284327030182, "e2e": 298.8131844997406, "tpot": 0.7770984308286146}
+{"t_sched": 41.605886426443455, "max_tokens": 87, "ok": true, "t_send": 1793586400.9707983, "prompt_tokens": 1255, "completion_tokens": 87, "ttft": 231.32542371749878, "e2e": 298.5167784690857, "tpot": 0.7812939549601355}
+{"t_sched": 43.78017469022843, "max_tokens": 70, "ok": true, "t_send": 1793586403.1463575, "prompt_tokens": 1536, "completion_tokens": 70, "ttft": 243.34037947654724, "e2e": 296.34482502937317, "tpot": 0.7681790607562964}
+{"t_sched": 40.441492505088725, "max_tokens": 209, "ok": false, "t_send": 1793586399.8089151, "error": "TimeoutError()"}
+{"t_sched": 40.82912498939513, "max_tokens": 191, "ok": false, "t_send": 1793586400.1937091, "error": "TimeoutError()"}
+{"t_sched": 40.63973916175732, "max_tokens": 112, "ok": false, "t_send": 1793586400.0044305, "error": "TimeoutError()"}
+{"t_sched": 40.552894948933314, "max_tokens": 133, "ok": false, "t_send": 1793586399.916416, "error": "TimeoutError()"}
+{"t_sched": 40.446852579665546, "max_tokens": 129, "ok": false, "t_send": 1793586399.8094065, "error": "TimeoutError()"}
+{"t_sched": 40.24785294406776, "max_tokens": 383, "ok": false, "t_send": 1793586399.6116369, "error": "TimeoutError()"}
+{"t_sched": 40.007948402423125, "max_tokens": 272, "ok": false, "t_send": 1793586399.3703234, "error": "TimeoutError()"}
+{"t_sched": 39.96637072904675, "max_tokens": 368, "ok": false, "t_send": 1793586399.33699, "error": "TimeoutError()"}
+{"t_sched": 39.93484931281753, "max_tokens": 173, "ok": false, "t_send": 1793586399.298173, "error": "TimeoutError()"}
+{"t_sched": 40.460516302601334, "max_tokens": 161, "ok": false, "t_send": 1793586399.826536, "error": "TimeoutError()"}
+{"t_sched": 40.5605093117761, "max_tokens": 189, "ok": false, "t_send": 1793586399.9261935, "error": "TimeoutError()"}
+{"t_sched": 40.48419425791512, "max_tokens": 243, "ok": false, "t_send": 1793586399.8475213, "error": "TimeoutError()"}
+{"t_sched": 40.12237558736182, "max_tokens": 167, "ok": false, "t_send": 1793586399.4874253, "error": "TimeoutError()"}
+{"t_sched": 40.542070737629835, "max_tokens": 168, "ok": false, "t_send": 1793586399.9049492, "error": "TimeoutError()"}
+{"t_sched": 40.533024394481174, "max_tokens": 135, "ok": false, "t_send": 1793586399.8960319, "error": "TimeoutError()"}
+{"t_sched": 41.796758482046044, "max_tokens": 170, "ok": false, "t_send": 1793586401.1595848, "error": "TimeoutError()"}
+{"t_sched": 41.618342661288054, "max_tokens": 90, "ok": false, "t_send": 1793586400.9827876, "error": "TimeoutError()"}
+{"t_sched": 41.52371093633497, "max_tokens": 145, "ok": false, "t_send": 1793586400.8861182, "error": "TimeoutError()"}
+{"t_sched": 41.46828479107795, "max_tokens": 91, "ok": false, "t_send": 1793586400.8347716, "error": "TimeoutError()"}
+{"t_sched": 41.3462082941707, "max_tokens": 178, "ok": false, "t_send": 1793586400.7094846, "error": "TimeoutError()"}
+{"t_sched": 41.18154670889632, "max_tokens": 163, "ok": false, "t_send": 1793586400.5455978, "error": "TimeoutError()"}
+{"t_sched": 42.83152720492006, "max_tokens": 121, "ok": false, "t_send": 1793586402.1995664, "error": "TimeoutError()"}
+{"t_sched": 42.729536072676105, "max_tokens": 366, "ok": false, "t_send": 1793586402.096139, "error": "TimeoutError()"}
+{"t_sched": 42.45627272730118, "max_tokens": 126, "ok": false, "t_send": 1793586401.823244, "error": "TimeoutError()"}
+{"t_sched": 42.19310696939781, "max_tokens": 155, "ok": false, "t_send": 1793586401.556838, "error": "TimeoutError()"}
+{"t_sched": 42.062823116195524, "max_tokens": 96, "ok": false, "t_send": 1793586401.4301722, "error": "TimeoutError()"}
+{"t_sched": 41.94056535616869, "max_tokens": 100, "ok": false, "t_send": 1793586401.3068705, "error": "TimeoutError()"}
+{"t_sched": 44.98887098654893, "max_tokens": 63, "ok": true, "t_send": 1793586404.3552125, "prompt_tokens": 1536, "completion_tokens": 63, "ttft": 251.72871732711792, "e2e": 298.5842378139496, "tpot": 0.7557325709250665}
+{"t_sched": 43.04720803090628, "max_tokens": 173, "ok": false, "t_send": 1793586402.4137447, "error": "TimeoutError()"}
+{"t_sched": 43.025176903619, "max_tokens": 165, "ok": false, "t_send": 1793586402.39179, "error": "TimeoutError()"}
+{"t_sched": 43.229642798859565, "max_tokens": 131, "ok": false, "t_send": 1793586402.594385, "error": "TimeoutError()"}
+{"t_sched": 43.82172369684962, "max_tokens": 104, "ok": false, "t_send": 1793586403.196064, "error": "TimeoutError()"}
+{"t_sched": 43.8251380327775, "max_tokens": 89, "ok": false, "t_send": 1793586403.196414, "error": "TimeoutError()"}
+{"t_sched": 43.81522187129361, "max_tokens": 134, "ok": false, "t_send": 1793586403.1807349, "error": "TimeoutError()"}
+{"t_sched": 43.555507591949876, "max_tokens": 245, "ok": false, "t_send": 1793586402.9211655, "error": "TimeoutError()"}
+{"t_sched": 43.50244890674535, "max_tokens": 78, "ok": false, "t_send": 1793586402.865968, "error": "TimeoutError()"}
+{"t_sched": 43.45806769351827, "max_tokens": 81, "ok": false, "t_send": 1793586402.821486, "error": "TimeoutError()"}
+{"t_sched": 43.310184158197, "max_tokens": 171, "ok": false, "t_send": 1793586402.6738894, "error": "TimeoutError()"}
+{"t_sched": 43.25153090355548, "max_tokens": 149, "ok": false, "t_send": 1793586402.6210024, "error": "TimeoutError()"}
+{"t_sched": 43.23539966661399, "max_tokens": 98, "ok": false, "t_send": 1793586402.6112897, "error": "TimeoutError()"}
+{"t_sched": 44.3487709311131, "max_tokens": 176, "ok": false, "t_send": 1793586403.712449, "error": "TimeoutError()"}
+{"t_sched": 44.08874372669885, "max_tokens": 158, "ok": false, "t_send": 1793586403.4540017, "error": "TimeoutError()"}
+{"t_sched": 44.07311133458323, "max_tokens": 145, "ok": false, "t_send": 1793586403.4367113, "error": "TimeoutError()"}
+{"t_sched": 44.727226375350604, "max_tokens": 122, "ok": false, "t_send": 1793586404.0938416, "error": "TimeoutError()"}
+{"t_sched": 44.35794518278756, "max_tokens": 95, "ok": false, "t_send": 1793586403.7204394, "error": "TimeoutError()"}
+{"t_sched": 44.480832916344006, "max_tokens": 125, "ok": false, "t_send": 1793586403.847589, "error": "TimeoutError()"}
+{"t_sched": 44.27055753114068, "max_tokens": 147, "ok": false, "t_send": 1793586403.6368854, "error": "TimeoutError()"}
+{"t_sched": 44.06522266853078, "max_tokens": 142, "ok": false, "t_send": 1793586403.4299831, "error": "TimeoutError()"}
+{"t_sched": 43.95292341409035, "max_tokens": 111, "ok": false, "t_send": 1793586403.3211486, "error": "TimeoutError()"}
+{"t_sched": 43.94541996405795, "max_tokens": 297, "ok": false, "t_send": 1793586403.3121681, "error": "TimeoutError()"}
+{"t_sched": 43.919468628145935, "max_tokens": 149, "ok": false, "t_send": 1793586403.2843683, "error": "TimeoutError()"}
+{"t_sched": 48.253849597098345, "max_tokens": 37, "ok": true, "t_send": 1793586407.6201682, "prompt_tokens": 1233, "completion_tokens": 37, "ttft": 270.04813623428345, "e2e": 296.8105311393738, "tpot": 0.7433972424930997}
+{"t_sched": 47.217028503035436, "max_tokens": 48, "ok": true, "t_send": 1793586406.58763, "prompt_tokens": 698, "completion_tokens": 48, "ttft": 263.40932035446167, "e2e": 298.5432801246643, "tpot": 0.7475293747922207}
+{"t_sched": 44.95618302592996, "max_tokens": 184, "ok": false, "t_send": 1793586404.32051, "error": "TimeoutError()"}
+{"t_sched": 45.34724753487657, "max_tokens": 227, "ok": false, "t_send": 1793586404.7161267, "error": "TimeoutError()"}
+{"t_sched": 45.1377815347425, "max_tokens": 97, "ok": false, "t_send": 1793586404.500035, "error": "TimeoutError()"}
+{"t_sched": 45.43844676840072, "max_tokens": 87, "ok": false, "t_send": 1793586404.8032923, "error": "TimeoutError()"}
+{"t_sched": 45.74091977483757, "max_tokens": 124, "ok": false, "t_send": 1793586405.1068466, "error": "TimeoutError()"}
+{"t_sched": 45.351165614876585, "max_tokens": 193, "ok": false, "t_send": 1793586404.716731, "error": "TimeoutError()"}
+{"t_sched": 45.015820673151445, "max_tokens": 111, "ok": false, "t_send": 1793586404.3773801, "error": "TimeoutError()"}
+{"t_sched": 45.60243523370946, "max_tokens": 137, "ok": false, "t_send": 1793586404.9663856, "error": "TimeoutError()"}
+{"t_sched": 45.52275444036871, "max_tokens": 116, "ok": false, "t_send": 1793586404.8872466, "error": "TimeoutError()"}
+{"t_sched": 45.45143976695517, "max_tokens": 107, "ok": false, "t_send": 1793586404.8165329, "error": "TimeoutError()"}
+{"t_sched": 45.76801351472906, "max_tokens": 452, "ok": false, "t_send": 1793586405.1335888, "error": "TimeoutError()"}
+{"t_sched": 45.3600010567341, "max_tokens": 148, "ok": false, "t_send": 1793586404.728844, "error": "TimeoutError()"}
+{"t_sched": 45.350838880329796, "max_tokens": 186, "ok": false, "t_send": 1793586404.7164454, "error": "TimeoutError()"}
+{"t_sched": 45.33473713932013, "max_tokens": 104, "ok": false, "t_send": 1793586404.699165, "error": "TimeoutError()"}
+{"t_sched": 45.32549434512876, "max_tokens": 85, "ok": false, "t_send": 1793586404.689013, "error": "TimeoutError()"}
+{"t_sched": 45.268130170905735, "max_tokens": 187, "ok": false, "t_send": 1793586404.6320243, "error": "TimeoutError()"}
+{"t_sched": 45.08428441248174, "max_tokens": 178, "ok": false, "t_send": 1793586404.448997, "error": "TimeoutError()"}
+{"t_sched": 45.12773561618799, "max_tokens": 139, "ok": false, "t_send": 1793586404.4942482, "error": "TimeoutError()"}
+{"t_sched": 47.35483432883238, "max_tokens": 48, "ok": true, "t_send": 1793586406.7227857, "prompt_tokens": 1216, "completion_tokens": 48, "ttft": 264.1442973613739, "e2e": 299.1646647453308, "tpot": 0.745112622037847}
+{"t_sched": 46.020867097987434, "max_tokens": 127, "ok": false, "t_send": 1793586405.387458, "error": "TimeoutError()"}
+{"t_sched": 46.10850455746543, "max_tokens": 144, "ok": false, "t_send": 1793586405.4738302, "error": "TimeoutError()"}
+{"t_sched": 46.833606624929025, "max_tokens": 135, "ok": false, "t_send": 1793586406.1997402, "error": "TimeoutError()"}
+{"t_sched": 46.39948314376093, "max_tokens": 137, "ok": false, "t_send": 1793586405.7641668, "error": "TimeoutError()"}
+{"t_sched": 46.37795233595352, "max_tokens": 151, "ok": false, "t_send": 1793586405.744316, "error": "TimeoutError()"}
+{"t_sched": 46.33234365268549, "max_tokens": 203, "ok": false, "t_send": 1793586405.6984458, "error": "TimeoutError()"}
+{"t_sched": 46.31167582847796, "max_tokens": 89, "ok": false, "t_send": 1793586405.6764717, "error": "TimeoutError()"}
+{"t_sched": 46.29206111376696, "max_tokens": 290, "ok": false, "t_send": 1793586405.6557825, "error": "TimeoutError()"}
+{"t_sched": 46.04864876934436, "max_tokens": 96, "ok": false, "t_send": 1793586405.4166508, "error": "TimeoutError()"}
+{"t_sched": 47.80029428448699, "max_tokens": 134, "ok": false, "t_send": 1793586407.1645758, "error": "TimeoutError()"}
+{"t_sched": 47.058559945307174, "max_tokens": 358, "ok": false, "t_send": 1793586406.4230053, "error": "TimeoutError()"}
+{"t_sched": 47.81671279613278, "max_tokens": 167, "ok": false, "t_send": 1793586407.1827898, "error": "TimeoutError()"}
+{"t_sched": 47.211469411938694, "max_tokens": 132, "ok": false, "t_send": 1793586406.5754197, "error": "TimeoutError()"}
+{"t_sched": 47.528062050129876, "max_tokens": 137, "ok": false, "t_send": 1793586406.8906136, "error": "TimeoutError()"}
+{"t_sched": 47.74105335127432, "max_tokens": 150, "ok": false, "t_send": 1793586407.1061776, "error": "TimeoutError()"}
+{"t_sched": 47.71237725935383, "max_tokens": 299, "ok": false, "t_send": 1793586407.077705, "error": "TimeoutError()"}
+{"t_sched": 47.633682540355395, "max_tokens": 95, "ok": false, "t_send": 1793586407.0000622, "error": "TimeoutError()"}
+{"t_sched": 47.60744500887971, "max_tokens": 119, "ok": false, "t_send": 1793586406.9831278, "error": "TimeoutError()"}
+{"t_sched": 47.55934076114456, "max_tokens": 57, "ok": false, "t_send": 1793586406.9246716, "error": "TimeoutError()"}
+{"t_sched": 47.14015110389499, "max_tokens": 103, "ok": false, "t_send": 1793586406.507356, "error": "TimeoutError()"}
+{"t_sched": 47.51769221717679, "max_tokens": 101, "ok": false, "t_send": 1793586406.8817844, "error": "TimeoutError()"}
+{"t_sched": 46.88021953814047, "max_tokens": 133, "ok": false, "t_send": 1793586406.2446651, "error": "TimeoutError()"}
+{"t_sched": 47.21765965361881, "max_tokens": 341, "ok": false, "t_send": 1793586406.5879533, "error": "TimeoutError()"}
+{"t_sched": 48.405462262598334, "max_tokens": 158, "ok": false, "t_send": 1793586407.77301, "error": "TimeoutError()"}
+{"t_sched": 47.893658809569864, "max_tokens": 105, "ok": false, "t_send": 1793586407.2623503, "error": "TimeoutError()"}
+{"t_sched": 48.2794707386958, "max_tokens": 199, "ok": false, "t_send": 1793586407.6433816, "error": "TimeoutError()"}
+{"t_sched": 48.70467424711416, "max_tokens": 389, "ok": false, "t_send": 1793586408.069955, "error": "TimeoutError()"}
+{"t_sched": 48.569521173569335, "max_tokens": 121, "ok": false, "t_send": 1793586407.9330647, "error": "TimeoutError()"}
+{"t_sched": 48.55783262415779, "max_tokens": 462, "ok": false, "t_send": 1793586407.9215388, "error": "TimeoutError()"}
+{"t_sched": 48.39620699273306, "max_tokens": 42, "ok": false, "t_send": 1793586407.7616773, "error": "TimeoutError()"}
+{"t_sched": 47.95690369473587, "max_tokens": 89, "ok": false, "t_send": 1793586407.3223526, "error": "TimeoutError()"}
+{"t_sched": 47.885727132014026, "max_tokens": 70, "ok": false, "t_send": 1793586407.2504537, "error": "TimeoutError()"}
+{"t_sched": 48.32623052973828, "max_tokens": 63, "ok": false, "t_send": 1793586407.6899853, "error": "TimeoutError()"}
+{"t_sched": 48.227452939099045, "max_tokens": 280, "ok": false, "t_send": 1793586407.592294, "error": "TimeoutError()"}
+{"t_sched": 48.147505517283825, "max_tokens": 74, "ok": false, "t_send": 1793586407.5106738, "error": "TimeoutError()"}
+{"t_sched": 49.664181217716724, "max_tokens": 136, "ok": false, "t_send": 1793586409.0302455, "error": "TimeoutError()"}
+{"t_sched": 49.77876989483159, "max_tokens": 425, "ok": false, "t_send": 1793586409.144576, "error": "TimeoutError()"}
+{"t_sched": 49.72307503793409, "max_tokens": 72, "ok": false, "t_send": 1793586409.0973356, "error": "TimeoutError()"}
+{"t_sched": 49.631469713379026, "max_tokens": 59, "ok": false, "t_send": 1793586408.9977021, "error": "TimeoutError()"}
+{"t_sched": 49.45299864564789, "max_tokens": 54, "ok": false, "t_send": 1793586408.8218992, "error": "TimeoutError()"}
+{"t_sched": 49.278116889639136, "max_tokens": 313, "ok": false, "t_send": 1793586408.6420145, "error": "TimeoutError()"}
+{"t_sched": 49.10392792794939, "max_tokens": 101, "ok": false, "t_send": 1793586408.4700246, "error": "TimeoutError()"}
+{"t_sched": 49.096714869845684, "max_tokens": 144, "ok": false, "t_send": 1793586408.4616969, "error": "TimeoutError()"}
+{"t_sched": 49.78097096045894, "max_tokens": 138, "ok": false, "t_send": 1793586409.1449497, "error": "TimeoutError()"}
+{"t_sched": 49.53247109062422, "max_tokens": 79, "ok": false, "t_send": 1793586408.897049, "error": "TimeoutError()"}
+{"t_sched": 49.4520087656475, "max_tokens": 216, "ok": false, "t_send": 1793586408.8214128, "error": "TimeoutError()"}
+{"t_sched": 49.35618037714103, "max_tokens": 175, "ok": false, "t_send": 1793586408.72277, "error": "TimeoutError()"}
+{"t_sched": 49.266877641449426, "max_tokens": 71, "ok": false, "t_send": 1793586408.630302, "error": "TimeoutError()"}
+{"t_sched": 49.03382491946435, "max_tokens": 76, "ok": false, "t_send": 1793586408.3996656, "error": "TimeoutError()"}
+{"t_sched": 48.939733127138986, "max_tokens": 80, "ok": false, "t_send": 1793586408.3044713, "error": "TimeoutError()"}
+{"t_sched": 48.92495163874403, "max_tokens": 78, "ok": false, "t_send": 1793586408.2952359, "error": "TimeoutError()"}
+{"t_sched": 50.62758041740931, "max_tokens": 219, "ok": false, "t_send": 1793586409.9900963, "error": "TimeoutError()"}
+{"t_sched": 50.812017321759214, "max_tokens": 199, "ok": false, "t_send": 1793586410.177408, "error": "TimeoutError()"}
+{"t_sched": 50.687678007480024, "max_tokens": 512, "ok": false, "t_send": 1793586410.0547826, "error": "TimeoutError()"}
+{"t_sched": 50.25371883509771, "max_tokens": 108, "ok": false, "t_send": 1793586409.6166031, "error": "TimeoutError()"}
+{"t_sched": 50.85661008236401, "max_tokens": 83, "ok": false, "t_send": 1793586410.2235353, "error": "TimeoutError()"}
+{"t_sched": 50.70577207742706, "max_tokens": 99, "ok": false, "t_send": 1793586410.0722706, "error": "TimeoutError()"}
+{"t_sched": 50.29575256864096, "max_tokens": 175, "ok": false, "t_send": 1793586409.658458, "error": "TimeoutError()"}
+{"t_sched": 50.72743130413774, "max_tokens": 70, "ok": false, "t_send": 1793586410.0909348, "error": "TimeoutError()"}
+{"t_sched": 50.805490834418755, "max_tokens": 96, "ok": false, "t_send": 1793586410.1768756, "error": "TimeoutError()"}
+{"t_sched": 50.46877980549851, "max_tokens": 206, "ok": false, "t_send": 1793586409.8385086, "error": "TimeoutError()"}
+{"t_sched": 50.5857773279344, "max_tokens": 52, "ok": false, "t_send": 1793586409.955541, "error": "TimeoutError()"}
+{"t_sched": 50.01768983794788, "max_tokens": 167, "ok": false, "t_send": 1793586409.3812149, "error": "TimeoutError()"}
+{"t_sched": 50.08087600873355, "max_tokens": 112, "ok": false, "t_send": 1793586409.45399, "error": "TimeoutError()"}
+{"t_sched": 50.34368784095862, "max_tokens": 132, "ok": false, "t_send": 1793586409.7065132, "error": "TimeoutError()"}
+{"t_sched": 50.084924263877795, "max_tokens": 103, "ok": false, "t_send": 1793586409.4544113, "error": "TimeoutError()"}
+{"t_sched": 50.07257533260372, "max_tokens": 233, "ok": false, "t_send": 1793586409.4383183, "error": "TimeoutError()"}
+{"t_sched": 50.58258304893058, "max_tokens": 102, "ok": false, "t_send": 1793586409.9551337, "error": "TimeoutError()"}
+{"t_sched": 50.590196923191215, "max_tokens": 243, "ok": false, "t_send": 1793586409.9558737, "error": "TimeoutError()"}
+{"t_sched": 50.533835477100965, "max_tokens": 174, "ok": false, "t_send": 1793586409.8994474, "error": "TimeoutError()"}
+{"t_sched": 50.48488391359547, "max_tokens": 349, "ok": false, "t_send": 1793586409.849519, "error": "TimeoutError()"}
+{"t_sched": 51.85448027038739, "max_tokens": 147, "ok": false, "t_send": 1793586411.2208788, "error": "TimeoutError()"}
+{"t_sched": 51.60216307974253, "max_tokens": 67, "ok": false, "t_send": 1793586410.965511, "error": "TimeoutError()"}
+{"t_sched": 51.78606186435846, "max_tokens": 99, "ok": false, "t_send": 1793586411.1520348, "error": "TimeoutError()"}
+{"t_sched": 51.103599807513994, "max_tokens": 100, "ok": false, "t_send": 1793586410.468465, "error": "TimeoutError()"}
+{"t_sched": 50.9770167385695, "max_tokens": 54, "ok": false, "t_send": 1793586410.3414185, "error": "TimeoutError()"}
+{"t_sched": 51.46510604980195, "max_tokens": 131, "ok": false, "t_send": 1793586410.829568, "error": "TimeoutError()"}
+{"t_sched": 51.26002871514538, "max_tokens": 60, "ok": false, "t_send": 1793586410.6294403, "error": "TimeoutError()"}
+{"t_sched": 51.15791536586648, "max_tokens": 31, "ok": false, "t_send": 1793586410.5244029, "error": "TimeoutError()"}
+{"t_sched": 51.233653165075395, "max_tokens": 100, "ok": false, "t_send": 1793586410.606739, "error": "TimeoutError()"}
+{"t_sched": 51.68265547003505, "max_tokens": 127, "ok": false, "t_send": 1793586411.046128, "error": "TimeoutError()"}
+{"t_sched": 51.67941600019945, "max_tokens": 253, "ok": false, "t_send": 1793586411.0457973, "error": "TimeoutError()"}
+{"t_sched": 50.93183400381499, "max_tokens": 116, "ok": false, "t_send": 1793586410.2955637, "error": "TimeoutError()"}
+{"t_sched": 51.594700500372234, "max_tokens": 154, "ok": false, "t_send": 1793586410.958052, "error": "TimeoutError()"}
+{"t_sched": 51.41294901088361, "max_tokens": 103, "ok": false, "t_send": 1793586410.7765985, "error": "TimeoutError()"}
+{"t_sched": 51.28302818955373, "max_tokens": 339, "ok": false, "t_send": 1793586410.647639, "error": "TimeoutError()"}
+{"t_sched": 51.405770042951865, "max_tokens": 99, "ok": false, "t_send": 1793586410.7704585, "error": "TimeoutError()"}
+{"t_sched": 51.27312353528036, "max_tokens": 60, "ok": false, "t_send": 1793586410.640414, "error": "TimeoutError()"}
+{"t_sched": 51.49041226726829, "max_tokens": 136, "ok": false, "t_send": 1793586410.8552244, "error": "TimeoutError()"}
+{"t_sched": 51.56946742792247, "max_tokens": 53, "ok": false, "t_send": 1793586410.9353483, "error": "TimeoutError()"}
+{"t_sched": 51.664185013723994, "max_tokens": 170, "ok": false, "t_send": 1793586411.0282786, "error": "TimeoutError()"}
+{"t_sched": 51.31153258202144, "max_tokens": 125, "ok": false, "t_send": 1793586410.6772323, "error": "TimeoutError()"}
+{"t_sched": 51.35108849301598, "max_tokens": 77, "ok": false, "t_send": 1793586410.7214713, "error": "TimeoutError()"}
+{"t_sched": 51.355779475400034, "max_tokens": 112, "ok": false, "t_send": 1793586410.7217855, "error": "TimeoutError()"}
+{"t_sched": 52.130623153132504, "max_tokens": 397, "ok": false, "t_send": 1793586411.4947941, "error": "TimeoutError()"}
+{"t_sched": 52.10888668667309, "max_tokens": 71, "ok": false, "t_send": 1793586411.4733276, "error": "TimeoutError()"}
+{"t_sched": 51.92543739268668, "max_tokens": 205, "ok": false, "t_send": 1793586411.2915523, "error": "TimeoutError()"}
+{"t_sched": 52.69673468317314, "max_tokens": 207, "ok": false, "t_send": 1793586412.0589643, "error": "TimeoutError()"}
+{"t_sched": 52.3418232622142, "max_tokens": 113, "ok": false, "t_send": 1793586411.7078815, "error": "TimeoutError()"}
+{"t_sched": 52.65875202908141, "max_tokens": 155, "ok": false, "t_send": 1793586412.0230129, "error": "TimeoutError()"}
+{"t_sched": 51.969683685679676, "max_tokens": 163, "ok": false, "t_send": 1793586411.3371246, "error": "TimeoutError()"}
+{"t_sched": 52.41089788244914, "max_tokens": 308, "ok": false, "t_send": 1793586411.7744806, "error": "TimeoutError()"}
+{"t_sched": 51.888690392039955, "max_tokens": 299, "ok": false, "t_send": 1793586411.2519784, "error": "TimeoutError()"}
+{"t_sched": 52.41930644578048, "max_tokens": 158, "ok": false, "t_send": 1793586411.7835686, "error": "TimeoutError()"}
+{"t_sched": 52.7826107972633, "max_tokens": 46, "ok": false, "t_send": 1793586412.1446993, "error": "TimeoutError()"}
+{"t_sched": 52.52632877752486, "max_tokens": 246, "ok": false, "t_send": 1793586411.8918638, "error": "TimeoutError()"}
+{"t_sched": 52.73352441933067, "max_tokens": 175, "ok": false, "t_send": 1793586412.1060734, "error": "TimeoutError()"}
+{"t_sched": 52.387524504833685, "max_tokens": 192, "ok": false, "t_send": 1793586411.7530656, "error": "TimeoutError()"}
+{"t_sched": 52.748017653840634, "max_tokens": 150, "ok": false, "t_send": 1793586412.1215847, "error": "TimeoutError()"}
+{"t_sched": 52.14956360001569, "max_tokens": 192, "ok": false, "t_send": 1793586411.5133805, "error": "TimeoutError()"}
+{"t_sched": 52.26167188270246, "max_tokens": 127, "ok": false, "t_send": 1793586411.6271229, "error": "TimeoutError()"}
+{"t_sched": 52.859066640453115, "max_tokens": 258, "ok": false, "t_send": 1793586412.2235198, "error": "TimeoutError()"}
+{"t_sched": 51.9545629659998, "max_tokens": 104, "ok": false, "t_send": 1793586411.3209374, "error": "TimeoutError()"}
+{"t_sched": 52.69422216826487, "max_tokens": 221, "ok": false, "t_send": 1793586412.056656, "error": "TimeoutError()"}
+{"t_sched": 52.522398856973574, "max_tokens": 212, "ok": false, "t_send": 1793586411.8847842, "error": "TimeoutError()"}
+{"t_sched": 52.416650748325814, "max_tokens": 70, "ok": false, "t_send": 1793586411.7833002, "error": "TimeoutError()"}
+{"t_sched": 52.13590653950433, "max_tokens": 64, "ok": false, "t_send": 1793586411.4993536, "error": "TimeoutError()"}
+{"t_sched": 52.95664731259703, "max_tokens": 36, "ok": false, "t_send": 1793586412.3201764, "error": "TimeoutError()"}
+{"t_sched": 53.779389385432445, "max_tokens": 78, "ok": false, "t_send": 1793586413.1426742, "error": "TimeoutError()"}
+{"t_sched": 53.15672092301937, "max_tokens": 78, "ok": false, "t_send": 1793586412.5205314, "error": "TimeoutError()"}
+{"t_sched": 53.59189499548323, "max_tokens": 105, "ok": false, "t_send": 1793586412.955672, "error": "TimeoutError()"}
+{"t_sched": 53.776747782427734, "max_tokens": 91, "ok": false, "t_send": 1793586413.1423485, "error": "TimeoutError()"}
+{"t_sched": 52.883912066775274, "max_tokens": 130, "ok": false, "t_send": 1793586412.25021, "error": "TimeoutError()"}
+{"t_sched": 53.15258590043801, "max_tokens": 133, "ok": false, "t_send": 1793586412.520263, "error": "TimeoutError()"}
+{"t_sched": 53.64571657838134, "max_tokens": 226, "ok": false, "t_send": 1793586413.0096517, "error": "TimeoutError()"}
+{"t_sched": 52.960733431521504, "max_tokens": 320, "ok": false, "t_send": 1793586412.324149, "error": "TimeoutError()"}
+{"t_sched": 53.67836705096945, "max_tokens": 125, "ok": false, "t_send": 1793586413.0438728, "error": "TimeoutError()"}
+{"t_sched": 53.50602003610189, "max_tokens": 131, "ok": false, "t_send": 1793586412.8847945, "error": "TimeoutError()"}
+{"t_sched": 53.51485449923208, "max_tokens": 417, "ok": false, "t_send": 1793586412.8852086, "error": "TimeoutError()"}
+{"t_sched": 53.291665593432654, "max_tokens": 213, "ok": false, "t_send": 1793586412.656937, "error": "TimeoutError()"}
+{"t_sched": 54.723991967803585, "max_tokens": 117, "ok": false, "t_send": 1793586414.09364, "error": "TimeoutError()"}
+{"t_sched": 54.060904785463414, "max_tokens": 85, "ok": false, "t_send": 1793586413.425755, "error": "TimeoutError()"}
+{"t_sched": 54.01638526312706, "max_tokens": 314, "ok": false, "t_send": 1793586413.381189, "error": "TimeoutError()"}
+{"t_sched": 54.49612336102293, "max_tokens": 138, "ok": false, "t_send": 1793586413.8649895, "error": "TimeoutError()"}
+{"t_sched": 54.84440388082081, "max_tokens": 147, "ok": false, "t_send": 1793586414.2080526, "error": "TimeoutError()"}
+{"t_sched": 54.4667732516003, "max_tokens": 424, "ok": false, "t_send": 1793586413.8303473, "error": "TimeoutError()"}
+{"t_sched": 54.25197903483931, "max_tokens": 157, "ok": false, "t_send": 1793586413.6160944, "error": "TimeoutError()"}
+{"t_sched": 54.51444376069708, "max_tokens": 213, "ok": false, "t_send": 1793586413.87776, "error": "TimeoutError()"}
+{"t_sched": 54.55186623135317, "max_tokens": 94, "ok": false, "t_send": 1793586413.917719, "error": "TimeoutError()"}
+{"t_sched": 53.935095084980524, "max_tokens": 90, "ok": false, "t_send": 1793586413.3016095, "error": "TimeoutError()"}
+{"t_sched": 54.49805410504219, "max_tokens": 131, "ok": false, "t_send": 1793586413.8653324, "error": "TimeoutError()"}
+{"t_sched": 54.72051830040415, "max_tokens": 74, "ok": false, "t_send": 1793586414.0932827, "error": "TimeoutError()"}
+{"t_sched": 54.092862119428574, "max_tokens": 145, "ok": false, "t_send": 1793586413.4574192, "error": "TimeoutError()"}
+{"t_sched": 54.56287451009461, "max_tokens": 104, "ok": false, "t_send": 1793586413.9340806, "error": "TimeoutError()"}
+{"t_sched": 53.990469425237166, "max_tokens": 126, "ok": false, "t_send": 1793586413.3567436, "error": "TimeoutError()"}
+{"t_sched": 54.79191452932136, "max_tokens": 206, "ok": false, "t_send": 1793586414.1563892, "error": "TimeoutError()"}
+{"t_sched": 53.96783206503709, "max_tokens": 94, "ok": false, "t_send": 1793586413.3330338, "error": "TimeoutError()"}
+{"t_sched": 54.82463967520126, "max_tokens": 140, "ok": false, "t_send": 1793586414.188356, "error": "TimeoutError()"}
+{"t_sched": 54.0149778301694, "max_tokens": 204, "ok": false, "t_send": 1793586413.3808992, "error": "TimeoutError()"}
+{"t_sched": 54.458571859427835, "max_tokens": 216, "ok": false, "t_send": 1793586413.8230646, "error": "TimeoutError()"}
+{"t_sched": 54.32411545693112, "max_tokens": 163, "ok": false, "t_send": 1793586413.6868088, "error": "TimeoutError()"}
+{"t_sched": 54.87264291384573, "max_tokens": 92, "ok": false, "t_send": 1793586414.238302, "error": "TimeoutError()"}
+{"t_sched": 54.1521932188146, "max_tokens": 103, "ok": false, "t_send": 1793586413.5154197, "error": "TimeoutError()"}
+{"t_sched": 55.24672419944081, "max_tokens": 58, "ok": false, "t_send": 1793586414.6119366, "error": "TimeoutError()"}
+{"t_sched": 55.81774668649875, "max_tokens": 112, "ok": false, "t_send": 1793586415.1824296, "error": "TimeoutError()"}
+{"t_sched": 55.16867754972683, "max_tokens": 90, "ok": false, "t_send": 1793586414.5345848, "error": "TimeoutError()"}
+{"t_sched": 54.89271302050372, "max_tokens": 117, "ok": false, "t_send": 1793586414.2598855, "error": "TimeoutError()"}
+{"t_sched": 55.58546069362939, "max_tokens": 92, "ok": false, "t_send": 1793586414.9536579, "error": "TimeoutError()"}
+{"t_sched": 55.49845222614246, "max_tokens": 65, "ok": false, "t_send": 1793586414.8614912, "error": "TimeoutError()"}
+{"t_sched": 55.26014128840725, "max_tokens": 68, "ok": false, "t_send": 1793586414.6223967, "error": "TimeoutError()"}
+{"t_sched": 55.03078764741653, "max_tokens": 149, "ok": false, "t_send": 1793586414.3936214, "error": "TimeoutError()"}
+{"t_sched": 55.22182932603739, "max_tokens": 137, "ok": false, "t_send": 1793586414.5858984, "error": "TimeoutError()"}
+{"t_sched": 56.5229282473849, "max_tokens": 176, "ok": false, "t_send": 1793586415.8898406, "error": "TimeoutError()"}
+{"t_sched": 56.308960473078415, "max_tokens": 43, "ok": false, "t_send": 1793586415.674907, "error": "TimeoutError()"}
+{"t_sched": 56.15904513603219, "max_tokens": 260, "ok": false, "t_send": 1793586415.5249896, "error": "TimeoutError()"}
+{"t_sched": 55.925655907855955, "max_tokens": 83, "ok": false, "t_send": 1793586415.2899914, "error": "TimeoutError()"}
+{"t_sched": 56.376645921630384, "max_tokens": 117, "ok": false, "t_send": 1793586415.742938, "error": "TimeoutError()"}
+{"t_sched": 55.98659517839957, "max_tokens": 228, "ok": false, "t_send": 1793586415.351051, "error": "TimeoutError()"}
+{"t_sched": 57.28387823255983, "max_tokens": 84, "ok": false, "t_send": 1793586416.6545968, "error": "TimeoutError()"}
+{"t_sched": 57.57752041517839, "max_tokens": 94, "ok": false, "t_send": 1793586416.943736, "error": "TimeoutError()"}
+{"t_sched": 57.376728879255836, "max_tokens": 68, "ok": false, "t_send": 1793586416.742735, "error": "TimeoutError()"}
+{"t_sched": 56.73917871843173, "max_tokens": 215, "ok": false, "t_send": 1793586416.282704, "error": "TimeoutError()"}
+{"t_sched": 56.55102754298483, "max_tokens": 192, "ok": false, "t_send": 1793586416.261606, "error": "TimeoutError()"}
+{"t_sched": 57.31763775036842, "max_tokens": 64, "ok": false, "t_send": 1793586416.6889575, "error": "TimeoutError()"}
+{"t_sched": 57.00699557909107, "max_tokens": 190, "ok": false, "t_send": 1793586416.3717537, "error": "TimeoutError()"}
+{"t_sched": 56.544701125443595, "max_tokens": 163, "ok": false, "t_send": 1793586415.933568, "error": "TimeoutError()"}
+{"t_sched": 57.436216577456605, "max_tokens": 128, "ok": false, "t_send": 1793586416.8020868, "error": "TimeoutError()"}
+{"t_sched": 57.06955279983239, "max_tokens": 40, "ok": false, "t_send": 1793586416.4354649, "error": "TimeoutError()"}
+{"t_sched": 56.87362749049025, "max_tokens": 202, "ok": false, "t_send": 1793586416.2829826, "error": "TimeoutError()"}
+{"t_sched": 57.01727974709528, "max_tokens": 301, "ok": false, "t_send": 1793586416.3833113, "error": "TimeoutError()"}
+{"t_sched": 57.6853962133711, "max_tokens": 441, "ok": false, "t_send": 1793586417.049641, "error": "TimeoutError()"}
+{"t_sched": 57.58658605342589, "max_tokens": 161, "ok": false, "t_send": 1793586416.9508421, "error": "TimeoutError()"}
+{"t_sched": 56.88963592252679, "max_tokens": 168, "ok": false, "t_send": 1793586416.2833138, "error": "TimeoutError()"}
+{"t_sched": 57.84590132885187, "max_tokens": 80, "ok": false, "t_send": 1793586417.2091458, "error": "TimeoutError()"}
+{"t_sched": 56.93011458915892, "max_tokens": 117, "ok": false, "t_send": 1793586416.303644, "error": "TimeoutError()"}
+{"t_sched": 57.49999264920298, "max_tokens": 144, "ok": false, "t_send": 1793586416.8652728, "error": "TimeoutError()"}
+{"t_sched": 57.8398529955335, "max_tokens": 112, "ok": false, "t_send": 1793586417.208735, "error": "TimeoutError()"}
+{"t_sched": 57.35307270125733, "max_tokens": 110, "ok": false, "t_send": 1793586416.717872, "error": "TimeoutError()"}
+{"t_sched": 58.16240089397947, "max_tokens": 61, "ok": false, "t_send": 1793586417.527594, "error": "TimeoutError()"}
+{"t_sched": 58.77784691748044, "max_tokens": 55, "ok": false, "t_send": 1793586418.1416717, "error": "TimeoutError()"}
+{"t_sched": 58.33667993483693, "max_tokens": 49, "ok": false, "t_send": 1793586417.702767, "error": "TimeoutError()"}
+{"t_sched": 58.793188343618, "max_tokens": 57, "ok": false, "t_send": 1793586418.1558955, "error": "TimeoutError()"}
+{"t_sched": 58.582596013230706, "max_tokens": 179, "ok": false, "t_send": 1793586417.9649065, "error": "TimeoutError()"}
+{"t_sched": 58.0632132689507, "max_tokens": 72, "ok": false, "t_send": 1793586417.4301972, "error": "TimeoutError()"}
+{"t_sched": 57.93304354254862, "max_tokens": 55, "ok": false, "t_send": 1793586417.3000524, "error": "TimeoutError()"}
+{"t_sched": 58.22754619275227, "max_tokens": 139, "ok": false, "t_send": 1793586417.5970187, "error": "TimeoutError()"}
+{"t_sched": 58.80501044023571, "max_tokens": 512, "ok": false, "t_send": 1793586418.1685, "error": "TimeoutError()"}
+{"t_sched": 58.177396086087406, "max_tokens": 98, "ok": false, "t_send": 1793586417.5421584, "error": "TimeoutError()"}
+{"t_sched": 58.23046289920961, "max_tokens": 107, "ok": false, "t_send": 1793586417.5974224, "error": "TimeoutError()"}
+{"t_sched": 58.00297568234618, "max_tokens": 223, "ok": false, "t_send": 1793586417.3673549, "error": "TimeoutError()"}
+{"t_sched": 58.559065577182345, "max_tokens": 163, "ok": false, "t_send": 1793586417.9227157, "error": "TimeoutError()"}
+{"t_sched": 58.72379617561442, "max_tokens": 45, "ok": false, "t_send": 1793586418.0935209, "error": "TimeoutError()"}
+{"t_sched": 58.72447791019009, "max_tokens": 55, "ok": false, "t_send": 1793586418.0938838, "error": "TimeoutError()"}
+{"t_sched": 58.283582801980074, "max_tokens": 237, "ok": false, "t_send": 1793586417.6502855, "error": "TimeoutError()"}
+{"t_sched": 58.87507428636527, "max_tokens": 202, "ok": false, "t_send": 1793586418.2397304, "error": "TimeoutError()"}
+{"t_sched": 58.17110124412765, "max_tokens": 113, "ok": false, "t_send": 1793586417.5417507, "error": "TimeoutError()"}
+{"t_sched": 58.7052919916635, "max_tokens": 147, "ok": false, "t_send": 1793586418.0707638, "error": "TimeoutError()"}
+{"t_sched": 59.59443280149315, "max_tokens": 185, "ok": false, "t_send": 1793586418.961181, "error": "TimeoutError()"}
+{"t_sched": 59.84446089118439, "max_tokens": 264, "ok": false, "t_send": 1793586419.2094688, "error": "TimeoutError()"}
+{"t_sched": 59.37847106668781, "max_tokens": 216, "ok": false, "t_send": 1793586418.7447877, "error": "TimeoutError()"}
+{"t_sched": 59.77649101272645, "max_tokens": 184, "ok": false, "t_send": 1793586419.1409159, "error": "TimeoutError()"}
+{"t_sched": 59.60162032487234, "max_tokens": 142, "ok": false, "t_send": 1793586418.965916, "error": "TimeoutError()"}
+{"t_sched": 59.73199601721257, "max_tokens": 108, "ok": false, "t_send": 1793586419.098794, "error": "TimeoutError()"}
+{"t_sched": 58.99358149985076, "max_tokens": 129, "ok": false, "t_send": 1793586418.3587341, "error": "TimeoutError()"}
+{"t_sched": 59.079015796651696, "max_tokens": 376, "ok": false, "t_send": 1793586418.443288, "error": "TimeoutError()"}
+{"t_sched": 59.23303835948196, "max_tokens": 78, "ok": false, "t_send": 1793586418.5964015, "error": "TimeoutError()"}
+{"t_sched": 59.95054716787236, "max_tokens": 73, "ok": false, "t_send": 1793586419.317696, "error": "TimeoutError()"}

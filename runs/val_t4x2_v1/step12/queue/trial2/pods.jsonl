@@ -1,0 +1,206 @@
+{"t": 1793590940.892157, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590942.894524, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590944.8948238, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590946.8962598, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590948.8978848, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590950.900181, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590952.9025004, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590954.905242, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590956.906581, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590958.9073274, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590960.9078069, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590962.9084263, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590964.909124, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590966.9094427, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590968.909819, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590970.9116175, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590972.9121583, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590974.912884, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590976.9138515, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590978.9149184, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590980.9154153, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590982.9157352, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590984.9161978, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590986.9168756, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590988.91763, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590990.9187424, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590992.9194326, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590994.920264, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590996.9205284, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793590998.9215038, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591000.9222863, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591002.9231997, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591004.9238799, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591006.9246688, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591008.92521, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591010.9256463, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591012.9260273, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591014.927235, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591016.9285195, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591018.9292493, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591020.930814, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591022.9310763, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591024.9324887, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591026.933442, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591028.934017, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591030.9354777, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591032.9361486, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591034.936653, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591036.9379601, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591038.9436657, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591040.944826, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591042.9451327, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591044.9463983, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591046.9469392, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591048.9476204, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591050.9481041, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591052.948493, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591054.9492507, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591056.9497597, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591058.950852, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591060.9512625, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591062.952464, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591064.9531364, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591066.953627, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591068.954261, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591070.9553266, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591072.9558425, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591074.9571047, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591076.9577372, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591078.9581647, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591080.9584553, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591082.9596267, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591084.9607027, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591086.9610543, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591088.962102, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591090.9626014, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591092.964747, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591094.9655447, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591096.9662256, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591098.9666965, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591100.9676855, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591102.968086, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591104.968876, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591106.9692001, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591108.9702039, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591110.9707148, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591112.9709373, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591114.9720304, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591116.9724205, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591118.9740078, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591120.980643, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591122.9817038, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591124.9826658, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591126.9831183, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591128.983561, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591130.984211, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591132.98504, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591134.997562, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591136.9989035, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591138.9993713, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591141.0012558, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591143.0024266, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591145.0031714, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591147.0038993, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591149.0046113, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": false, "phase": "starting"}]}
+{"t": 1793591151.0057497, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591153.0064278, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591155.006722, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591157.0082881, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591159.0086918, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591161.0092747, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591163.0101686, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591165.0120041, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591167.0126472, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591169.013722, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591171.0147731, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591173.0159802, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591175.0162842, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591177.016919, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591179.0191205, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591181.0195248, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591183.0204716, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591185.026142, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591187.0357597, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591189.0369992, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591191.0381634, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591193.039007, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591195.0399928, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591197.0410275, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591199.042169, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591201.0426147, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591203.0429258, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591205.0435286, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591207.0438054, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591209.0446272, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591211.0449154, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591213.0458212, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591215.0461717, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591217.0466897, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591219.0472655, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591221.0482354, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591223.0491943, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591225.0507712, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591227.0518346, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591229.0528133, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591231.0537984, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591233.054491, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591235.0557535, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591237.0562294, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591239.0567887, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591241.057931, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591243.0586314, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591245.0602486, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591247.0611854, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591249.0622602, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591251.0629182, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591253.063828, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591255.0642345, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591257.0646052, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591259.0655994, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591261.0658844, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591263.0666392, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591265.0676825, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591267.0687556, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591269.0694246, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591271.0701149, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591273.070394, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591275.071193, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591277.072192, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": true, "deleting": false, "phase": "ready"}]}
+{"t": 1793591279.072875, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591281.0735452, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591283.0738647, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591285.074819, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591287.0756845, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591289.076743, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591291.0772436, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591293.0781145, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591295.0787945, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591297.0799782, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591299.0802596, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591301.080784, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591303.081373, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591305.0815842, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591307.0825946, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591309.0837624, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591311.0855775, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591313.0860608, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591315.0882072, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591317.0888348, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591319.091122, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591321.0916812, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591323.092411, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591325.0933156, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591327.095471, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591329.0969865, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591331.098449, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591333.0993989, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591335.1004443, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591337.102737, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591339.1044176, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591341.1054766, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591343.107777, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591345.1106455, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591347.113051, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591349.1153939, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}
+{"t": 1793591351.1175854, "pods": [{"name": "gpu0", "ready": true, "deleting": false, "phase": "ready"}, {"name": "gpu1", "ready": false, "deleting": true, "phase": "draining"}]}

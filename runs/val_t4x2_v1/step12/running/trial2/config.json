@@ -1,0 +1,19 @@
+{
+  "policy": "running",
+  "load": "step12",
+  "trial": 2,
+  "seed": 1002,
+  "schedule": [
+    "2:60",
+    "12:120",
+    "2:180"
+  ],
+  "max_replicas": 2,
+  "scrape": 15.0,
+  "sync": 15.0,
+  "stabilization": 60.0,
+  "prestop": 120.0,
+  "target": 50.0,
+  "signal": "vllm:num_requests_running",
+  "testbed": "kaggle T4 x2, real vLLM"
+}

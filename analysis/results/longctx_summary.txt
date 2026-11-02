@@ -1,0 +1,15 @@
+MEASURED (T4), data/results_longctx_run1
+rate  ok/sent  fail  ttft_p99_s  goodput  peak_wait  peak_run  peak_kv  mean_kv  t_kv>=0.8  t_wait>=5
+ 0.5   26/26      0         1.0     0.43          0         4    0.017    0.004          -          -
+   1   58/58      0         1.3     0.92          0        10    0.038    0.013          -          -
+   2  114/114     0         1.7     1.64          0        32    0.124    0.045          -          -
+   4  242/242     0        14.1     2.54         39       136    0.459    0.199          -        34s
+      at waiting>=5: KV 0.137
+   8  478/478     0        65.3     2.98        158       239    0.847    0.518       113s        33s
+      at KV>=0.8: waiting 30, running 230
+      at waiting>=5: KV 0.443
+  16  548/933   385       250.2     1.52        771       256    0.943    0.706       129s         2s
+      at KV>=0.8: waiting 600, running 228
+      at waiting>=5: KV 0.025
+max preemptions counter: 0
+coldstart: [{'trial': 0, 'spawn_to_ready_s': 154.15852236747742, 'weights_load_s': 3.05, 'model_load_s': 32.150825, 'graph_capture_s': 10.0, 'kv_cache_tokens': 312816.0, 'max_concurrency_x': 152.74}]

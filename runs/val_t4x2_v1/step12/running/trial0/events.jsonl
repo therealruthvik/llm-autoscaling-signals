@@ -1,0 +1,70 @@
+{"t": 1793585355.024453, "event": "create", "gpu": 0}
+{"t": 1793585428.2090197, "event": "ready", "gpu": 0, "startup_s": 73.18461990356445}
+{"t": 1793585437.4091349, "event": "sync", "total": 0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585439.1745324, "event": "scrape", "gpu": 0, "value": 0.0}
+{"t": 1793585452.4102287, "event": "sync", "total": 0.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585454.1837082, "event": "scrape", "gpu": 0, "value": 3.0}
+{"t": 1793585467.4113874, "event": "sync", "total": 3.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585469.191669, "event": "scrape", "gpu": 0, "value": 6.0}
+{"t": 1793585482.411705, "event": "sync", "total": 6.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585484.2051861, "event": "scrape", "gpu": 0, "value": 3.0}
+{"t": 1793585497.4126892, "event": "sync", "total": 3.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585499.2152405, "event": "scrape", "gpu": 0, "value": 5.0}
+{"t": 1793585512.414707, "event": "sync", "total": 5.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585514.2240536, "event": "scrape", "gpu": 0, "value": 39.0}
+{"t": 1793585527.415642, "event": "sync", "total": 39.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585529.233305, "event": "scrape", "gpu": 0, "value": 196.0}
+{"t": 1793585542.4168546, "event": "sync", "total": 196.0, "cur": 1, "desired": 2, "new": 2}
+{"t": 1793585542.4217188, "event": "create", "gpu": 1}
+{"t": 1793585544.2431564, "event": "scrape", "gpu": 0, "value": 255.0}
+{"t": 1793585557.4172676, "event": "sync", "total": 255.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585559.2521203, "event": "scrape", "gpu": 0, "value": 255.0}
+{"t": 1793585572.418257, "event": "sync", "total": 255.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585574.2682178, "event": "scrape", "gpu": 0, "value": 256.0}
+{"t": 1793585587.4198008, "event": "sync", "total": 256.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585589.2827778, "event": "scrape", "gpu": 0, "value": 256.0}
+{"t": 1793585602.4206538, "event": "sync", "total": 256.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585604.2967033, "event": "scrape", "gpu": 0, "value": 254.0}
+{"t": 1793585617.4216406, "event": "sync", "total": 254.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585619.3265758, "event": "scrape", "gpu": 0, "value": 253.0}
+{"t": 1793585624.8015993, "event": "ready", "gpu": 1, "startup_s": 82.37995982170105}
+{"t": 1793585632.4229004, "event": "sync", "total": 253.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585634.335687, "event": "scrape", "gpu": 0, "value": 255.0}
+{"t": 1793585634.7341192, "event": "scrape", "gpu": 1, "value": 0.0}
+{"t": 1793585647.4235637, "event": "sync", "total": 255.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585649.3446848, "event": "scrape", "gpu": 0, "value": 253.0}
+{"t": 1793585649.743786, "event": "scrape", "gpu": 1, "value": 0.0}
+{"t": 1793585662.4237435, "event": "sync", "total": 253.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585664.3531713, "event": "scrape", "gpu": 0, "value": 254.0}
+{"t": 1793585664.7519078, "event": "scrape", "gpu": 1, "value": 0.0}
+{"t": 1793585677.4239807, "event": "sync", "total": 254.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585679.3612323, "event": "scrape", "gpu": 0, "value": 254.0}
+{"t": 1793585679.761143, "event": "scrape", "gpu": 1, "value": 4.0}
+{"t": 1793585692.4247603, "event": "sync", "total": 258.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585694.3690042, "event": "scrape", "gpu": 0, "value": 89.0}
+{"t": 1793585694.7777922, "event": "scrape", "gpu": 1, "value": 3.0}
+{"t": 1793585707.4258125, "event": "sync", "total": 92.0, "cur": 2, "desired": 2, "new": 2}
+{"t": 1793585709.3782868, "event": "scrape", "gpu": 0, "value": 1.0}
+{"t": 1793585709.787996, "event": "scrape", "gpu": 1, "value": 3.0}
+{"t": 1793585722.427021, "event": "sync", "total": 4.0, "cur": 2, "desired": 1, "new": 2}
+{"t": 1793585724.386672, "event": "scrape", "gpu": 0, "value": 2.0}
+{"t": 1793585724.7983148, "event": "scrape", "gpu": 1, "value": 0.0}
+{"t": 1793585737.4273767, "event": "sync", "total": 2.0, "cur": 2, "desired": 1, "new": 2}
+{"t": 1793585739.3957224, "event": "scrape", "gpu": 0, "value": 2.0}
+{"t": 1793585739.8076875, "event": "scrape", "gpu": 1, "value": 2.0}
+{"t": 1793585752.427791, "event": "sync", "total": 4.0, "cur": 2, "desired": 1, "new": 2}
+{"t": 1793585754.4044292, "event": "scrape", "gpu": 0, "value": 2.0}
+{"t": 1793585754.8158815, "event": "scrape", "gpu": 1, "value": 2.0}
+{"t": 1793585767.4280822, "event": "sync", "total": 4.0, "cur": 2, "desired": 1, "new": 1}
+{"t": 1793585767.4282877, "event": "remove", "gpu": 1}
+{"t": 1793585769.4138942, "event": "scrape", "gpu": 0, "value": 7.0}
+{"t": 1793585782.4287117, "event": "sync", "total": 7.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585784.4219015, "event": "scrape", "gpu": 0, "value": 0.0}
+{"t": 1793585797.4290807, "event": "sync", "total": 0.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585799.43566, "event": "scrape", "gpu": 0, "value": 5.0}
+{"t": 1793585812.430255, "event": "sync", "total": 5.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585814.444237, "event": "scrape", "gpu": 0, "value": 0.0}
+{"t": 1793585827.4326189, "event": "sync", "total": 0.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585829.4542458, "event": "scrape", "gpu": 0, "value": 0.0}
+{"t": 1793585842.435856, "event": "sync", "total": 0.0, "cur": 1, "desired": 1, "new": 1}
+{"t": 1793585845.7572808, "event": "trial_end"}

@@ -1,0 +1,11 @@
+[
+  {
+    "trial": 0,
+    "spawn_to_ready_s": 154.15852236747742,
+    "weights_load_s": 3.05,
+    "model_load_s": 32.150825,
+    "graph_capture_s": 10.0,
+    "kv_cache_tokens": 312816.0,
+    "max_concurrency_x": 152.74
+  }
+]

@@ -1,0 +1,28 @@
+== step12, mean over 3 seeds (real = MEASURED T4 x2, kind = emulated, sim = SIMULATED)
+   policy   n  slo_attainment real  slo_attainment kind  slo_attainment sim    ttft_p99 real    ttft_p99 kind     ttft_p99 sim  pod_seconds real  pod_seconds kind  pod_seconds sim  ready_lag_s real  ready_lag_s kind  ready_lag_s sim
+   kv-cal   3            0.273            0.379            0.399           47.193           34.907           33.615          694.160          693.905          695.835          107.738           99.054          100.165
+    queue   3            0.215            0.300            0.321           53.737           44.978           43.688          676.113          659.959          662.835          125.723          134.638          133.165
+  running   3            0.258            0.397            0.399           48.488           33.936           33.615          692.850          697.905          695.835          109.080           95.483          100.165
+ static-1   3            0.189            0.269            0.297           53.221           44.987           43.688          389.884          389.776          390.000              nan              nan              nan
+ static-2   3            1.000            1.000            1.000            0.582            0.421            0.313          779.721          779.474          780.000          -58.384          -58.154              nan
+
+== rank by SLO attainment
+ real: static-2 (1.000) > kv-cal (0.273) > running (0.258) > queue (0.215) > static-1 (0.189)
+ kind: static-2 (1.000) > running (0.397) > kv-cal (0.379) > queue (0.300) > static-1 (0.269)
+  sim: static-2 (1.000) > running (0.399) > kv-cal (0.399) > queue (0.321) > static-1 (0.297)
+
+== per-trial SLO attainment, real (MEASURED)
+   kv-cal: 0.278, 0.273, 0.268
+    queue: 0.210, 0.236, 0.199
+  running: 0.224, 0.289, 0.261
+ static-1: 0.214, 0.191, 0.163
+ static-2: 1.000, 1.000, 0.999
+
+== replica startup on the T4s (create -> /health OK), MEASURED
+   initial (before load): n=18 median 72.7 s, min 71.7, max 100.8
+     autoscaler scale-up: n=9 median 82.0 s, min 81.4, max 83.0
+  warm-up (first boot per GPU): GPU 0 175.9 s, GPU 1 72.2 s
+
+== failed requests on the real testbed (MEASURED)
+  9 of 28830 requests failed
+     9  http 500

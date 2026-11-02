@@ -1,0 +1,5 @@
+{"t_sched": 0.6799319039689096, "max_tokens": 187, "ok": true, "t_send": 1793585844.5466747, "prompt_tokens": 945, "completion_tokens": 187, "ttft": 1.2865495681762695, "e2e": 4.632836103439331, "tpot": 0.017990262277664676}
+{"t_sched": 4.773083773430037, "max_tokens": 55, "ok": true, "t_send": 1793585848.6372507, "prompt_tokens": 927, "completion_tokens": 55, "ttft": 0.2662994861602783, "e2e": 1.1694276332855225, "tpot": 0.01672300585994014}
+{"t_sched": 4.184304963358627, "max_tokens": 107, "ok": true, "t_send": 1793585848.049159, "prompt_tokens": 946, "completion_tokens": 107, "ttft": 0.26954197883605957, "e2e": 2.2067244052886963, "tpot": 0.018272258200735417}
+{"t_sched": 8.866732868142874, "max_tokens": 103, "ok": true, "t_send": 1793585852.7347631, "prompt_tokens": 1536, "completion_tokens": 103, "ttft": 0.5405356884002686, "e2e": 2.3797061443328857, "tpot": 0.018030348946066463}
+{"t_sched": 6.533769429620222, "max_tokens": 281, "ok": true, "t_send": 1793585850.4008927, "prompt_tokens": 1536, "completion_tokens": 281, "ttft": 0.4970071315765381, "e2e": 5.682065486907959, "tpot": 0.018517165524618965}
