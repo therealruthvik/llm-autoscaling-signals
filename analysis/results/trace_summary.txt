@@ -1,0 +1,39 @@
+
+== offered load at peak 20: hourly mean 9.9-17.9 req/s (trough hour 4, busiest hour 14 UTC), busiest minute 20.0
+
+== peak 20 req/s (thinning 0.241, 12.8 req/s mean, 3 seeds), SIMULATED
+reference: static-3 (3.00 replicas)
+         policy    slo min-hour  ttft_p99 replicas vs ref  max scale ev
+       static-1  0.001    0.000   56120.7     1.00   0.33    1        0
+       static-2  0.717    0.000    1041.9     2.00   0.67    2        0
+       static-3  1.000    1.000       0.3     3.00   1.00    3        0
+       static-4  1.000    1.000       0.3     4.00   1.33    4        0
+        ingress  1.000    0.989       0.3     2.52   0.84    3       65
+ ingress-floor2  1.000    1.000       0.3     2.52   0.84    3       63
+         kv-cal  0.946    0.758      10.9     4.78   1.59    8     1409
+            qps  0.999    0.973       0.3     2.49   0.83    3       49
+          queue  0.568    0.515      94.7     9.20   3.07    8     1031
+   queue-floor2  0.941    0.549      10.3     2.49   0.83    8       94
+        running  0.920    0.722      19.2     5.10   1.70    8     1546
+ running-floor2  0.991    0.914       0.3     3.84   1.28    8      949
+           ttft  0.675    0.633      99.4     7.73   2.58    8      909
+
+== offered load at peak 40: hourly mean 19.8-35.8 req/s (trough hour 4, busiest hour 14 UTC), busiest minute 40.0
+
+== peak 40 req/s (thinning 0.483, 25.7 req/s mean, 3 seeds), SIMULATED
+reference: static-5 (5.00 replicas)
+         policy    slo min-hour  ttft_p99 replicas vs ref  max scale ev
+       static-2  0.000    0.000   56123.9     2.00   0.40    2        0
+       static-3  0.143    0.000   11515.2     3.00   0.60    3        0
+       static-4  0.715    0.000    1056.0     4.00   0.80    4        0
+       static-5  1.000    1.000       0.3     5.00   1.00    5        0
+       static-6  1.000    1.000       0.3     6.00   1.20    6        0
+        ingress  0.998    0.952       0.3     4.56   0.91    6       89
+ ingress-floor2  0.999    0.983       0.3     4.57   0.91    6       95
+         kv-cal  0.867    0.790      26.7    12.69   2.54   16     2431
+            qps  0.995    0.862       0.4     4.52   0.90    6       73
+          queue  0.737    0.675     251.3    18.28   3.66   16      901
+   queue-floor2  0.573    0.523      97.6    18.01   3.60   16     1331
+        running  0.852    0.762      29.2    12.66   2.53   16     2463
+ running-floor2  0.783    0.718      39.1    13.46   2.69   16     2428
+           ttft  0.748    0.638     242.0    16.22   3.24   16      918

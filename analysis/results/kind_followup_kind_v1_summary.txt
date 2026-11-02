@@ -1,0 +1,10 @@
+
+== ramp  (mean ± 95% CI over trials)
+         policy  n       slo_attainment             ttft_p99               failed          pod_seconds             max_pods          ready_lag_s
+        ingress  5       0.431 ± 0.053       74.149 ± 17.213       0.000 ± 0.000     1122.376 ± 15.231       3.000 ± 0.000          nan ± nan   
+ running-floor2  5       0.817 ± 0.034        3.041 ± 2.156        0.000 ± 0.000     2544.203 ± 28.577       8.000 ± 0.000          nan ± nan   
+
+== step  (mean ± 95% CI over trials)
+         policy  n       slo_attainment             ttft_p99               failed          pod_seconds             max_pods          ready_lag_s
+        ingress  5       0.184 ± 0.045      139.315 ± 13.039       0.000 ± 0.000      968.904 ± 15.553       3.000 ± 0.000      103.104 ± 8.544 
+ running-floor2  5       0.425 ± 0.019       11.956 ± 4.566        0.000 ± 0.000     2462.295 ± 51.388       8.000 ± 0.000      -58.175 ± 0.055 

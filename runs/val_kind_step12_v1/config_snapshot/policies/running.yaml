@@ -1,0 +1,24 @@
+# Batch size: running requests per replica, target 50 = value at 80% of measured T4 capacity (GKE batch-size signal).
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: vllm-sim-running
+  namespace: llm
+spec:
+  scaleTargetRef:
+    name: vllm-sim
+  minReplicaCount: 1
+  maxReplicaCount: MAX_REPLICAS
+  pollingInterval: 5
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleDown:
+          stabilizationWindowSeconds: STABILIZATION
+  triggers:
+    - type: prometheus
+      metricType: AverageValue
+      metadata:
+        serverAddress: http://prometheus-server.monitoring.svc.cluster.local:80
+        query: sum(vllm:num_requests_running{namespace="llm"})
+        threshold: "50"

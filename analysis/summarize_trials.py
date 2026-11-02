@@ -26,7 +26,7 @@ from scipy import stats
 SLO_TTFT = 1.0
 SLO_TPOT = 0.15
 WINDOW_TAIL = 30.0  # pods are polled until ~30 s after the schedule; sim uses the same tail
-BURST_START = {"step": 60.0, "ramp": None, "steady": None}
+BURST_START = {"step": 60.0, "ramp": None, "steady": None, "step12": 60.0}
 
 
 def schedule_len(schedule):
@@ -100,14 +100,14 @@ def main():
     keys = ["slo_attainment", "ttft_p99", "failed", "pod_seconds", "max_pods", "ready_lag_s"]
     for load in sorted({r["load"] for r in rows}):
         print(f"\n== {load}  (mean ± 95% CI over trials)")
-        print(f"{'policy':>11} {'n':>2} " + " ".join(f"{k:>20}" for k in keys))
+        print(f"{'policy':>15} {'n':>2} " + " ".join(f"{k:>20}" for k in keys))
         for pol in sorted({r["policy"] for r in rows if r["load"] == load}):
             rs = [r for r in rows if r["load"] == load and r["policy"] == pol]
             cells = []
             for k in keys:
                 m, h = ci95([r[k] for r in rs])
                 cells.append(f"{m:>11.3f} ± {h:<6.3f}")
-            print(f"{pol:>11} {len(rs):>2} " + " ".join(cells))
+            print(f"{pol:>15} {len(rs):>2} " + " ".join(cells))
 
 
 if __name__ == "__main__":

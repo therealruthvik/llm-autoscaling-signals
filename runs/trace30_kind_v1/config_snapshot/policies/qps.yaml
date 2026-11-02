@@ -1,0 +1,24 @@
+# Throughput: completed requests/s per replica, target 6.4 = 80% of measured T4 capacity (Liu & Hu HPA-QPS baseline uses 8).
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: vllm-sim-qps
+  namespace: llm
+spec:
+  scaleTargetRef:
+    name: vllm-sim
+  minReplicaCount: 1
+  maxReplicaCount: MAX_REPLICAS
+  pollingInterval: 5
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleDown:
+          stabilizationWindowSeconds: STABILIZATION
+  triggers:
+    - type: prometheus
+      metricType: AverageValue
+      metadata:
+        serverAddress: http://prometheus-server.monitoring.svc.cluster.local:80
+        query: sum(rate(vllm:request_success_total{namespace="llm"}[1m]))
+        threshold: "6.4"

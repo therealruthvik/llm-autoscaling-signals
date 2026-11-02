@@ -1,0 +1,30 @@
+# Saturation-style combination (llm-d WVA): queue per replica > QUEUE_T OR KV per replica > 0.8; HPA takes the max.
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: vllm-sim-combined
+  namespace: llm
+spec:
+  scaleTargetRef:
+    name: vllm-sim
+  minReplicaCount: 1
+  maxReplicaCount: MAX_REPLICAS
+  pollingInterval: 5
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleDown:
+          stabilizationWindowSeconds: STABILIZATION
+  triggers:
+    - type: prometheus
+      metricType: AverageValue
+      metadata:
+        serverAddress: http://prometheus-server.monitoring.svc.cluster.local:80
+        query: sum(vllm:num_requests_waiting{namespace="llm"})
+        threshold: "QUEUE_T"
+    - type: prometheus
+      metricType: AverageValue
+      metadata:
+        serverAddress: http://prometheus-server.monitoring.svc.cluster.local:80
+        query: sum(vllm:kv_cache_usage_perc{namespace="llm"})
+        threshold: "0.8"

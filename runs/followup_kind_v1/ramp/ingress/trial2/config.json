@@ -1,0 +1,24 @@
+{
+  "policy": "ingress",
+  "load": "ramp",
+  "trial": 2,
+  "out": "runs/followup_kind_v1",
+  "startup": "73s",
+  "max_replicas": 8,
+  "stabilization": 60,
+  "queue_threshold": 5,
+  "seed": 1002,
+  "schedule": [
+    "2:40",
+    "5:40",
+    "9:40",
+    "14:40",
+    "18:40",
+    "20:40",
+    "18:40",
+    "14:40",
+    "9:40",
+    "5:40",
+    "2:40"
+  ]
+}

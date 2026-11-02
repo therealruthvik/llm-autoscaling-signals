@@ -26,7 +26,11 @@ Cluster model:
     queue; the waiting metric is then the shared queue length)
   - new pods become Ready after startup delay; removed pods leave routing at
     once, drain for PRESTOP seconds, then in-flight requests fail
-  - Prometheus scrapes each pod every scrape_interval (random phase)
+  - Prometheus scrapes each pod every scrape_interval (random phase), and the
+    gateway's arrival counter (for the ingress signal) on its own phase
+  - a policy's "min" sets the replica floor (KEDA minReplicaCount, default 1)
+  - cfg "max_seqs" lowers vLLM's max_num_seqs below the calibrated 256; the
+    latency calibration (TPOT table, prefill factor) is unchanged
   - HPA sync every sync_period: external AverageValue target ->
     desired = ceil(total / target); Value target -> ceil(current * value / target);
     10% tolerance; scale-up limited to max(4 pods, 100%) per sync; scale-down
@@ -116,6 +120,11 @@ class Sim:
         self.trace = []          # (t, spec, ready, total_pods, metric_value)
         self.spec = policy.get("static", 1)
         self.central = []        # shared waiting queue (routing == "central")
+        self.max_seqs = cfg.get("max_seqs", MAX_SEQS)
+        self.floor = policy.get("min", 1)
+        self.spec = max(self.spec, self.floor)
+        self.arrived = 0         # gateway counter, scraped for the ingress signal
+        self.gw_hist = []        # (t, arrived) scrapes of the gateway counter
         for _ in range(self.spec):
             self.add_replica(ready_now=True)
 
@@ -143,7 +152,7 @@ class Sim:
             return
         pull = self.cfg.get("routing") == "central" and rep.ready and rep.removed_at is None
         while (rep.waiting or (pull and self.central)) and \
-                len(rep.running) + len(rep.prefill) < MAX_SEQS:
+                len(rep.running) + len(rep.prefill) < self.max_seqs:
             r = rep.waiting.pop(0) if rep.waiting else self.central.pop(0)
             r.replica = rep.rid
             rep.prefill.append(r)
@@ -205,6 +214,11 @@ class Sim:
                 if len(hist) >= 2:
                     tot += (hist[-1][1] - hist[0][1]) / max(1e-9, hist[-1][0] - hist[0][0])
             return tot
+        if kind == "ingress":  # arrivals/s at the gateway over rate_window, from scrapes
+            hist = [h for h in self.gw_hist if h[0] >= self.t - win]
+            if len(hist) < 2:
+                return 0.0
+            return (hist[-1][1] - hist[0][1]) / max(1e-9, hist[-1][0] - hist[0][0])
         if kind == "ttft":  # p90 of TTFTs observed in the last rate_window s (as scraped)
             vals = []
             for r in self.live():
@@ -228,7 +242,7 @@ class Sim:
                 ratio = v / rule["target"]
             d = cur if abs(ratio - 1) <= 0.1 else math.ceil(cur * ratio)
             desired = max(desired, d)
-        desired = min(max(desired, 1), self.cfg["max_replicas"])
+        desired = min(max(desired, self.floor), self.cfg["max_replicas"])
         self.desired_hist.append((self.t, desired))
         win = [d for (t, d) in self.desired_hist if t >= self.t - self.cfg["stabilization"]]
         if desired > cur:
@@ -246,6 +260,10 @@ class Sim:
         self.spec = new
         self.trace.append((self.t, new, sum(r.ready for r in self.live()),
                            sum(not r.dead for r in self.reps), val))
+
+    def _uses(self, signal):
+        rules = self.policy.get("triggers", [self.policy])
+        return any(r.get("signal") == signal for r in rules)
 
     def metric_for(self, rule):
         saved = self.policy
@@ -268,6 +286,10 @@ class Sim:
             r.t_done = self.t
         rep.waiting, rep.prefill, rep.running = [], [], []
 
+    def on_gw_scrape(self):
+        self.gw_hist.append((self.t, self.arrived))
+        self.push(self.t + self.cfg["scrape"], "gw_scrape")
+
     def on_scrape(self, rid):
         rep = self.reps[rid]
         if rep.dead:
@@ -282,6 +304,7 @@ class Sim:
 
     def on_arrival(self, i):
         r = self.reqs[i]
+        self.arrived += 1
         ready = [x for x in self.reps if x.ready and x.removed_at is None]
         if not ready:
             r.failed = True
@@ -307,6 +330,8 @@ class Sim:
         for i, r in enumerate(self.reqs):
             self.push(r.t_arr, "arr", i)
         self.push(self.rng.uniform(0, self.cfg["sync"]), "hpa")
+        if self._uses("ingress"):
+            self.push(self.rng.uniform(0, self.cfg["scrape"]), "gw_scrape")
         t_last = self.reqs[-1].t_arr if self.reqs else 0
         while self.ev:
             t, _, kind, data = heapq.heappop(self.ev)
@@ -324,6 +349,9 @@ class Sim:
                     self.kick(rep)
             elif kind == "kill":
                 self.on_kill(data)
+            elif kind == "gw_scrape":
+                if not (t > t_last + 900 and all(r.t_done is not None for r in self.reqs)):
+                    self.on_gw_scrape()
             elif kind == "scrape":
                 self.on_scrape(data)
                 if t > t_last + 900 and all(r.t_done is not None for r in self.reqs):
@@ -363,6 +391,8 @@ POLICIES = {
     "kv-default": {"signal": "kv", "type": "AverageValue", "target": 0.8},
     "ttft": {"signal": "ttft", "type": "Value", "target": 1.0},
     "qps": {"signal": "qps", "type": "AverageValue", "target": 6.4},
+    # offered load: request arrivals/s counted at the gateway, 80% of capacity
+    "ingress": {"signal": "ingress", "type": "AverageValue", "target": 6.4},
 }
 POLICIES["combined"] = {"signal": "waiting", "type": "AverageValue", "target": 5,
                         "triggers": [POLICIES["queue"] | {}, POLICIES["kv-default"] | {}]}
@@ -370,11 +400,16 @@ POLICIES["combined-cal"] = {"signal": "waiting", "type": "AverageValue", "target
                             "triggers": [POLICIES["queue"] | {}, POLICIES["kv-cal"] | {}]}
 for n in (1, 2, 3, 4):
     POLICIES[f"static-{n}"] = {"static": n}
+# static floor plus reactive scaling (KEDA minReplicaCount = 2)
+for name in ("running", "ingress", "queue"):
+    POLICIES[f"{name}-floor2"] = POLICIES[name] | {"min": 2}
 
 LOADS = {
     "step": ["2:60", "20:120", "2:180"],
     "ramp": [f"{r}:40" for r in (2, 5, 9, 14, 18, 20, 18, 14, 9, 5, 2)],
     "steady": ["12:360"],
+    # two-replica validation burst (validation/two_replica_t4.py), 1.5x capacity
+    "step12": ["2:60", "12:120", "2:180"],
 }
 DEFAULT_CFG = {"startup": 73.0, "scrape": 15.0, "sync": 15.0,
                "stabilization": 60.0, "max_replicas": 8,

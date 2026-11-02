@@ -7,3 +7,6 @@ paper/*.log
 paper/*.out
 runs/*.log
 sim/results_*.log
+# Azure trace: 1.1 GB raw CSV and per-day extracts are regenerated (sim/trace.py)
+data/traces/azure2024/*.csv
+data/traces/azure2024/*.npy

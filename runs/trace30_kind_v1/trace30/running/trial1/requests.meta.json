@@ -1,0 +1,11 @@
+{
+  "schedule": null,
+  "seed": 1001,
+  "in_mean": 256,
+  "out_mean": 128,
+  "max_in": 1024,
+  "max_out": 512,
+  "t_start": 1793377528.4689019,
+  "arrivals": "/Users/ruthvikg/pythonprojects/researchpaper/data/traces/azure2024/trace30/seed1001.arrivals.jsonl",
+  "t_end": 1793379345.314851
+}

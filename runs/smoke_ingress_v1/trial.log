@@ -1,0 +1,9 @@
+== step/ingress/trial0: reset
+== running load ['2:60', '20:120', '2:180']
+open file limit: 1048576
+[     0s] rate 2.0 rps for 60s
+[    60s] rate 20.0 rps for 120s
+[   180s] rate 2.0 rps for 180s
+schedule done, draining 382 requests
+wrote 2812 requests to runs/smoke_ingress_v1/step/ingress/trial0/requests.jsonl
+== done runs/smoke_ingress_v1/step/ingress/trial0 (436s)

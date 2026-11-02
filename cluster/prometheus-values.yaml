@@ -10,6 +10,12 @@ server:
     type: NodePort
     nodePort: 30090
   retention: 2d
+# The load generator on the host serves gateway_requests_total (ingress policy).
+extraScrapeConfigs: |
+  - job_name: gateway
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['host.docker.internal:9400']
 alertmanager:
   enabled: false
 prometheus-pushgateway:

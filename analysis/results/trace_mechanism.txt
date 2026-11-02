@@ -1,0 +1,46 @@
+== MEASURED (T4): mean running requests at each offered rate, per session
+rate  1: running   2.4   2.4   2.4   per req/s  2.4
+rate  2: running   5.6   5.5   5.6   per req/s  2.8
+rate  4: running  15.1  15.0  15.2   per req/s  3.8
+rate  8: running  71.0  70.4  71.2   per req/s  8.9
+
+== SIMULATED: TRACE30 window, seed 1000
+         policy  ups downs ready below need
+          queue   12     7             0.44
+        running   18    17             0.50
+         kv-cal   19    19             0.46
+        ingress    1     0             0.03
+ running-floor2   23    16             0.58
+
+== SIMULATED: running, first 15 min (every second sync)
+    t need spec ready  signal
+   12    1    1     1      16
+   42    2    5     1     256
+   72    3    5     1     256
+  102    3    5     1     256
+  132    3    6     5     301
+  162    3    6     5     300
+  192    3    6     5     308
+  222    3    6     6     300
+  252    3    6     6     302
+  282    3    6     6     294
+  312    3    6     6     280
+  342    3    6     6      59
+  372    3    6     6      52
+  402    3    2     2      46
+  432    3    3     2     124
+  462    3    3     2     147
+  492    3    4     2     166
+  522    3    4     3     141
+  552    3    4     3      76
+  582    3    3     3      39
+  612    3    2     2      82
+  642    3    2     2      99
+  672    3    3     2     158
+  702    3    5     2     239
+  732    3    6     2     283
+  762    3    6     3     168
+  792    3    6     5      50
+  822    3    4     4      47
+  852    3    2     2      51
+  882    3    2     2      98

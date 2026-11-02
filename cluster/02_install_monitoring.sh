@@ -7,11 +7,11 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm repo add kedacore https://kedacore.github.io/charts
 helm repo update
 
-helm upgrade --install prometheus prometheus-community/prometheus \
+helm upgrade --install prometheus prometheus-community/prometheus --version 29.38.2 \
   --namespace monitoring --create-namespace \
   -f prometheus-values.yaml --wait --timeout 10m
 
-helm upgrade --install keda kedacore/keda \
+helm upgrade --install keda kedacore/keda --version 2.21.0 \
   --namespace keda --create-namespace \
   --wait --timeout 10m
 

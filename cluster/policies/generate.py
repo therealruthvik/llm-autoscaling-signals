@@ -3,6 +3,9 @@
 
 Placeholders filled in at apply time by experiments/run_trial.py:
 MAX_REPLICAS, STABILIZATION, QUEUE_T.
+The ingress policy reads gateway_requests_total, a counter of requests sent
+that cluster/loadgen.py serves on :9400 and Prometheus scrapes from the host
+(cluster/prometheus-values.yaml); it stands in for a gateway's request counter.
 Thresholds marked "80% of measured capacity" are the signal's mean value on the
 T4 at 6.4 req/s = 0.8 x saturated single-replica capacity (7.8-8.2 completions/s
 at 24 and 32 req/s offered, data/results_run{1,2,3}), linearly interpolated
@@ -17,7 +20,7 @@ metadata:
 spec:
   scaleTargetRef:
     name: vllm-sim
-  minReplicaCount: 1
+  minReplicaCount: {min}
   maxReplicaCount: MAX_REPLICAS
   pollingInterval: 5
   advanced:
@@ -57,12 +60,18 @@ POLICIES = {
     "combined": ("Saturation-style combination (llm-d WVA): queue per replica > QUEUE_T OR KV per replica > 0.8; HPA takes the max.",
                  [trig(f'sum(vllm:num_requests_waiting{{{NS}}})', "QUEUE_T"),
                   trig(f'sum(vllm:kv_cache_usage_perc{{{NS}}})', "0.8")]),
+    "ingress": ("Offered load: requests/s arriving at the gateway, target 6.4 per replica = 80% of measured T4 capacity.",
+                [trig('sum(rate(gateway_requests_total{job="gateway"}[1m]))', "6.4")]),
 }
+# Static floor plus reactive scaling: same triggers, minReplicaCount 2.
+MIN = {"running-floor2": 2}
+POLICIES["running-floor2"] = ("Batch size as in running, with a static floor of 2 replicas (minReplicaCount 2).",
+                              POLICIES["running"][1])
 
 if __name__ == "__main__":
     import os
     here = os.path.dirname(os.path.abspath(__file__))
     for name, (desc, trigs) in POLICIES.items():
         with open(os.path.join(here, f"{name}.yaml"), "w") as f:
-            f.write(HEAD.format(desc=desc, name=name) + "".join(trigs))
+            f.write(HEAD.format(desc=desc, name=name, min=MIN.get(name, 1)) + "".join(trigs))
     print("wrote", ", ".join(sorted(POLICIES)))

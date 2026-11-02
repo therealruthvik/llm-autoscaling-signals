@@ -28,6 +28,7 @@ def main():
     ap.add_argument("--trials", type=int, default=5)
     ap.add_argument("--policies", nargs="+", default=POLICIES)
     ap.add_argument("--loads", nargs="+", default=LOADS)
+    ap.add_argument("--max-replicas", type=int, default=8)
     args = ap.parse_args()
     # Snapshot the exact emulator and policy configs used by this campaign.
     snap = os.path.join(args.out, "config_snapshot")
@@ -43,7 +44,7 @@ def main():
             for policy in order:
                 cmd = [sys.executable, os.path.join(ROOT, "experiments", "run_trial.py"),
                        "--policy", policy, "--load", load, "--trial", str(trial),
-                       "--out", args.out]
+                       "--out", args.out, "--max-replicas", str(args.max_replicas)]
                 r = subprocess.run(cmd)
                 if r.returncode != 0:
                     failures.append((load, policy, trial))

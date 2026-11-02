@@ -1,0 +1,4 @@
+open file limit: 1048576
+[     0s] rate 2.0 rps for 50s
+schedule done, draining 6 requests
+wrote 102 requests to runs/smoke_ingress_v1/requests.jsonl

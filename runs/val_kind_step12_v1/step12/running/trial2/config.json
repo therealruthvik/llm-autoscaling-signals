@@ -1,0 +1,16 @@
+{
+  "policy": "running",
+  "load": "step12",
+  "trial": 2,
+  "out": "runs/val_kind_step12_v1",
+  "startup": "73s",
+  "max_replicas": 2,
+  "stabilization": 60,
+  "queue_threshold": 5,
+  "seed": 1002,
+  "schedule": [
+    "2:60",
+    "12:120",
+    "2:180"
+  ]
+}

@@ -1,0 +1,154 @@
+
+== base (SIMULATED, mean of 5 seeds): slo / ttft p99 / pod-s(+30) / pod-s(+120) / max pods
+  ramp         ingress         0.488    75.2    1122    1351  3.0
+  ramp  ingress-floor2         0.792     3.6    1236    1465  3.0
+  ramp           queue         0.565   102.8    2694    3365  8.0
+  ramp    queue-floor2         0.591    11.4    2175    2665  8.0
+  ramp         running         0.689    48.0    2586    2837  7.8
+  ramp  running-floor2         0.910     1.6    2532    2740  8.0
+  ramp        static-2         0.581    12.1     940    1120  2.0
+  ramp        static-3         1.000     0.3    1410    1680  3.0
+steady         ingress         0.537    37.9     843    1023  2.4
+steady  ingress-floor2         1.000     0.3     780     960  2.0
+steady           queue         0.436    48.8    3073    3800  8.0
+steady    queue-floor2         1.000     0.3     780     960  2.0
+steady         running         0.545    35.1    2430    2862  6.2
+steady  running-floor2         1.000     0.3     975    1209  2.8
+steady        static-2         1.000     0.3     780     960  2.0
+steady        static-3         1.000     0.3    1170    1440  3.0
+  step         ingress         0.203   136.5     982    1086  3.0
+  step  ingress-floor2         0.438    13.8    1121    1308  3.2
+  step           queue         0.272   135.8    2465    3185  8.0
+  step    queue-floor2         0.417    13.8    2158    2361  8.0
+  step         running         0.305   124.8    2030    2568  6.8
+  step  running-floor2         0.499     9.4    2493    2709  8.0
+  step        static-2         0.417    13.7     780     960  2.0
+  step        static-3         1.000     0.3    1170    1440  3.0
+
+== target (SIMULATED, mean of 5 seeds): slo / ttft p99 / pod-s(+30) / pod-s(+120) / max pods
+  ramp         ingress    4.0  0.657    36.7    1740    2094  5.0
+  ramp         ingress    5.0  0.600    48.2    1430    1725  4.0
+  ramp         ingress    6.4  0.488    75.2    1122    1351  3.0
+  ramp         ingress    7.5  0.418    98.0    1077    1291  3.0
+steady         ingress    4.0  0.696    37.5    1293    1563  3.6
+steady         ingress    5.0  0.679    37.5    1116    1386  3.0
+steady         ingress    6.4  0.537    37.9     843    1023  2.4
+steady         ingress    7.5  0.514    38.1     753     933  2.0
+  step         ingress    4.0  0.254   129.0    1744    1854  5.8
+  step         ingress    5.0  0.214   135.9    1350    1455  4.4
+  step         ingress    6.4  0.203   136.5     982    1086  3.0
+  step         ingress    7.5  0.178   140.8     965    1062  3.0
+
+== rate_window (SIMULATED, mean of 5 seeds): slo / ttft p99 / pod-s(+30) / pod-s(+120) / max pods
+  ramp         ingress   15.0  0.132   225.4     470     560  1.0
+  ramp         ingress   30.0  0.578    49.7    1245    1471  3.4
+  ramp         ingress   60.0  0.488    75.2    1122    1351  3.0
+steady         ingress   15.0  0.042   175.6     390     480  1.0
+steady         ingress   30.0  0.529    38.0     840    1020  2.4
+steady         ingress   60.0  0.537    37.9     843    1023  2.4
+  step         ingress   15.0  0.068   161.0     390     480  1.0
+  step         ingress   30.0  0.248   128.3    1263    1353  4.0
+  step         ingress   60.0  0.203   136.5     982    1086  3.0
+
+== startup (SIMULATED, mean of 5 seeds): slo / ttft p99 / pod-s(+30) / pod-s(+120) / max pods
+  ramp         ingress   30.0  0.684    17.2    1122    1351  3.0
+  ramp         ingress   73.0  0.488    75.2    1122    1351  3.0
+  ramp         ingress  170.0  0.260   194.9    1122    1351  3.0
+  ramp         ingress  300.0  0.136   225.4    1122    1351  3.0
+  ramp         running   30.0  0.912     2.6    2059    2267  6.0
+  ramp         running   73.0  0.689    48.0    2586    2837  7.8
+  ramp         running  170.0  0.330   183.7    2234    2789  6.4
+  ramp         running  300.0  0.140   225.4    2168    2708  6.0
+  ramp  running-floor2   30.0  1.000     0.3    1807    1987  5.6
+  ramp  running-floor2   73.0  0.910     1.6    2532    2740  8.0
+  ramp  running-floor2  170.0  0.620    11.4    2568    3190  8.0
+  ramp  running-floor2  300.0  0.609    11.4    2568    3226  8.0
+steady         ingress   30.0  0.798    15.3     843    1023  2.4
+steady         ingress   73.0  0.537    37.9     843    1023  2.4
+steady         ingress  170.0  0.265    85.8     843    1023  2.4
+steady         ingress  300.0  0.083   160.0     843    1023  2.4
+steady         running   30.0  0.780    13.3    2372    2779  6.0
+steady         running   73.0  0.545    35.1    2430    2862  6.2
+steady         running  170.0  0.430    83.1    2140    2684  6.2
+steady         running  300.0  0.115   156.1    2051    2591  6.0
+steady  running-floor2   30.0  1.000     0.3     975    1198  2.8
+steady  running-floor2   73.0  1.000     0.3     975    1209  2.8
+steady  running-floor2  170.0  1.000     0.3     975    1209  2.8
+steady  running-floor2  300.0  1.000     0.3     975    1209  2.8
+  step         ingress   30.0  0.446    72.4     982    1086  3.0
+  step         ingress   73.0  0.203   136.5     982    1086  3.0
+  step         ingress  170.0  0.076   161.0     982    1086  3.0
+  step         ingress  300.0  0.068   161.0     982    1086  3.0
+  step         running   30.0  0.562    60.8    2112    2271  7.0
+  step         running   73.0  0.305   124.8    2030    2568  6.8
+  step         running  170.0  0.124   161.0    1741    2227  5.4
+  step         running  300.0  0.068   161.0    1741    2227  5.4
+  step  running-floor2   30.0  0.871     0.9    2196    2376  7.8
+  step  running-floor2   73.0  0.499     9.4    2493    2709  8.0
+  step  running-floor2  170.0  0.415    13.0    2513    2793  8.0
+  step  running-floor2  300.0  0.415    13.0    2513    2793  8.0
+
+== max_seqs (SIMULATED, mean of 5 seeds): slo / ttft p99 / pod-s(+30) / pod-s(+120) / max pods
+  ramp         ingress     64  0.267   139.7    1122    1351  3.0
+  ramp         ingress    128  0.419    86.8    1122    1351  3.0
+  ramp         ingress    256  0.488    75.2    1122    1351  3.0
+  ramp          kv-cal     64  0.226   127.9    1113    1381  3.0
+  ramp          kv-cal    128  0.632    56.2    1860    2171  5.6
+  ramp          kv-cal    256  0.692    44.9    2617    2873  8.0
+  ramp             qps     64  0.111   329.2     578     724  2.0
+  ramp             qps    128  0.297   134.9     975    1245  3.0
+  ramp             qps    256  0.323   154.7     924    1194  3.0
+  ramp           queue     64  0.665    94.9    2961    3407  8.0
+  ramp           queue    128  0.624    92.5    2772    3296  8.0
+  ramp           queue    256  0.565   102.8    2694    3365  8.0
+  ramp         running     64  0.223   131.9    1107    1375  3.0
+  ramp         running    128  0.624    58.9    1849    2167  5.6
+  ramp         running    256  0.689    48.0    2586    2837  7.8
+  ramp        static-3     64  0.940     2.7    1410    1680  3.0
+  ramp        static-3    128  1.000     0.3    1410    1680  3.0
+  ramp        static-3    256  1.000     0.3    1410    1680  3.0
+  ramp            ttft     64  0.623   109.6    2883    3603  8.0
+  ramp            ttft    128  0.582   109.4    2718    3438  8.0
+  ramp            ttft    256  0.508   125.5    2601    3321  8.0
+steady         ingress     64  0.373    83.0     843    1023  2.4
+steady         ingress    128  0.498    49.0     843    1023  2.4
+steady         ingress    256  0.537    37.9     843    1023  2.4
+steady          kv-cal     64  0.431    81.6    1008    1278  3.0
+steady          kv-cal    128  0.611    47.3    1490    1744  4.2
+steady          kv-cal    256  0.494    38.5    2570    3092  6.6
+steady             qps     64  0.109   240.7     508     652  1.6
+steady             qps    128  0.385    66.5     873    1143  3.0
+steady             qps    256  0.335    63.6     780    1014  2.6
+steady           queue     64  0.486    81.0    3477    4229  8.0
+steady           queue    128  0.475    51.4    3413    4133  8.0
+steady           queue    256  0.436    48.8    3073    3800  8.0
+steady         running     64  0.441    78.9     996    1255  3.0
+steady         running    128  0.617    45.5    1280    1514  3.4
+steady         running    256  0.545    35.1    2430    2862  6.2
+steady        static-3     64  1.000     0.3    1170    1440  3.0
+steady        static-3    128  1.000     0.3    1170    1440  3.0
+steady        static-3    256  1.000     0.3    1170    1440  3.0
+steady            ttft     64  0.693    80.1    2891    3366  8.0
+steady            ttft    128  0.700    53.1    2798    3112  8.0
+steady            ttft    256  0.637    52.5    2657    3123  8.0
+  step         ingress     64  0.158   203.5     982    1086  3.0
+  step         ingress    128  0.221   147.2     982    1086  3.0
+  step         ingress    256  0.203   136.5     982    1086  3.0
+  step          kv-cal     64  0.169   196.7     912    1095  3.0
+  step          kv-cal    128  0.298   136.3    1416    1695  5.0
+  step          kv-cal    256  0.304   124.8    2114    2654  7.2
+  step             qps     64  0.070   234.3     432     558  1.4
+  step             qps    128  0.150   172.5     660     840  2.0
+  step             qps    256  0.120   161.0     651     831  2.0
+  step           queue     64  0.301   188.9    2498    3218  8.0
+  step           queue    128  0.317   141.4    2486    3206  8.0
+  step           queue    256  0.272   135.8    2465    3185  8.0
+  step         running     64  0.169   196.7     912    1095  3.0
+  step         running    128  0.297   136.3    1368    1638  4.8
+  step         running    256  0.305   124.8    2030    2568  6.8
+  step        static-3     64  0.767     3.6    1170    1440  3.0
+  step        static-3    128  1.000     0.3    1170    1440  3.0
+  step        static-3    256  1.000     0.3    1170    1440  3.0
+  step            ttft     64  0.285   194.2    2486    3206  8.0
+  step            ttft    128  0.315   141.7    2480    3200  8.0
+  step            ttft    256  0.198   155.0    2381    3101  8.0

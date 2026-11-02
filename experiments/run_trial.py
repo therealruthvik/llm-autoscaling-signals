@@ -17,6 +17,7 @@ Usage:
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import threading
@@ -35,7 +36,16 @@ LOADS = {
     "ramp": [f"{r}:40" for r in (2, 5, 9, 14, 18, 20, 18, 14, 9, 5, 2)],
     # Steady load needing ~2 replicas; exposes oscillation.
     "steady": ["12:360"],
+    # Two-replica validation burst (validation/two_replica_t4.py): 1.5x capacity.
+    "step12": ["2:60", "12:120", "2:180"],
 }
+
+# Trace replay: thinned 30-minute window of the Azure LLM trace (sim/trace.py);
+# the arrival file depends on the trial seed.
+TRACE_LOADS = {"trace30": os.path.join(ROOT, "data", "traces", "azure2024", "trace30",
+                                       "seed{seed}.arrivals.jsonl")}
+for _name in TRACE_LOADS:
+    LOADS[_name] = ["0:1800"]  # duration only (summary window); arrivals come from the file
 
 PROM_QUERIES = {
     "spec_replicas": 'kube_deployment_spec_replicas{namespace="llm",deployment="vllm-sim"}',
@@ -45,6 +55,7 @@ PROM_QUERIES = {
     "running": 'vllm:num_requests_running{namespace="llm"}',
     "kv_cache": 'vllm:kv_cache_usage_perc{namespace="llm"}',
     "success_total": 'vllm:request_success_total{namespace="llm"}',
+    "gateway_rate_1m": 'sum(rate(gateway_requests_total{job="gateway"}[1m]))',
     "ttft_p90_1m": 'histogram_quantile(0.9, sum(rate(vllm:time_to_first_token_seconds_bucket{namespace="llm"}[1m])) by (le))',
 }
 
@@ -103,9 +114,11 @@ def apply_policy(policy, max_replicas, stabilization, queue_t):
         sh("kubectl", "rollout", "status", "deployment/vllm-sim", "-n", NS, "--timeout=15m")
         return
     with open(os.path.join(ROOT, "cluster", "policies", f"{policy}.yaml")) as f:
-        so = (f.read().replace("MAX_REPLICAS", str(max_replicas))
-              .replace("STABILIZATION", str(stabilization))
-              .replace("QUEUE_T", str(queue_t)))
+        so = f.read()
+    min_replicas = int(re.search(r"minReplicaCount: (\d+)", so).group(1))
+    so = (so.replace("MAX_REPLICAS", str(max_replicas))
+          .replace("STABILIZATION", str(stabilization))
+          .replace("QUEUE_T", str(queue_t)))
     subprocess.run(["kubectl", "apply", "-f", "-"], input=so, text=True,
                    check=True, capture_output=True)
     # Wait until the HPA reads its metric(s), so the trial starts with a live loop.
@@ -113,9 +126,16 @@ def apply_policy(policy, max_replicas, stabilization, queue_t):
     while time.time() - t0 < 180:
         hpa = json.loads(sh("kubectl", "get", "hpa", "-n", NS, "-o", "json"))["items"]
         if hpa and hpa[0].get("status", {}).get("currentMetrics"):
-            return
+            break
         time.sleep(3)
-    raise RuntimeError("HPA never reported metrics")
+    else:
+        raise RuntimeError("HPA never reported metrics")
+    # A replica floor above 1 must be Ready before the load starts.
+    t0 = time.time()
+    while sum(p["ready"] and not p["deleting"] for p in pods()) < min_replicas:
+        if time.time() - t0 > 900:
+            raise RuntimeError(f"floor of {min_replicas} replicas never Ready")
+        time.sleep(3)
 
 
 def poll_pods(stop_evt, path):
@@ -168,9 +188,13 @@ def main():
     poller.start()
     t_start = time.time()
     print(f"== running load {LOADS[args.load]}", flush=True)
+    if args.load in TRACE_LOADS:
+        source = ["--arrivals", TRACE_LOADS[args.load].format(seed=seed)]
+    else:
+        source = ["--schedule", *LOADS[args.load]]
     subprocess.run([os.path.join(ROOT, ".venv", "bin", "python"),
                     os.path.join(ROOT, "cluster", "loadgen.py"),
-                    "--schedule", *LOADS[args.load], "--seed", str(seed),
+                    *source, "--seed", str(seed),
                     "--out", os.path.join(d, "requests.jsonl")], check=True)
     # Short tail after the last request completes. Cost (pod-seconds) is
     # compared over the same schedule window for every policy, so this tail

@@ -1,0 +1,22 @@
+
+== followup_kind_v1 (kind = emulated, sim = SIMULATED, same seeds)
+   load          policy  n  slo kind  slo sim  pods kind  pods sim  ev kind  ev sim
+   ramp         ingress  5     0.431    0.488       1122      1122      4.0     nan
+   ramp  running-floor2  5     0.817    0.910       2544      2532      6.8     nan
+   step         ingress  5     0.184    0.203        969       982      4.0     nan
+   step  running-floor2  5     0.425    0.499       2462      2493      4.6     nan
+
+== val_kind_step12_v1 (kind = emulated, sim = SIMULATED, same seeds)
+   load          policy  n  slo kind  slo sim  pods kind  pods sim  ev kind  ev sim
+ step12          kv-cal  3     0.379    0.402        694       695      2.0     nan
+ step12           queue  3     0.300    0.322        660       660      2.0     nan
+ step12         running  3     0.397    0.402        698       695      2.0     nan
+ step12        static-1  3     0.269    0.300        390       390      0.0     nan
+ step12        static-2  3     1.000    1.000        779       780      0.0     nan
+
+== trace30_kind_v1 (kind = emulated, sim = SIMULATED, same seeds)
+   load          policy  n  slo kind  slo sim  pods kind  pods sim  ev kind  ev sim
+trace30         ingress  2     0.848    0.866       5396      5436      2.0     3.0
+trace30           queue  2     0.559    0.568      17025     16444     22.0    21.5
+trace30         running  2     0.914    0.913      11433     10030     42.0    35.0
+trace30        static-3  2     1.000    1.000       5490      5490      0.0     0.0
