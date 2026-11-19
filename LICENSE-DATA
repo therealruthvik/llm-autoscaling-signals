@@ -1,0 +1,14 @@
+Data, run logs and paper: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Ruthvik Garlapati
+
+The contents of data/, runs/, sim/results/, analysis/results/ and paper/ are
+licensed under CC BY 4.0. You may share and adapt them for any purpose,
+provided you give appropriate credit, link to the license and indicate if
+changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Third-party data: files under data/traces/azure2024/ are derived from the
+Azure LLM Inference Trace 2024 (Microsoft, CC BY 4.0). Cite Stojkovic et al.,
+"DynamoLLM", HPCA 2025. Source and checksum are in data/PROVENANCE.md.

@@ -27,3 +27,10 @@ behavior on an NVIDIA T4.
 6. Analysis: `python analysis/summarize_trials.py runs/main`, `python analysis/plots.py --campaign runs/main --sweep sim/results/sweep_v1.csv`.
 
 Python dependencies: `aiohttp numpy scipy matplotlib`.
+
+## License
+
+Code is MIT (`LICENSE`). Data, run logs and the paper are CC BY 4.0
+(`LICENSE-DATA`). Files under `data/traces/azure2024/` are derived from the
+Azure LLM Inference Trace 2024 (CC BY 4.0; cite Stojkovic et al., DynamoLLM,
+HPCA 2025).
